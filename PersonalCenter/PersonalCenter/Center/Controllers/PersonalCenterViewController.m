@@ -19,7 +19,7 @@
 #define kScreenWidth      [[UIScreen mainScreen] bounds].size.width
 #define kRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define segmentMenuHeight 41  //分页菜单栏的高度
-#define headViewHeight    200
+#define headViewHeight    220
 
 
 @interface PersonalCenterViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
@@ -57,7 +57,6 @@
     self.naviView.hidden = NO;
 }
 
-
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO];
@@ -65,8 +64,8 @@
 
 #pragma mark -- 设置界面
 - (void)setUI {
+    self.title = @"个人中心";
     self.view.backgroundColor = [UIColor whiteColor];
-    
     //添加tableView
     [self.view addSubview:self.mainTableView];
     

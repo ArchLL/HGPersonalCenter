@@ -47,7 +47,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"SecondVC Row: %ld",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"为人生更自由 Row: %ld",indexPath.row];
     cell.imageView.image = [UIImage imageNamed:@"动漫.jpg"];
     return cell;
 }

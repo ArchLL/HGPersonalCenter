@@ -24,8 +24,13 @@ static NSString * const reuseIdentifier = @"collectionCell";
 
 - (void)initCollectionView {
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
-    flowLayout.minimumInteritemSpacing = 6;
-    flowLayout.minimumLineSpacing = 6;
+    flowLayout.minimumInteritemSpacing = 10;//item左右最小间隔(实际间距，比sectionInset优先级高)
+    flowLayout.minimumLineSpacing = 10;//item上下最小间隔(实际间距，比sectionInset优先级高)
+    flowLayout.sectionInset = UIEdgeInsetsMake(10,10,5,10);//item对象上左下右的距离
+    flowLayout.itemSize = CGSizeMake((kScreenWidth-30)/2, 200);//每一个 item 对象大小
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;//设置滚动方向,默认垂直方向.
+//    flowLayout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 30);//头视图的大小
+//    flowLayout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 30);//尾视图大小
     _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64-segmentMenuHeight) collectionViewLayout:flowLayout];
     [_collectionView registerClass :[UICollectionViewCell class ] forCellWithReuseIdentifier :reuseIdentifier];
     
@@ -63,23 +68,6 @@ static NSString * const reuseIdentifier = @"collectionCell";
 {
     return YES;
 }
-
-#pragma mark --UICollectionViewDelegateFlowLayout
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    return CGSizeMake((kScreenWidth-15)/2, 200);
-}
-
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(5, 5, 5, 5);
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 0;
-}
-
-
 
 
 @end

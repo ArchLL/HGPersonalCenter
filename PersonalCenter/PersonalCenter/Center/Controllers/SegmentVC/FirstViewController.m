@@ -7,6 +7,7 @@
 //
 
 #import "FirstViewController.h"
+#import "MyMessageViewController.h"
 
 @interface FirstViewController () < UITableViewDelegate, UITableViewDataSource>
 
@@ -38,7 +39,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -47,9 +48,16 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"FirstVC ROW: %ld",indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"快点我%ld -> 进入我的消息",indexPath.row];
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MyMessageViewController *myMesageVC = [[MyMessageViewController alloc]init];
+    [self.navigationController pushViewController:myMesageVC animated:YES];
+}
+
+
 
 
 @end
