@@ -9,7 +9,6 @@
 #import "RootViewController.h"
 #import "PersonalCenterViewController.h"
 
-
 @interface RootViewController ()
 
 @end
@@ -18,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"首页";
 }
 
 //进入个人中心

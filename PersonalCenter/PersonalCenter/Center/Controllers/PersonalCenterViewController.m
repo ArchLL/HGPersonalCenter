@@ -12,19 +12,21 @@
 #import "ThirdViewController.h"
 #import "CenterSegmentView.h"
 #import "CenterTouchTableView.h"
+#import "MyMessageViewController.h"
 #import <Masonry.h>
 
 #define kScreenHeight     [[UIScreen mainScreen] bounds].size.height
 #define kScreenWidth      [[UIScreen mainScreen] bounds].size.width
 #define kRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define segmentMenuHeight 41  //分页菜单栏的高度
-#define headViewHeight    180
+#define headViewHeight    200
 
 
-@interface PersonalCenterViewController () <UITableViewDelegate,UITableViewDataSource>
+@interface PersonalCenterViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) CenterTouchTableView  * mainTableView;
 @property (nonatomic, strong) CenterSegmentView     * segmentView;
+@property (nonatomic, strong) UIView                * naviView;       //自定义导航栏
 @property (nonatomic, strong) UIImageView           * headImageView;  //头部背景视图
 @property (nonatomic, strong) UIView                * headContentView;//头部内容视图，放置用户信息，如：姓名，昵称、座右铭等(作用：背景放大不会影响内容的位置)
 @property (nonatomic, strong) UIImageView           * avatarImage;    //头像
@@ -41,38 +43,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    [self configureNavigation];
+    //如果使用自定义的按钮去替换系统默认返回按钮，会出现滑动返回手势失效的情况，解决方法如下：
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    //设置界面
     [self setUI];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:@"leaveTop" object:nil];
 }
 
-//设置高斯模糊，以及自定义导航视图的隐藏和出现
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBar.translucent = YES;
+    [self.navigationController setNavigationBarHidden:YES];
+    self.naviView.hidden = NO;
 }
 
 
-#pragma mark -- 设置导航栏
-- (void)configureNavigation {
-    //设置导航栏的样式
-    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-    //设置导航栏内容的颜色
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    //设置透明的背景图
-    [self.navigationController.navigationBar setBackgroundImage:[self drawPngImageWithAlpha:0] forBarMetrics:(UIBarMetricsDefault)];
-    //消除导航栏底部的黑线
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
 }
 
+#pragma mark -- 设置界面
 - (void)setUI {
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    //添加tableView
     [self.view addSubview:self.mainTableView];
-    //头部背景视图
+    
+    //添加头部背景视图
     [_mainTableView addSubview:self.headImageView];
-  
-    //头部内容视图
+    
+    //添加自定义导航栏
+    [self.view addSubview:self.naviView];
+    
+    //添加头部内容视图
     [_headImageView addSubview:self.headContentView];
     [_headContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(_headImageView).offset(0);
@@ -80,8 +84,8 @@
         make.width.mas_equalTo(kScreenWidth);
         make.height.mas_equalTo(headViewHeight);
     }];
-
-    //头像
+    
+    //添加头像
     [_headContentView addSubview:self.avatarImage];
     [_avatarImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_headContentView);
@@ -90,7 +94,7 @@
         make.bottom.mas_equalTo(-70);
     }];
     
-    //昵称
+    //添加昵称
     [_headImageView addSubview:self.nickNameLB];
     [_nickNameLB mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(_headContentView);
@@ -136,7 +140,7 @@
     }else{
         alpha = 0;
     }
-    [self.navigationController.navigationBar setBackgroundImage:[self drawPngImageWithAlpha:alpha] forBarMetrics:(UIBarMetricsDefault)];
+    self.naviView.backgroundColor = kRGBA(255, 126, 15, alpha);
     
     if (_isTopIsCanNotMoveTabView != _isTopIsCanNotMoveTabViewPre) {
         if (!_isTopIsCanNotMoveTabViewPre && _isTopIsCanNotMoveTabView) {
@@ -170,7 +174,19 @@
     
 }
 
-#pragma marl - tableDelegate
+#pragma mark - 返回上一界面
+- (void)backAction {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+#pragma mark - 查看消息
+- (void)checkMessage {
+    NSLog(@"查看消息");
+    MyMessageViewController *myMessageVC = [[MyMessageViewController alloc]init];
+    [self.navigationController pushViewController:myMessageVC animated:YES];
+}
+
+#pragma mark - tableDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -192,13 +208,36 @@
 }
 
 #pragma maek - 懒加载
+- (UIView *)naviView {
+    if (!_naviView) {
+        _naviView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 64)];
+        _naviView.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
+        //添加返回按钮
+        UIButton *backButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [backButton setImage:[UIImage imageNamed:@"back"] forState:(UIControlStateNormal)];
+        backButton.frame = CGRectMake(5, 28, 28, 25);
+        backButton.adjustsImageWhenHighlighted = NO;
+        [backButton addTarget:self action:@selector(backAction) forControlEvents:(UIControlEventTouchUpInside)];
+        [_naviView addSubview:backButton];
+        //添加消息按钮
+        UIButton *messageButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [messageButton setImage:[UIImage imageNamed:@"message"] forState:(UIControlStateNormal)];
+        messageButton.frame = CGRectMake(kScreenWidth-35, 28, 25, 25);
+        messageButton.adjustsImageWhenHighlighted = NO;
+        [messageButton addTarget:self action:@selector(checkMessage) forControlEvents:(UIControlEventTouchUpInside)];
+        [_naviView addSubview:messageButton];
+    }
+    return _naviView;
+}
+
+#pragma mark - 懒加载
 - (UITableView *)mainTableView {
     if (!_mainTableView){
         _mainTableView= [[CenterTouchTableView alloc]initWithFrame:CGRectMake(0,0,kScreenWidth,kScreenHeight)];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.showsVerticalScrollIndicator = NO;
-        _mainTableView.contentInset = UIEdgeInsetsMake(headViewHeight,0, 0, 0);
+        _mainTableView.contentInset = UIEdgeInsetsMake(headViewHeight,0, 0, 0);//内容视图开始显示的坐标为(0,headViewHeight)
         _mainTableView.backgroundColor = [UIColor clearColor];
     }
     return _mainTableView;
@@ -215,12 +254,12 @@
 - (UIImageView *)avatarImage {
     if (!_avatarImage) {
         _avatarImage = [[UIImageView alloc] init];
+        _avatarImage.image = [UIImage imageNamed:@"center_avatar.jpeg"];
         _avatarImage.userInteractionEnabled = YES;
         _avatarImage.layer.masksToBounds = YES;
         _avatarImage.layer.borderWidth = 1;
-        _avatarImage.layer.borderColor =[[UIColor colorWithRed:255/255. green:253/255. blue:253/255. alpha:1.] CGColor];
+        _avatarImage.layer.borderColor = kRGBA(255, 253, 253, 1.).CGColor;
         _avatarImage.layer.cornerRadius = 40;
-        _avatarImage.image = [UIImage imageNamed:@"center_avatar.jpeg"];
     }
     return _avatarImage;
 }
@@ -233,7 +272,7 @@
         _nickNameLB.textAlignment = NSTextAlignmentCenter;
         _nickNameLB.lineBreakMode = NSLineBreakByWordWrapping;
         _nickNameLB.numberOfLines = 0;
-        _nickNameLB.text = @"我的名字叫Anna";
+        _nickNameLB.text = @"撒哈拉下雪了";
     }
     return _nickNameLB;
 }
@@ -261,37 +300,14 @@
         FirstViewController  * firstVC = [[FirstViewController alloc]init];
         SecondViewController * secondVC = [[SecondViewController alloc]init];
         ThirdViewController  * thirdVC =[[ThirdViewController alloc]init];
+        SecondViewController * fourthVC = [[SecondViewController alloc]init];
         
-        NSArray *controllers=@[firstVC,secondVC,thirdVC];
-        NSArray *titleArray =@[@"普吉岛",@"夏威夷",@"洛杉矶"];
+        NSArray *controllers=@[firstVC,secondVC,thirdVC,fourthVC];
+        NSArray *titleArray =@[@"普吉岛",@"夏威夷",@"洛杉矶",@"新泽西"];
         CenterSegmentView *segmentView = [[CenterSegmentView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) controllers:controllers titleArray:(NSArray *)titleArray ParentController:self selectBtnIndex:(NSInteger)index lineWidth:kScreenWidth/5 lineHeight:3];
         _segmentView = segmentView;
     }
     return _segmentView;
 }
-
-#pragma mark ---根据透明度绘制图片
-- (UIImage *)drawPngImageWithAlpha:(CGFloat)alpha{
-    //透明色(可设置初始颜色，当alpha=0时，为透明色)
-    UIColor *color = kRGBA(255, 126, 15, alpha);
-    //位图大小
-    CGSize size = CGSizeMake(1, 1);
-    //绘制位图
-    UIGraphicsBeginImageContext(size);
-    //获取当前创建的内容
-    CGContextRef content = UIGraphicsGetCurrentContext();
-    //充满指定的填充颜色
-    CGContextSetFillColorWithColor(content, color.CGColor);
-    //指定充满整个矩形
-    CGContextFillRect(content, CGRectMake(0, 0, 1, 1));
-    //绘制image
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    //结束绘制
-    UIGraphicsEndImageContext();
-    return image;
-}
-
-
-
 
 @end

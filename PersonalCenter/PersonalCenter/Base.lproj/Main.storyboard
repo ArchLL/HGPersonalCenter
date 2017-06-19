@@ -23,12 +23,15 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-T1-7gh">
                                 <rect key="frame" x="87.5" y="313.5" width="200" height="40"/>
-                                <color key="backgroundColor" red="0.64421355520000001" green="1" blue="0.67003294960000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SPA-ea-HyD"/>
                                     <constraint firstAttribute="width" constant="200" id="pBL-2L-YSR"/>
                                 </constraints>
-                                <state key="normal" title="进入个人中心"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <state key="normal" title="进入个人中心">
+                                    <color key="titleColor" red="0.99990254639999998" green="1" blue="0.99988251920000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="intoCenterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Blv-fK-K9v"/>
                                 </connections>
@@ -44,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
+            <point key="canvasLocation" x="868" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="glE-pJ-ifC">
