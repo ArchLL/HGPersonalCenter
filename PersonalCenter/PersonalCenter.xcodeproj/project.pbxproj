@@ -245,7 +245,8 @@
 				TargetAttributes = {
 					D24F5E271EF3D9CD0011AB07 = {
 						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = CV57LD9494;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -472,7 +473,8 @@
 			baseConfigurationReference = EEC61715961AFF357FFAE7F5 /* Pods-PersonalCenter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CV57LD9494;
 				INFOPLIST_FILE = PersonalCenter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -487,7 +489,8 @@
 			baseConfigurationReference = D8C0A4C5A30C82D2D3EF880E /* Pods-PersonalCenter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = CV57LD9494;
 				INFOPLIST_FILE = PersonalCenter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
