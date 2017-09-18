@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A7g-Mb-0eg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A7g-Mb-0eg">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-T1-7gh">
-                                <rect key="frame" x="57.5" y="384" width="260" height="40"/>
+                                <rect key="frame" x="57.5" y="324" width="260" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="SPA-ea-HyD"/>
@@ -62,26 +62,10 @@
                                     <constraint firstAttribute="height" constant="31" id="wBE-29-pZN"/>
                                 </constraints>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头部背景不放大" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcy-qb-tCu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="头部背景放大" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcy-qb-tCu">
                                 <rect key="frame" x="131" y="241" width="187" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="lYX-LM-JLJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5WH-Lp-RCY">
-                                <rect key="frame" x="57" y="301" width="51" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="7iw-2V-Vfr"/>
-                                    <constraint firstAttribute="width" constant="49" id="qeB-PQ-5lh"/>
-                                </constraints>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下方列表可刷新" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE2-EG-qFN">
-                                <rect key="frame" x="131" y="302" width="187" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="jew-4W-dZr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -92,7 +76,7 @@
                         <constraints>
                             <constraint firstItem="dAl-Ut-QGT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="112" id="0GL-Tg-xGd"/>
                             <constraint firstItem="Vcy-qb-tCu" firstAttribute="trailing" secondItem="Azb-T1-7gh" secondAttribute="trailing" id="3DR-Nt-gPL"/>
-                            <constraint firstItem="Azb-T1-7gh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="320" id="4NF-mc-8Ps"/>
+                            <constraint firstItem="Azb-T1-7gh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="260" id="4NF-mc-8Ps"/>
                             <constraint firstItem="Vcy-qb-tCu" firstAttribute="leading" secondItem="e2N-5L-5bp" secondAttribute="trailing" constant="25" id="4dJ-Gh-tzf"/>
                             <constraint firstItem="dAl-Ut-QGT" firstAttribute="leading" secondItem="Azb-T1-7gh" secondAttribute="leading" id="4yu-8r-mrL"/>
                             <constraint firstItem="55p-LK-qLJ" firstAttribute="centerY" secondItem="dAl-Ut-QGT" secondAttribute="centerY" id="HaY-gk-9EJ"/>
@@ -101,19 +85,13 @@
                             <constraint firstItem="e2N-5L-5bp" firstAttribute="top" secondItem="dAl-Ut-QGT" secondAttribute="bottom" constant="33" id="OnM-Ju-YBK"/>
                             <constraint firstItem="Azb-T1-7gh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SsD-33-YRo"/>
                             <constraint firstItem="55p-LK-qLJ" firstAttribute="trailing" secondItem="Azb-T1-7gh" secondAttribute="trailing" id="Tgv-rF-nqv"/>
-                            <constraint firstItem="5WH-Lp-RCY" firstAttribute="top" secondItem="e2N-5L-5bp" secondAttribute="bottom" constant="30" id="ZIO-Dq-SkC"/>
-                            <constraint firstItem="TE2-EG-qFN" firstAttribute="trailing" secondItem="Azb-T1-7gh" secondAttribute="trailing" id="c0O-US-Drn"/>
                             <constraint firstItem="55p-LK-qLJ" firstAttribute="leading" secondItem="dAl-Ut-QGT" secondAttribute="trailing" constant="25" id="fG4-oj-Ooa"/>
-                            <constraint firstItem="TE2-EG-qFN" firstAttribute="leading" secondItem="5WH-Lp-RCY" secondAttribute="trailing" constant="25" id="g9z-v5-vsL"/>
-                            <constraint firstItem="TE2-EG-qFN" firstAttribute="centerY" secondItem="5WH-Lp-RCY" secondAttribute="centerY" id="pSh-z7-Auk"/>
-                            <constraint firstItem="5WH-Lp-RCY" firstAttribute="leading" secondItem="Azb-T1-7gh" secondAttribute="leading" id="uKO-nw-2VY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="iNy-EN-fAM"/>
                     <connections>
                         <outlet property="enlargeSwitch" destination="e2N-5L-5bp" id="v9W-Qw-EIU"/>
                         <outlet property="iphoneXSwitch" destination="dAl-Ut-QGT" id="ufS-rs-2uv"/>
-                        <outlet property="refreshSwitch" destination="TE2-EG-qFN" id="fxt-co-9NC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

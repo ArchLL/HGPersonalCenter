@@ -12,6 +12,8 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+#import "SYProgressHUD.h"
+
 //适配iphone X - 如果是真机测试需要将该宏改为判断该机型是否为iphone X
 #define  IS_IPHONEX [[NSUserDefaults standardUserDefaults] objectForKey:@"FitIphoneX"]
 //导航栏的高度

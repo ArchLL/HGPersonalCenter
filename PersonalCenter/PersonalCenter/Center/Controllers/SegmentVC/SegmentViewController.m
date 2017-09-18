@@ -10,7 +10,7 @@
 
 @interface SegmentViewController () <UIGestureRecognizerDelegate,UIScrollViewDelegate>
 
-@property(strong, nonatomic)UIScrollView *scrollView;
+@property(strong, nonatomic)UIScrollView * scrollView;
 @property (nonatomic, assign) BOOL canScroll;  //是否可以滚动
 
 @end
@@ -29,6 +29,7 @@
 - (void)acceptMsg:(NSNotification *)notification
 {
     NSString *notificationName = notification.name;
+
     if ([notificationName isEqualToString:@"goTop"]) {
         NSDictionary *userInfo = notification.userInfo;
         NSString *canScroll = userInfo[@"canScroll"];

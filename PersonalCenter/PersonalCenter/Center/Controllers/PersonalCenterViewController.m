@@ -24,13 +24,13 @@
 
 @interface PersonalCenterViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) CenterTouchTableView  * mainTableView;
+@property (nonatomic, strong) CenterTouchTableView   * mainTableView;
 @property (nonatomic, strong) CenterSegmentView      * segmentView;
-@property (nonatomic, strong) UIView                         * naviView;//自定义导航栏
-@property (nonatomic, strong) UIImageView                 * headImageView; //头部背景视图
-@property (nonatomic, strong) UIView                         * headContentView;//头部内容视图，放置用户信息，如：姓名，昵称、座右铭等(作用：背景放大不会影响内容的位置)
-@property (nonatomic, strong) UIImageView                * avatarImage;//头像
-@property (nonatomic,   copy) UILabel                        * nickNameLB;//昵称
+@property (nonatomic, strong) UIView                 * naviView;//自定义导航栏
+@property (nonatomic, strong) UIImageView            * headImageView; //头部背景视图
+@property (nonatomic, strong) UIView                 * headContentView;//头部内容视图，放置用户信息，如：姓名，昵称、座右铭等(作用：背景放大不会影响内容的位置)
+@property (nonatomic, strong) UIImageView            * avatarImage;//头像
+@property (nonatomic,   copy) UILabel                * nickNameLB;//昵称
 
 @property (nonatomic, assign) BOOL canScroll;
 @property (nonatomic, assign) BOOL isTopIsCanNotMoveTabView; //到达顶部不能移动mainTableView
@@ -50,6 +50,9 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
     //设置界面
     [self setUI];
+    //请求数据
+    [self requestData];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:@"leaveTop" object:nil];
 }
 
@@ -103,6 +106,18 @@
         make.height.mas_equalTo(25);
         make.bottom.mas_equalTo(-40);
     }];
+}
+
+//请求数据
+- (void)requestData {
+    [SYProgressHUD showToLoadingView:self.view];
+    //模拟数据请求
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:2];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [SYProgressHUD hideHUDForView:self.view animated:YES];
+        });
+    });
 }
 
 //接收通知
@@ -161,17 +176,23 @@
      * 处理头部背景视图
      * 图片会被拉伸多出状态栏的高度
      */
-    if(yOffset < -headViewHeight) {
-        CGRect f = self.headImageView.frame;
-        //改变HeadImageView的frame
-        //上下放大
-        f.origin.y = yOffset;
-        f.size.height =  -yOffset;
-        //左右放大
-        f.origin.x = (yOffset*kScreenWidth/headViewHeight+kScreenWidth)/2;
-        f.size.width = -yOffset*kScreenWidth/headViewHeight;
-        //改变头部视图的frame
-        self.headImageView.frame = f;
+    if(yOffset <= -headViewHeight) {
+        if (_isEnlarge) {
+            CGRect f = self.headImageView.frame;
+            //改变HeadImageView的frame
+            //上下放大
+            f.origin.y = yOffset;
+            f.size.height =  -yOffset;
+            //左右放大
+            f.origin.x = (yOffset*kScreenWidth/headViewHeight+kScreenWidth)/2;
+            f.size.width = -yOffset*kScreenWidth/headViewHeight;
+            //改变头部视图的frame
+            self.headImageView.frame = f;
+        }else{
+             _mainTableView.bounces = NO;
+        }
+        //刷新数据
+        [self requestData];
     }
 }
 
@@ -298,12 +319,12 @@
 {
     if (!_segmentView) {
         //设置子控制器
-        FirstViewController      * firstVC      = [[FirstViewController alloc]init];
+        FirstViewController   * firstVC  = [[FirstViewController alloc]init];
         SecondViewController  * secondVC = [[SecondViewController alloc]init];
-        ThirdViewController     * thirdVC     = [[ThirdViewController alloc]init];
-        SecondViewController  * fourthVC   = [[SecondViewController alloc]init];
+        ThirdViewController   * thirdVC  = [[ThirdViewController alloc]init];
+        SecondViewController  * fourthVC = [[SecondViewController alloc]init];
         NSArray *controllers = @[firstVC,secondVC,thirdVC,fourthVC];
-        NSArray *titleArray = @[@"普吉岛",@"夏威夷",@"洛杉矶",@"新泽西"];
+        NSArray *titleArray  = @[@"普吉岛",@"夏威夷",@"洛杉矶",@"新泽西"];
         CenterSegmentView *segmentView = [[CenterSegmentView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) controllers:controllers titleArray:(NSArray *)titleArray ParentController:self selectBtnIndex:(NSInteger)index lineWidth:kScreenWidth/5 lineHeight:3];
         _segmentView = segmentView;
     }

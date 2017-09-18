@@ -11,7 +11,9 @@
 
 @interface FirstViewController () < UITableViewDelegate, UITableViewDataSource>
 
-@property(nonatomic ,strong)UITableView * tableView;
+@property (nonatomic , strong) UITableView * tableView;
+@property (nonatomic , assign) NSInteger     page;
+@property (nonatomic , assign) BOOL          isHeader;
 
 @end
 
@@ -32,6 +34,8 @@
     _tableView.rowHeight = 50;
     [self.view addSubview:_tableView];
 }
+
+
 
 #pragma mark - TableView delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

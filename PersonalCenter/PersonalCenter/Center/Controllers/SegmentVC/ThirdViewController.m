@@ -22,6 +22,7 @@ static NSString * const reuseIdentifier = @"collectionCell";
     [self initCollectionView];
 }
 
+
 - (void)initCollectionView {
     UICollectionViewFlowLayout *flowLayout=[[UICollectionViewFlowLayout alloc] init];
     flowLayout.minimumInteritemSpacing = 10;//item左右最小间隔(实际间距，比sectionInset优先级高)

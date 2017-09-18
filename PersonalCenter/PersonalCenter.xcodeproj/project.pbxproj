@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E4DAE741F702A71007C1EE2 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4DAE6B1F702A71007C1EE2 /* MBProgressHUD.m */; };
+		2E4DAE751F702A71007C1EE2 /* hud_error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4DAE6D1F702A71007C1EE2 /* hud_error@2x.png */; };
+		2E4DAE761F702A71007C1EE2 /* hud_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4DAE6E1F702A71007C1EE2 /* hud_info@2x.png */; };
+		2E4DAE771F702A71007C1EE2 /* hud_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4DAE6F1F702A71007C1EE2 /* hud_success@2x.png */; };
+		2E4DAE781F702A71007C1EE2 /* nav_back_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4DAE701F702A71007C1EE2 /* nav_back_icon@2x.png */; };
+		2E4DAE791F702A71007C1EE2 /* nav_back_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4DAE711F702A71007C1EE2 /* nav_back_icon@3x.png */; };
+		2E4DAE7A1F702A71007C1EE2 /* SYProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4DAE731F702A71007C1EE2 /* SYProgressHUD.m */; };
 		3E4C03C4CA0E5F97CD522012 /* libPods-PersonalCenter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3379ED4F74FC9D400EBAF696 /* libPods-PersonalCenter.a */; };
 		5313760F1F6A7FCA00D646AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5313760E1F6A7FCA00D646AF /* Foundation.framework */; };
 		531376111F6A7FD300D646AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531376101F6A7FD300D646AF /* UIKit.framework */; };
@@ -33,6 +40,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E4DAE6A1F702A71007C1EE2 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		2E4DAE6B1F702A71007C1EE2 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		2E4DAE6D1F702A71007C1EE2 /* hud_error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_error@2x.png"; sourceTree = "<group>"; };
+		2E4DAE6E1F702A71007C1EE2 /* hud_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_info@2x.png"; sourceTree = "<group>"; };
+		2E4DAE6F1F702A71007C1EE2 /* hud_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hud_success@2x.png"; sourceTree = "<group>"; };
+		2E4DAE701F702A71007C1EE2 /* nav_back_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back_icon@2x.png"; sourceTree = "<group>"; };
+		2E4DAE711F702A71007C1EE2 /* nav_back_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back_icon@3x.png"; sourceTree = "<group>"; };
+		2E4DAE721F702A71007C1EE2 /* SYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYProgressHUD.h; sourceTree = "<group>"; };
+		2E4DAE731F702A71007C1EE2 /* SYProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYProgressHUD.m; sourceTree = "<group>"; };
 		3379ED4F74FC9D400EBAF696 /* libPods-PersonalCenter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonalCenter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5313760E1F6A7FCA00D646AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		531376101F6A7FD300D646AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -97,6 +113,38 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2E4DAE681F702A71007C1EE2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				2E4DAE691F702A71007C1EE2 /* SYProgressHUD */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		2E4DAE691F702A71007C1EE2 /* SYProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2E4DAE6A1F702A71007C1EE2 /* MBProgressHUD.h */,
+				2E4DAE6B1F702A71007C1EE2 /* MBProgressHUD.m */,
+				2E4DAE6C1F702A71007C1EE2 /* Resource */,
+				2E4DAE721F702A71007C1EE2 /* SYProgressHUD.h */,
+				2E4DAE731F702A71007C1EE2 /* SYProgressHUD.m */,
+			);
+			path = SYProgressHUD;
+			sourceTree = "<group>";
+		};
+		2E4DAE6C1F702A71007C1EE2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2E4DAE6D1F702A71007C1EE2 /* hud_error@2x.png */,
+				2E4DAE6E1F702A71007C1EE2 /* hud_info@2x.png */,
+				2E4DAE6F1F702A71007C1EE2 /* hud_success@2x.png */,
+				2E4DAE701F702A71007C1EE2 /* nav_back_icon@2x.png */,
+				2E4DAE711F702A71007C1EE2 /* nav_back_icon@3x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		5DAD1D0165BB0A2CAF75501A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +176,7 @@
 		D24F5E2A1EF3D9CD0011AB07 /* PersonalCenter */ = {
 			isa = PBXGroup;
 			children = (
+				2E4DAE681F702A71007C1EE2 /* Tools */,
 				D24F5E551EF3D9FA0011AB07 /* Images */,
 				D277E1F91EF78D95001C0DC1 /* Base */,
 				D24F5E421EF3D9FA0011AB07 /* Center */,
@@ -136,11 +185,7 @@
 				D24F5E591EF3D9FA0011AB07 /* RootViewController.h */,
 				D24F5E5A1EF3D9FA0011AB07 /* RootViewController.m */,
 				D24F5E341EF3D9CD0011AB07 /* Main.storyboard */,
-				D24F5E371EF3D9CD0011AB07 /* Assets.xcassets */,
-				D24F5E391EF3D9CD0011AB07 /* LaunchScreen.storyboard */,
-				D24F5E3C1EF3D9CD0011AB07 /* Info.plist */,
 				D24F5E2B1EF3D9CD0011AB07 /* Supporting Files */,
-				53F1415C1F6BB05F00AB9BEF /* PrefixHeader.pch */,
 			);
 			path = PersonalCenter;
 			sourceTree = "<group>";
@@ -148,6 +193,10 @@
 		D24F5E2B1EF3D9CD0011AB07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D24F5E371EF3D9CD0011AB07 /* Assets.xcassets */,
+				D24F5E391EF3D9CD0011AB07 /* LaunchScreen.storyboard */,
+				D24F5E3C1EF3D9CD0011AB07 /* Info.plist */,
+				53F1415C1F6BB05F00AB9BEF /* PrefixHeader.pch */,
 				D24F5E2C1EF3D9CD0011AB07 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -177,12 +226,12 @@
 		D24F5E461EF3D9FA0011AB07 /* SegmentVC */ = {
 			isa = PBXGroup;
 			children = (
+				D24F5E4B1EF3D9FA0011AB07 /* SegmentViewController.h */,
+				D24F5E4C1EF3D9FA0011AB07 /* SegmentViewController.m */,
 				D24F5E471EF3D9FA0011AB07 /* FirstViewController.h */,
 				D24F5E481EF3D9FA0011AB07 /* FirstViewController.m */,
 				D24F5E491EF3D9FA0011AB07 /* SecondViewController.h */,
 				D24F5E4A1EF3D9FA0011AB07 /* SecondViewController.m */,
-				D24F5E4B1EF3D9FA0011AB07 /* SegmentViewController.h */,
-				D24F5E4C1EF3D9FA0011AB07 /* SegmentViewController.m */,
 				D24F5E4D1EF3D9FA0011AB07 /* ThirdViewController.h */,
 				D24F5E4E1EF3D9FA0011AB07 /* ThirdViewController.m */,
 			);
@@ -283,13 +332,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E4DAE761F702A71007C1EE2 /* hud_info@2x.png in Resources */,
 				D277E1F51EF78C3C001C0DC1 /* 动漫.jpg in Resources */,
 				D24F5E631EF3D9FA0011AB07 /* center_bg.jpg in Resources */,
 				D24F5E3B1EF3D9CD0011AB07 /* LaunchScreen.storyboard in Resources */,
 				D277E1F31EF78BA6001C0DC1 /* message.png in Resources */,
+				2E4DAE751F702A71007C1EE2 /* hud_error@2x.png in Resources */,
+				2E4DAE771F702A71007C1EE2 /* hud_success@2x.png in Resources */,
 				D24F5E621EF3D9FA0011AB07 /* center_avatar.jpeg in Resources */,
 				D277E1F11EF78889001C0DC1 /* back.png in Resources */,
 				D24F5E381EF3D9CD0011AB07 /* Assets.xcassets in Resources */,
+				2E4DAE781F702A71007C1EE2 /* nav_back_icon@2x.png in Resources */,
+				2E4DAE791F702A71007C1EE2 /* nav_back_icon@3x.png in Resources */,
 				D24F5E361EF3D9CD0011AB07 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,13 +357,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PersonalCenter-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E7D45AD5C2379375AEEE2725 /* [CP] Copy Pods Resources */ = {
@@ -318,9 +375,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PersonalCenter/Pods-PersonalCenter-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -353,11 +413,13 @@
 				D277E1FC1EF78DA3001C0DC1 /* BaseViewController.m in Sources */,
 				D24F5E5D1EF3D9FA0011AB07 /* SecondViewController.m in Sources */,
 				D24F5E5B1EF3D9FA0011AB07 /* PersonalCenterViewController.m in Sources */,
+				2E4DAE7A1F702A71007C1EE2 /* SYProgressHUD.m in Sources */,
 				D24F5E301EF3D9CD0011AB07 /* AppDelegate.m in Sources */,
 				D277E1F81EF78CA3001C0DC1 /* MyMessageViewController.m in Sources */,
 				D24F5E651EF3D9FA0011AB07 /* RootViewController.m in Sources */,
 				D24F5E2D1EF3D9CD0011AB07 /* main.m in Sources */,
 				D24F5E611EF3D9FA0011AB07 /* CenterTouchTableView.m in Sources */,
+				2E4DAE741F702A71007C1EE2 /* MBProgressHUD.m in Sources */,
 				D24F5E601EF3D9FA0011AB07 /* CenterSegmentView.m in Sources */,
 				D24F5E5C1EF3D9FA0011AB07 /* FirstViewController.m in Sources */,
 				D24F5E5F1EF3D9FA0011AB07 /* ThirdViewController.m in Sources */,
