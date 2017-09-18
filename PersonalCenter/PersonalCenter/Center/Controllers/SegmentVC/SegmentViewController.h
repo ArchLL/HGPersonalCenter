@@ -14,7 +14,4 @@
 //此类为子控制器的父类
 @interface SegmentViewController : UIViewController
 
-@property(strong, nonatomic)UIScrollView *scrollView;
-@property (nonatomic, assign) BOOL canScroll;  //是否可以滚动
-
 @end

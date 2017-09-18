@@ -12,11 +12,10 @@
 #define segmentScrollVHeight  41     //分页控制器button的高度
 
 @interface CenterSegmentView () <UIScrollViewDelegate>
-
+@property ( nonatomic, strong) NSArray   * controllers;
 @end
 
 @implementation CenterSegmentView
-
 
 - (instancetype)initWithFrame:(CGRect)frame controllers:(NSArray *)controllers titleArray:(NSArray *)titleArray ParentController:(UIViewController *)parentC selectBtnIndex:(NSInteger)index lineWidth:(float)lineW lineHeight:(float)lineH
 {
@@ -39,15 +38,16 @@
         self.segmentScrollV.bounces = NO;
         [self addSubview:self.segmentScrollV];
         
-        for (int i=0; i<self.controllers.count;i++)
+        for (int i=0; i<self.controllers.count; i++)
         {
-            UIViewController * contr = self.controllers[i];
-            [self.segmentScrollV addSubview:contr.view];
-            contr.view.frame = CGRectMake(i*frame.size.width, 0, frame.size.width,frame.size.height);
-            [parentC addChildViewController:contr];
-            [contr didMoveToParentViewController:parentC];
+            UIViewController * controller = self.controllers[i];
+            [self.segmentScrollV addSubview:controller.view];
+            controller.view.frame = CGRectMake(i*frame.size.width, 0, frame.size.width,frame.size.height);
+            [parentC addChildViewController:controller];
+            [controller didMoveToParentViewController:parentC];
         }
-        for (int i=0; i<self.controllers.count;i++)
+        
+        for (int i=0; i<self.controllers.count; i++)
         {
             UIButton * btn = [ UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(i*(frame.size.width/self.controllers.count), 0, frame.size.width/self.controllers.count, segmentScrollVHeight);

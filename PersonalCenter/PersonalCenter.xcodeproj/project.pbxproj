@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3E4C03C4CA0E5F97CD522012 /* libPods-PersonalCenter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3379ED4F74FC9D400EBAF696 /* libPods-PersonalCenter.a */; };
+		5313760F1F6A7FCA00D646AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5313760E1F6A7FCA00D646AF /* Foundation.framework */; };
+		531376111F6A7FD300D646AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531376101F6A7FD300D646AF /* UIKit.framework */; };
 		D24F5E2D1EF3D9CD0011AB07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E2C1EF3D9CD0011AB07 /* main.m */; };
 		D24F5E301EF3D9CD0011AB07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E2F1EF3D9CD0011AB07 /* AppDelegate.m */; };
 		D24F5E361EF3D9CD0011AB07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24F5E341EF3D9CD0011AB07 /* Main.storyboard */; };
@@ -32,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		3379ED4F74FC9D400EBAF696 /* libPods-PersonalCenter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PersonalCenter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5313760E1F6A7FCA00D646AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		531376101F6A7FD300D646AF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		53F1415C1F6BB05F00AB9BEF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D24F5E281EF3D9CD0011AB07 /* PersonalCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24F5E2C1EF3D9CD0011AB07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D24F5E2E1EF3D9CD0011AB07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -74,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531376111F6A7FD300D646AF /* UIKit.framework in Frameworks */,
+				5313760F1F6A7FCA00D646AF /* Foundation.framework in Frameworks */,
 				3E4C03C4CA0E5F97CD522012 /* libPods-PersonalCenter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +100,8 @@
 		5DAD1D0165BB0A2CAF75501A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				531376101F6A7FD300D646AF /* UIKit.framework */,
+				5313760E1F6A7FCA00D646AF /* Foundation.framework */,
 				3379ED4F74FC9D400EBAF696 /* libPods-PersonalCenter.a */,
 			);
 			name = Frameworks;
@@ -119,18 +128,19 @@
 		D24F5E2A1EF3D9CD0011AB07 /* PersonalCenter */ = {
 			isa = PBXGroup;
 			children = (
+				D24F5E551EF3D9FA0011AB07 /* Images */,
+				D277E1F91EF78D95001C0DC1 /* Base */,
+				D24F5E421EF3D9FA0011AB07 /* Center */,
 				D24F5E2E1EF3D9CD0011AB07 /* AppDelegate.h */,
 				D24F5E2F1EF3D9CD0011AB07 /* AppDelegate.m */,
 				D24F5E591EF3D9FA0011AB07 /* RootViewController.h */,
 				D24F5E5A1EF3D9FA0011AB07 /* RootViewController.m */,
-				D277E1F91EF78D95001C0DC1 /* Base */,
-				D24F5E421EF3D9FA0011AB07 /* Center */,
-				D24F5E551EF3D9FA0011AB07 /* Images */,
 				D24F5E341EF3D9CD0011AB07 /* Main.storyboard */,
 				D24F5E371EF3D9CD0011AB07 /* Assets.xcassets */,
 				D24F5E391EF3D9CD0011AB07 /* LaunchScreen.storyboard */,
 				D24F5E3C1EF3D9CD0011AB07 /* Info.plist */,
 				D24F5E2B1EF3D9CD0011AB07 /* Supporting Files */,
+				53F1415C1F6BB05F00AB9BEF /* PrefixHeader.pch */,
 			);
 			path = PersonalCenter;
 			sourceTree = "<group>";
@@ -245,7 +255,7 @@
 				TargetAttributes = {
 					D24F5E271EF3D9CD0011AB07 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = CV57LD9494;
+						DevelopmentTeam = V28CMPT7BE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -474,7 +484,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CV57LD9494;
+				DEVELOPMENT_TEAM = V28CMPT7BE;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PersonalCenter/PrefixHeader.pch";
 				INFOPLIST_FILE = PersonalCenter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -490,7 +501,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = CV57LD9494;
+				DEVELOPMENT_TEAM = V28CMPT7BE;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PersonalCenter/PrefixHeader.pch";
 				INFOPLIST_FILE = PersonalCenter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

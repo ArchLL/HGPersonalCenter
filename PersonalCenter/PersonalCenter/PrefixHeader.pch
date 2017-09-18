@@ -1,0 +1,20 @@
+//
+//  PrefixHeader.pch
+//  PersonalCenter
+//
+//  Created by 赛驰 on 2017/9/15.
+//  Copyright © 2017年 mint_bin. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//适配iphone X - 如果是真机测试需要将该宏改为判断该机型是否为iphone X
+#define  IS_IPHONEX [[NSUserDefaults standardUserDefaults] objectForKey:@"FitIphoneX"]
+//导航栏的高度
+#define NaviBarHeight  [IS_IPHONEX integerValue] == 1 ? 88 : 64
+
+#endif /* PrefixHeader_pch */

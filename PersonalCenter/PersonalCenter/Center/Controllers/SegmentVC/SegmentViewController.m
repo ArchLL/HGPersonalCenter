@@ -10,6 +10,8 @@
 
 @interface SegmentViewController () <UIGestureRecognizerDelegate,UIScrollViewDelegate>
 
+@property(strong, nonatomic)UIScrollView *scrollView;
+@property (nonatomic, assign) BOOL canScroll;  //是否可以滚动
 
 @end
 
@@ -41,8 +43,6 @@
     }
 }
 
-
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (!self.canScroll) {
@@ -67,7 +67,6 @@
     }
     return NO;
 }
-
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
