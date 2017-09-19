@@ -25,34 +25,39 @@
 @interface PersonalCenterViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) CenterTouchTableView   * mainTableView;
-@property (nonatomic, strong) CenterSegmentView      * segmentView;
-@property (nonatomic, strong) UIView                 * naviView;//自定义导航栏
-@property (nonatomic, strong) UIImageView            * headImageView; //头部背景视图
-@property (nonatomic, strong) UIView                 * headContentView;//头部内容视图，放置用户信息，如：姓名，昵称、座右铭等(作用：背景放大不会影响内容的位置)
-@property (nonatomic, strong) UIImageView            * avatarImage;//头像
-@property (nonatomic,   copy) UILabel                * nickNameLB;//昵称
+@property (nonatomic, strong) CenterSegmentView       * segmentView;
+@property (nonatomic, strong) UIView                          * naviView;//自定义导航栏
+@property (nonatomic, strong) UIButton                       * backButton;//导航栏-返回按钮
+@property (nonatomic, strong) UIButton                       * messageButton;//导航栏-消息按钮
+
+@property (nonatomic, strong) UIImageView                 * headImageView; //头部背景视图
+@property (nonatomic, strong) UIView                          * headContentView;//头部内容视图，放置用户信息，如：姓名，昵称、座右铭等(作用：背景放大不会影响内容的位置)
+@property (nonatomic, strong) UIImageView                  * avatarImage;//头像
+@property (nonatomic,   copy) UILabel                          * nickNameLB;//昵称
 
 @property (nonatomic, assign) BOOL canScroll;
 @property (nonatomic, assign) BOOL isTopIsCanNotMoveTabView; //到达顶部不能移动mainTableView
 @property (nonatomic, assign) BOOL isTopIsCanNotMoveTabViewPre;//到达顶部不能移动子控制器的tableView
-@property (nonatomic, assign) NSInteger naviBarHeight;//导航栏的高度
-
 @end
 
 @implementation PersonalCenterViewController
+{
+   NSInteger _topHeight;//导航栏的高度+状态栏的高度
+   BOOL _isRefresh;//控制下拉放大时刷新数据的次数，做到下拉放大值刷新一次，避免重复刷新
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _isRefresh = YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
     //接收宏定义的值，因为下面要做运算，宏不能直接拿来运算
-    _naviBarHeight = NaviBarHeight;
+    _topHeight = TopHeight;
     //如果使用自定义的按钮去替换系统默认返回按钮，会出现滑动返回手势失效的情况，解决方法如下：
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
     //设置界面
     [self setUI];
     //请求数据
     [self requestData];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:@"leaveTop" object:nil];
 }
 
@@ -60,11 +65,15 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     self.naviView.hidden = NO;
+    self.messageButton.hidden = NO;
+    self.backButton.hidden = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO];
+    self.messageButton.hidden = YES;
+    self.backButton.hidden = YES;
 }
 
 #pragma mark -- 设置界面
@@ -110,12 +119,12 @@
 
 //请求数据
 - (void)requestData {
-    [SYProgressHUD showToLoadingView:self.view];
+    [MBProgressHUD showOnlyLoadToView:self.view];
     //模拟数据请求
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [NSThread sleepForTimeInterval:2];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [SYProgressHUD hideHUDForView:self.view animated:YES];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
     });
 }
@@ -135,7 +144,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     //获取滚动视图y值的偏移量
     CGFloat yOffset  = scrollView.contentOffset.y;//内层分页视图的偏移量
-    CGFloat tabyOffset = [_mainTableView rectForSection:0].origin.y-_naviBarHeight;//外层tableView的偏移量
+    CGFloat tabyOffset = [_mainTableView rectForSection:0].origin.y -_topHeight;//外层tableView的偏移量
     
      _isTopIsCanNotMoveTabViewPre = _isTopIsCanNotMoveTabView;//默认值为NO，都可以滑动
     
@@ -149,7 +158,7 @@
     }
     
     //更改导航栏的背景图的透明度
-    CGFloat newyOffset = -yOffset-_naviBarHeight;
+    CGFloat newyOffset = -yOffset-_topHeight;
     CGFloat alpha = 0;
     if (newyOffset <= 0) {
         alpha = 1;
@@ -188,11 +197,21 @@
             f.size.width = -yOffset*kScreenWidth/headViewHeight;
             //改变头部视图的frame
             self.headImageView.frame = f;
+            //刷新数据，保证刷新一次
+            if (yOffset ==  - headViewHeight) {
+                _isRefresh = YES;
+            }
+            if (yOffset < -headViewHeight - 30 && _isRefresh) {
+                [self requestData];
+                _isRefresh = NO;
+            }
         }else{
              _mainTableView.bounces = NO;
+            if (yOffset == -headViewHeight) {
+                //刷新数据
+                [self requestData];
+            }
         }
-        //刷新数据
-        [self requestData];
     }
 }
 
@@ -218,7 +237,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return kScreenHeight-64;
+    return kScreenHeight-_topHeight;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -232,23 +251,22 @@
 #pragma maek - 懒加载
 - (UIView *)naviView {
     if (!_naviView) {
-        _naviView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,_naviBarHeight)];
-        _naviView.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
-  
+        _naviView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,_topHeight)];
+        _naviView.backgroundColor = [UIColor colorWithWhite:1 alpha:0];//该透明色设置不会影响子视图
         //添加返回按钮
-        UIButton *backButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [backButton setImage:[UIImage imageNamed:@"back"] forState:(UIControlStateNormal)];
-        backButton.frame = CGRectMake(5,28 + _naviBarHeight - 64,28,25);
-        backButton.adjustsImageWhenHighlighted = NO;
-        [backButton addTarget:self action:@selector(backAction) forControlEvents:(UIControlEventTouchUpInside)];
-        [_naviView addSubview:backButton];
+        self.backButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [_backButton setImage:[UIImage imageNamed:@"back"] forState:(UIControlStateNormal)];
+        _backButton.frame = CGRectMake(5, 28 + _topHeight - 64, 28, 25);
+        _backButton.adjustsImageWhenHighlighted = NO;
+        [_backButton addTarget:self action:@selector(backAction) forControlEvents:(UIControlEventTouchUpInside)];
+        [_naviView addSubview:_backButton];
         //添加消息按钮
-        UIButton *messageButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [messageButton setImage:[UIImage imageNamed:@"message"] forState:(UIControlStateNormal)];
-        messageButton.frame = CGRectMake(kScreenWidth-35,28 + _naviBarHeight - 64,25,25);
-        messageButton.adjustsImageWhenHighlighted = NO;
-        [messageButton addTarget:self action:@selector(checkMessage) forControlEvents:(UIControlEventTouchUpInside)];
-        [_naviView addSubview:messageButton];
+        self.messageButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [_messageButton setImage:[UIImage imageNamed:@"message"] forState:(UIControlStateNormal)];
+        _messageButton.frame = CGRectMake(kScreenWidth-35, 28 + _topHeight - 64, 25, 25);
+        _messageButton.adjustsImageWhenHighlighted = NO;
+        [_messageButton addTarget:self action:@selector(checkMessage) forControlEvents:(UIControlEventTouchUpInside)];
+        [_naviView addSubview:_messageButton];
     }
     return _naviView;
 }
@@ -260,7 +278,7 @@
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.showsVerticalScrollIndicator = NO;
-        _mainTableView.contentInset = UIEdgeInsetsMake(headViewHeight,0, 0,0);//内容视图开始正常显示的坐标为(0,headViewHeight)
+        _mainTableView.contentInset = UIEdgeInsetsMake(headViewHeight, 0, 0, 0);//内容视图开始正常显示的坐标为(0,headViewHeight)
     }
     return _mainTableView;
 }
@@ -311,7 +329,6 @@
     return _headImageView;
 }
 
-
 /*
  * 这里可以设置替换你喜欢的segmentView
  */
@@ -319,13 +336,13 @@
 {
     if (!_segmentView) {
         //设置子控制器
-        FirstViewController   * firstVC  = [[FirstViewController alloc]init];
+        FirstViewController      * firstVC  = [[FirstViewController alloc]init];
         SecondViewController  * secondVC = [[SecondViewController alloc]init];
-        ThirdViewController   * thirdVC  = [[ThirdViewController alloc]init];
+        ThirdViewController     * thirdVC  = [[ThirdViewController alloc]init];
         SecondViewController  * fourthVC = [[SecondViewController alloc]init];
         NSArray *controllers = @[firstVC,secondVC,thirdVC,fourthVC];
-        NSArray *titleArray  = @[@"普吉岛",@"夏威夷",@"洛杉矶",@"新泽西"];
-        CenterSegmentView *segmentView = [[CenterSegmentView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) controllers:controllers titleArray:(NSArray *)titleArray ParentController:self selectBtnIndex:(NSInteger)index lineWidth:kScreenWidth/5 lineHeight:3];
+        NSArray *titleArray  = @[@"普吉岛",@"西雅图",@"洛杉矶",@"新泽西"];
+        CenterSegmentView *segmentView = [[CenterSegmentView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,    kScreenHeight - _topHeight) controllers:controllers titleArray:titleArray ParentController:self selectBtnIndex:_selectIndex lineWidth:kScreenWidth/5 lineHeight:3];
         _segmentView = segmentView;
     }
     return _segmentView;

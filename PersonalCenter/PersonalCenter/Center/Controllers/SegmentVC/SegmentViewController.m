@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _topHeight = TopHeight;
     //子控制器视图到达顶部的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:@"goTop" object:nil];
     //子控制器视图离开顶部的通知

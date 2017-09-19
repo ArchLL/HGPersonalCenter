@@ -32,7 +32,7 @@ static NSString * const reuseIdentifier = @"collectionCell";
     flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;//设置滚动方向,默认垂直方向.
 //    flowLayout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 30);//头视图的大小
 //    flowLayout.footerReferenceSize = CGSizeMake(self.view.frame.size.width, 30);//尾视图大小
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64-segmentMenuHeight) collectionViewLayout:flowLayout];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-self.topHeight-segmentMenuHeight) collectionViewLayout:flowLayout];
     [_collectionView registerClass :[UICollectionViewCell class ] forCellWithReuseIdentifier :reuseIdentifier];
     
     //设置代理

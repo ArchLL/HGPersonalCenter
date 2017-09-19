@@ -28,6 +28,7 @@
 - (IBAction)intoCenterAction:(UIButton *)sender {
     PersonalCenterViewController *personalCenterVC = [[PersonalCenterViewController alloc]init];
     personalCenterVC.isEnlarge = _enlargeSwitch.on;
+    personalCenterVC.selectIndex = 0;
     [self.navigationController pushViewController:personalCenterVC animated:YES];
 }
 

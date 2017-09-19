@@ -11,9 +11,9 @@
 
 @interface FirstViewController () < UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic , strong) UITableView * tableView;
-@property (nonatomic , assign) NSInteger     page;
-@property (nonatomic , assign) BOOL          isHeader;
+@property (nonatomic , strong) UITableView  * tableView;
+@property (nonatomic , assign) NSInteger        page;
+@property (nonatomic , assign) BOOL             isHeader;
 
 @end
 
@@ -23,9 +23,8 @@
     [super viewDidLoad];
     [self creatTableView];
 }
-
 - (void)creatTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64-segmentMenuHeight)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-self.topHeight-segmentMenuHeight)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.showsVerticalScrollIndicator = NO;
