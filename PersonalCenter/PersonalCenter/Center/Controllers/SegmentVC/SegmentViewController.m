@@ -57,7 +57,7 @@
     _scrollView = scrollView;
 }
 
-//处理左滑右滑,防止左滑返回上一界面
+//处理左滑右滑，解决系统右划手势与ScrollView右划手势冲突
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
     // 首先判断otherGestureRecognizer是不是系统pop手势

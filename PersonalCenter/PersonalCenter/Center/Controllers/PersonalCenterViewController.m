@@ -19,7 +19,7 @@
 #define kScreenWidth      [[UIScreen mainScreen] bounds].size.width
 #define kRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define segmentMenuHeight 41  //分页菜单栏的高度
-#define headViewHeight    240   //头部视图的高度
+#define headimageHeight    240   //头部视图的高度
 
 
 @interface PersonalCenterViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
@@ -38,17 +38,25 @@
 @property (nonatomic, assign) BOOL canScroll;
 @property (nonatomic, assign) BOOL isTopIsCanNotMoveTabView; //到达顶部不能移动mainTableView
 @property (nonatomic, assign) BOOL isTopIsCanNotMoveTabViewPre;//到达顶部不能移动子控制器的tableView
+
 @end
 
 @implementation PersonalCenterViewController
 {
    NSInteger _topHeight;//导航栏的高度+状态栏的高度
    BOOL _isRefresh;//控制下拉放大时刷新数据的次数，做到下拉放大值刷新一次，避免重复刷新
+    CGFloat _headViewHeight;//头部视图的高度
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //初始化
     _isRefresh = YES;
+    if (IS_IPHONEX) {
+        _headViewHeight = headimageHeight + 44;
+    }else {
+        _headViewHeight = headimageHeight;
+    }
     self.automaticallyAdjustsScrollViewInsets = NO;
     //接收宏定义的值，因为下面要做运算，宏不能直接拿来运算
     _topHeight = TopHeight;
@@ -65,15 +73,11 @@
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
     self.naviView.hidden = NO;
-    self.messageButton.hidden = NO;
-    self.backButton.hidden = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    self.messageButton.hidden = YES;
-    self.backButton.hidden = YES;
 }
 
 #pragma mark -- 设置界面
@@ -95,7 +99,7 @@
         make.bottom.equalTo(_headImageView).offset(0);
         make.centerX.mas_equalTo(_headImageView.mas_centerX);
         make.width.mas_equalTo(kScreenWidth);
-        make.height.mas_equalTo(headViewHeight);
+        make.height.mas_equalTo(_headViewHeight);
     }];
     
     //添加头像
@@ -185,7 +189,7 @@
      * 处理头部背景视图
      * 图片会被拉伸多出状态栏的高度
      */
-    if(yOffset <= -headViewHeight) {
+    if(yOffset <= -_headViewHeight) {
         if (_isEnlarge) {
             CGRect f = self.headImageView.frame;
             //改变HeadImageView的frame
@@ -193,21 +197,21 @@
             f.origin.y = yOffset;
             f.size.height =  -yOffset;
             //左右放大
-            f.origin.x = (yOffset*kScreenWidth/headViewHeight+kScreenWidth)/2;
-            f.size.width = -yOffset*kScreenWidth/headViewHeight;
+            f.origin.x = (yOffset*kScreenWidth/_headViewHeight+kScreenWidth)/2;
+            f.size.width = -yOffset*kScreenWidth/_headViewHeight;
             //改变头部视图的frame
             self.headImageView.frame = f;
             //刷新数据，保证刷新一次
-            if (yOffset ==  - headViewHeight) {
+            if (yOffset ==  - _headViewHeight) {
                 _isRefresh = YES;
             }
-            if (yOffset < -headViewHeight - 30 && _isRefresh) {
+            if (yOffset < -_headViewHeight - 30 && _isRefresh) {
                 [self requestData];
                 _isRefresh = NO;
             }
         }else{
              _mainTableView.bounces = NO;
-            if (yOffset == -headViewHeight) {
+            if (yOffset == -_headViewHeight) {
                 //刷新数据
                 [self requestData];
             }
@@ -278,7 +282,8 @@
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.showsVerticalScrollIndicator = NO;
-        _mainTableView.contentInset = UIEdgeInsetsMake(headViewHeight, 0, 0, 0);//内容视图开始正常显示的坐标为(0,headViewHeight)
+        //注意：这里不能使用动态高度_headViewHeight, 不然tableView会往下移，在iphone X下，头部不放大的时候，上方依然会有白色空白
+        _mainTableView.contentInset = UIEdgeInsetsMake(headimageHeight, 0, 0, 0);//内容视图开始正常显示的坐标为(0,_headViewHeight)
     }
     return _mainTableView;
 }
@@ -324,7 +329,7 @@
         _headImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"center_bg.jpg"]];
         _headImageView.backgroundColor = [UIColor greenColor];
         _headImageView.userInteractionEnabled = YES;
-        _headImageView.frame = CGRectMake(0, -headViewHeight, kScreenWidth, headViewHeight);
+        _headImageView.frame = CGRectMake(0, -_headViewHeight, kScreenWidth, _headViewHeight);
     }
     return _headImageView;
 }
@@ -341,7 +346,7 @@
         ThirdViewController     * thirdVC  = [[ThirdViewController alloc]init];
         SecondViewController  * fourthVC = [[SecondViewController alloc]init];
         NSArray *controllers = @[firstVC,secondVC,thirdVC,fourthVC];
-        NSArray *titleArray  = @[@"普吉岛",@"西雅图",@"洛杉矶",@"新泽西"];
+        NSArray *titleArray   = @[@"普吉岛",@"西雅图",@"洛杉矶",@"新泽西"];
         CenterSegmentView *segmentView = [[CenterSegmentView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,    kScreenHeight - _topHeight) controllers:controllers titleArray:titleArray ParentController:self selectBtnIndex:_selectIndex lineWidth:kScreenWidth/5 lineHeight:3];
         _segmentView = segmentView;
     }
