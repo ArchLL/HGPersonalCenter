@@ -15,9 +15,6 @@
 #import "MyMessageViewController.h"
 #import <Masonry.h>
 
-#define kScreenHeight     [[UIScreen mainScreen] bounds].size.height
-#define kScreenWidth      [[UIScreen mainScreen] bounds].size.width
-#define kRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define segmentMenuHeight 41  //分页菜单栏的高度
 #define headimageHeight    240   //头部视图的高度
 

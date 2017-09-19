@@ -21,9 +21,13 @@
 #import "MBProgressHUD.h"
 #import "MBProgressHUD+NHAdd.h"
 
+#define kScreenHeight     [[UIScreen mainScreen] bounds].size.height
+#define kScreenWidth      [[UIScreen mainScreen] bounds].size.width
+#define kRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
 //适配iphone X - 如果是真机测试需要将该宏改为判断该机型是否为iphone X
 #define  IS_IPHONEX [[NSUserDefaults standardUserDefaults] objectForKey:@"FitIphoneX"]
-////导航栏的高度+状态栏的高度
-#define TopHeight  [IS_IPHONEX integerValue] == 1 ? 88 : 64
+//导航栏的高度+状态栏的高度
+#define TopHeight   [IS_IPHONEX integerValue] == 1 ? 88 : 64
 
 #endif /* PrefixHeader_pch */

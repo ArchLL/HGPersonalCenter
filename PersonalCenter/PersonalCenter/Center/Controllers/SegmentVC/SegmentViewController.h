@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#define kScreenHeight   [[UIScreen mainScreen] bounds].size.height
-#define kScreenWidth    [[UIScreen mainScreen] bounds].size.width
 #define segmentMenuHeight 41 //分页菜单栏的高度
 
 //此类为子控制器的父类

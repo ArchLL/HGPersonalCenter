@@ -7,13 +7,9 @@
 //
 
 #import "BaseViewController.h"
-#define kScreenWidth      [[UIScreen mainScreen] bounds].size.width
-#define kRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
 @interface BaseViewController ()
-
 @property (nonatomic, strong) UIView  * naviView;  //自定义导航栏背景
-
 @end
 
 @implementation BaseViewController

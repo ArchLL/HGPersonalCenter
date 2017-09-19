@@ -12,6 +12,4 @@
 //默认上下左右放大
 @property (nonatomic, assign) BOOL isEnlarge;//是否放大
 @property (nonatomic, assign) NSInteger selectIndex;//当前选中的分页视图
-
-
 @end
