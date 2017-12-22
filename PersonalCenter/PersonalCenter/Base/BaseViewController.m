@@ -9,7 +9,9 @@
 #import "BaseViewController.h"
 
 @interface BaseViewController ()
+
 @property (nonatomic, strong) UIView  * naviView;  //自定义导航栏背景
+
 @end
 
 @implementation BaseViewController
@@ -17,7 +19,7 @@
 #pragma maek - 懒加载
 - (UIView *)naviView {
     if (!_naviView) {
-        _naviView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, TopHeight)];
+        _naviView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, NaviBarHeight)];
         _naviView.backgroundColor = kRGBA(0, 255, 143, 1.0);
     }
     return _naviView;
@@ -26,14 +28,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    if (@available(iOS 11.0, *)) {
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     //设置透明的背景图
     [self.navigationController.navigationBar setBackgroundImage:[self drawPngImageWithAlpha:0] forBarMetrics:(UIBarMetricsDefault)];
     //消除导航栏底部的黑线
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     //修改导航栏字体大小和颜色
-    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor blackColor]};
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor whiteColor]};
     //修改导航栏内容颜色
-    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.view addSubview:self.naviView];
 }
 
@@ -59,3 +66,4 @@
 }
 
 @end
+

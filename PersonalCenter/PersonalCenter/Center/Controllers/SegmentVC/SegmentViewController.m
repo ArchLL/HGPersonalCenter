@@ -10,8 +10,8 @@
 
 @interface SegmentViewController () <UIGestureRecognizerDelegate,UIScrollViewDelegate>
 
-@property(strong, nonatomic)UIScrollView * scrollView;
-@property (nonatomic, assign) BOOL canScroll;  //是否可以滚动
+@property (strong, nonatomic) UIScrollView * scrollView;
+@property (nonatomic, assign) BOOL canScroll;//是否可以滚动
 
 @end
 
@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _topHeight = TopHeight;
+    _topHeight = NaviBarHeight;
     //子控制器视图到达顶部的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:@"goTop" object:nil];
     //子控制器视图离开顶部的通知

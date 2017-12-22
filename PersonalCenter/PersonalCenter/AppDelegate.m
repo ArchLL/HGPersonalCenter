@@ -17,13 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //判断机型
-   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    if ([UIScreen mainScreen].bounds.size.height == 812) {
-        [userDefaults setObject:@"1" forKey:@"FitIphoneX"];
-    }else {
-        [userDefaults setObject:@"0" forKey:@"FitIphoneX"];
-    }
     return YES;
 }
 
