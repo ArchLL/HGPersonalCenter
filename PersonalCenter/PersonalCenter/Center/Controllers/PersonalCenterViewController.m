@@ -19,7 +19,7 @@
 #define segmentMenuHeight 41  //分页菜单栏的高度
 #define headimageHeight   240 //头部视图的高度
 
-@interface PersonalCenterViewController () <UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
+@interface PersonalCenterViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) CenterTouchTableView   * mainTableView;
 @property (nonatomic, strong) CenterSegmentView      * segmentView;//分栏视图，头部视图下方区域
@@ -32,14 +32,13 @@
 @property (nonatomic, strong) UIImageView            * avatarImage;//头像
 @property (nonatomic,   copy) UILabel                * nickNameLB;//昵称
 
-@property (nonatomic, assign) BOOL canScroll;
-@property (nonatomic, assign) BOOL isTopIsCanNotMoveTabView;//到达顶部不能移动mainTableView
-@property (nonatomic, assign) BOOL isTopIsCanNotMoveTabViewPre;//到达顶部不能移动子控制器的tableView
+@property (nonatomic, assign) BOOL canScroll;//mainTableView是否可以滚动
+@property (nonatomic, assign) BOOL isTopIsCanNotMoveTabView;//到达顶部(临界点)不能移动mainTableView
+@property (nonatomic, assign) BOOL isTopIsCanNotMoveTabViewPre;//到达顶部(临界点)不能移动子控制器的tableView
 
 @end
 
 @implementation PersonalCenterViewController
-
 {
     NSInteger _naviBarHeight;//导航栏的高度+状态栏的高度
     BOOL _isRefresh;//控制下拉放大时刷新数据的次数，做到下拉放大值刷新一次，避免重复刷新
@@ -67,6 +66,10 @@
     [self setUI];
     [self requestData];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:@"leaveTop" object:nil];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark -- 设置界面
@@ -132,23 +135,15 @@
 
 /**
  * 处理联动
+ * 因为要实现下拉头部放大的问题，tableView设置了contentInset，所以试图刚加载的时候会调用一遍这个方法，所以要做一些特殊处理，
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    //获取滚动视图y值的偏移量
-    CGFloat yOffset  = scrollView.contentOffset.y;//内层分页视图的偏移量
-    CGFloat tabyOffset = [_mainTableView rectForSection:0].origin.y - _naviBarHeight;//外层tableView的偏移量
+    //当前偏移量
+    CGFloat yOffset  = scrollView.contentOffset.y;
+    //临界点偏移量(吸顶临界点)
+    CGFloat tabyOffset = [_mainTableView rectForSection:0].origin.y - _naviBarHeight;
     
-    _isTopIsCanNotMoveTabViewPre = _isTopIsCanNotMoveTabView;//默认值为NO，都可以滑动
-    
-    if (yOffset >= tabyOffset) {
-        //当分页视图滑动至导航栏时，禁止外层tableView滑动
-        scrollView.contentOffset = CGPointMake(0, tabyOffset);
-        _isTopIsCanNotMoveTabView = YES;
-    }else{
-        //当分页视图和顶部导航栏分离时，允许外层tableView滑动
-        _isTopIsCanNotMoveTabView = NO;
-    }
-    
+    //第一部分：
     //更改导航栏的背景图的透明度
     CGFloat alpha = 0;
     if (-yOffset <= _naviBarHeight) {
@@ -160,23 +155,46 @@
     }
     self.naviView.backgroundColor = kRGBA(255,126,15,alpha);
     
+    //第二部分：
+    //注意：先解决mainTableView的bance问题，如果不用下拉头部刷新/下拉头部放大/为了实现subTableView下拉刷新
+    //1. 不用下拉顶部刷新、不用下拉头部放大、使用subTableView下拉顶部刷新， 可在mainTableView初始化时禁用bance；
+    //2. 如果做下拉顶部刷新、下拉头部放大，就需要对bance做处理，不然当视图滑动到底部后，内外层的scrollView的bance都会起作用，导致视觉上的幻觉(刚滑动到底部/触发内部scrollView的bance的时候，再去点击cell/item/button, 你会发现竟然不管用，再次点就好了，刚开始还以为是点击事件和滑动事件的冲突，后来通过offset的log，发现当内部bance触发的时候，你感觉不到外层bance的变化，并且你会看见，当前列表已经停止滚动了，但是外层scrollView的offset还在变，所以导致首次点击事件失效)
+    if (yOffset > 0) {
+        scrollView.bounces = NO;
+    }else {
+        scrollView.bounces = YES;
+    }
     
-    if (_isTopIsCanNotMoveTabView != _isTopIsCanNotMoveTabViewPre) {
-        if (!_isTopIsCanNotMoveTabViewPre && _isTopIsCanNotMoveTabView) {
-            NSLog(@"滑动到顶端");
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"goTop" object:nil userInfo:@{@"canScroll":@"1"}];
-            _canScroll = NO;
-        }
-        if(_isTopIsCanNotMoveTabViewPre && !_isTopIsCanNotMoveTabView) {
-            NSLog(@"离开顶端");
-            if (!_canScroll) {
-                scrollView.contentOffset = CGPointMake(0, tabyOffset);
-            }
+    //利用contentOffset处理内外层scrollView的滑动冲突问题
+    if (yOffset >= tabyOffset) {
+        //当分页视图滑动至导航栏时，禁止外层tableView滑动
+        scrollView.contentOffset = CGPointMake(0, tabyOffset);
+        _isTopIsCanNotMoveTabView = YES;
+    }else{
+        //当分页视图和顶部导航栏分离时，允许外层tableView滑动
+        _isTopIsCanNotMoveTabView = NO;
+    }
+    
+    //取反
+    _isTopIsCanNotMoveTabViewPre = !_isTopIsCanNotMoveTabView;
+    
+    if (!_isTopIsCanNotMoveTabViewPre && _isTopIsCanNotMoveTabView) {
+        NSLog(@"滑动到顶端");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"goTop" object:nil userInfo:@{@"canScroll":@"1"}];
+        _canScroll = NO;
+    }
+    
+    if(_isTopIsCanNotMoveTabViewPre && !_isTopIsCanNotMoveTabView) {
+        NSLog(@"滑动到底部后开始下拉");
+        if (!_canScroll) {
+            NSLog(@"保持在顶端");
+            scrollView.contentOffset = CGPointMake(0, tabyOffset);
         }
     }
     
+    //第三部分：
     /**
-     * 处理头部背景视图
+     * 处理头部自定义背景视图 (如: 下拉放大)
      * 图片会被拉伸多出状态栏的高度
      */
     if(yOffset <= -headimageHeight) {
@@ -269,9 +287,13 @@
     return _naviView;
 }
 
-#pragma mark - 懒加载
 - (UITableView *)mainTableView {
     if (!_mainTableView) {
+        //⚠️这里的属性初始化一定要放在mainTableView.contentInset的设置滚动之前, 不然首次进来视图就会偏移到临界位置，contentInset会调用scrollViewDidScroll这个方法。
+        //初始化变量
+        _canScroll = YES;
+        _isTopIsCanNotMoveTabView = NO;
+        
         _mainTableView = [[CenterTouchTableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
@@ -316,8 +338,7 @@
     return _nickNameLB;
 }
 
-- (UIImageView *)headImageView
-{
+- (UIImageView *)headImageView {
     if (!_headImageView) {
         _headImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"center_bg.jpg"]];
         _headImageView.backgroundColor = [UIColor greenColor];
@@ -334,9 +355,9 @@
 {
     if (!_segmentView) {
         //设置子控制器
-        FirstViewController      * firstVC  = [[FirstViewController alloc]init];
+        FirstViewController   * firstVC  = [[FirstViewController alloc]init];
         SecondViewController  * secondVC = [[SecondViewController alloc]init];
-        ThirdViewController     * thirdVC  = [[ThirdViewController alloc]init];
+        ThirdViewController   * thirdVC  = [[ThirdViewController alloc]init];
         SecondViewController  * fourthVC = [[SecondViewController alloc]init];
         NSArray *controllers = @[firstVC,secondVC,thirdVC,fourthVC];
         NSArray *titleArray  = @[@"普吉岛",@"夏威夷",@"洛杉矶",@"新泽西"];

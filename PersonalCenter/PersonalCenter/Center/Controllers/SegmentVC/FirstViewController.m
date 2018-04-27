@@ -34,15 +34,13 @@
     [self.view addSubview:_tableView];
 }
 
-
-
 #pragma mark - TableView delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
