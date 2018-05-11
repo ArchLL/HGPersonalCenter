@@ -65,7 +65,10 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
     [self setUI];
     [self requestData];
+    //注册允许外层tableView滚动通知-解决和分页视图的上下滑动冲突问题
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsg:) name:@"leaveTop" object:nil];
+    //注册允许外层tableView滚动通知-解决子视图左右滑动和外层tableView上下滑动的冲突问题
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(acceptMsgOfSubView:) name:@"isScroll" object:nil];
 }
 
 - (void)dealloc {
@@ -133,6 +136,16 @@
     }
 }
 
+- (void)acceptMsgOfSubView:(NSNotification *)notification{
+    NSDictionary *userInfo = notification.userInfo;
+    NSString *canScroll = userInfo[@"canScroll"];
+    if ([canScroll isEqualToString:@"1"]) {
+        _mainTableView.scrollEnabled = YES;
+    }else if([canScroll isEqualToString:@"0"]) {
+        _mainTableView.scrollEnabled = NO;
+    }
+}
+
 /**
  * 处理联动
  * 因为要实现下拉头部放大的问题，tableView设置了contentInset，所以试图刚加载的时候会调用一遍这个方法，所以要做一些特殊处理，
@@ -179,16 +192,14 @@
     _isTopIsCanNotMoveTabViewPre = !_isTopIsCanNotMoveTabView;
     
     if (!_isTopIsCanNotMoveTabViewPre && _isTopIsCanNotMoveTabView) {
-        NSLog(@"滑动到顶端");
+        NSLog(@"分页选择部分滑动到顶端");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"goTop" object:nil userInfo:@{@"canScroll":@"1"}];
         _canScroll = NO;
-    }
-    
-    if(_isTopIsCanNotMoveTabViewPre && !_isTopIsCanNotMoveTabView) {
-        NSLog(@"滑动到底部后开始下拉");
+    }else {
+        NSLog(@"页面滑动到底部后开始下拉");
         if (!_canScroll) {
-            NSLog(@"保持在顶端");
-            scrollView.contentOffset = CGPointMake(0, tabyOffset);
+            NSLog(@"分页选择部分保持在顶端");
+            _mainTableView.contentOffset = CGPointMake(0, tabyOffset);
         }
     }
     

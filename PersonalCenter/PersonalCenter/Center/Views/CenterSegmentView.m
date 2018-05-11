@@ -17,7 +17,9 @@
 #define downColor [UIColor lightGrayColor] //分割线颜色
 
 @interface CenterSegmentView () <UIScrollViewDelegate>
-@property ( nonatomic, strong) NSArray   * controllers;
+
+@property ( nonatomic, strong) NSArray  * controllers;
+
 @end
 
 @implementation CenterSegmentView
@@ -130,6 +132,15 @@
     
     [self.segmentScrollV setContentOffset:CGPointMake((sender.tag)*kWidth, 0) animated:YES ];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectVC" object:sender userInfo:nil];
+}
+
+//segmentScrollV左右滑动时和外层tableView上下滑动需要做互斥处理
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"isScroll" object:nil userInfo:@{@"canScroll":@"0"}];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"isScroll" object:nil userInfo:@{@"canScroll":@"1"}];
 }
 
 //滑动下方分页View时的事件处理
