@@ -13,10 +13,7 @@
 #import "CenterSegmentView.h"
 #import "CenterTouchTableView.h"
 #import "MyMessageViewController.h"
-#import <Masonry.h>
 
-
-#define segmentMenuHeight 41  //分页菜单栏的高度
 #define headimageHeight   240 //头部视图的高度
 
 @interface PersonalCenterViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
@@ -24,9 +21,6 @@
 @property (nonatomic, strong) CenterTouchTableView   * mainTableView;
 @property (nonatomic, strong) CenterSegmentView      * segmentView;//分栏视图，头部视图下方区域
 @property (nonatomic, strong) UIView                 * naviView;//自定义导航栏
-@property (nonatomic, strong) UIButton               * backButton;//导航栏-返回按钮
-@property (nonatomic, strong) UIButton               * messageButton;//导航栏-消息按钮
-
 @property (nonatomic, strong) UIImageView            * headImageView; //头部背景视图
 @property (nonatomic, strong) UIView                 * headContentView;//头部内容视图，放置用户信息，如：姓名，昵称、座右铭等(作用：背景放大不会影响内容的位置)
 @property (nonatomic, strong) UIImageView            * avatarImage;//头像
@@ -58,7 +52,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    if (@available(iOS 11.0, *)) {
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     //接收宏定义的值，因为下面要做运算，这个宏含有三目运算不能直接拿来运算,会出错
     _naviBarHeight = NaviBarHeight;
     //如果使用自定义的按钮去替换系统默认返回按钮，会出现滑动返回手势失效的情况，解决方法如下：
@@ -161,7 +159,7 @@
     CGFloat alpha = 0;
     if (-yOffset <= _naviBarHeight) {
         alpha = 1;
-    }else if(88 < -yOffset && -yOffset < headimageHeight){
+    }else if(_naviBarHeight < -yOffset && -yOffset < headimageHeight){
         alpha = (headimageHeight + yOffset)/(headimageHeight-_naviBarHeight);
     }else {
         alpha = 0;
@@ -191,7 +189,7 @@
     //取反
     _isTopIsCanNotMoveTabViewPre = !_isTopIsCanNotMoveTabView;
     
-    if (!_isTopIsCanNotMoveTabViewPre && _isTopIsCanNotMoveTabView) {
+    if (!_isTopIsCanNotMoveTabViewPre) {
         NSLog(@"分页选择部分滑动到顶端");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"goTop" object:nil userInfo:@{@"canScroll":@"1"}];
         _canScroll = NO;
@@ -281,19 +279,19 @@
         _naviView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth,_naviBarHeight)];
         _naviView.backgroundColor = [UIColor colorWithWhite:1 alpha:0];//该透明色设置不会影响子视图
         //添加返回按钮
-        self.backButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_backButton setImage:[UIImage imageNamed:@"back"] forState:(UIControlStateNormal)];
-        _backButton.frame = CGRectMake(5, 28 + _naviBarHeight - 64, 28, 25);
-        _backButton.adjustsImageWhenHighlighted = NO;
-        [_backButton addTarget:self action:@selector(backAction) forControlEvents:(UIControlEventTouchUpInside)];
-        [_naviView addSubview:_backButton];
+        UIButton *backButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [backButton setImage:[UIImage imageNamed:@"back"] forState:(UIControlStateNormal)];
+        backButton.frame = CGRectMake(5, 28 + _naviBarHeight - 64, 28, 25);
+        backButton.adjustsImageWhenHighlighted = NO;
+        [backButton addTarget:self action:@selector(backAction) forControlEvents:(UIControlEventTouchUpInside)];
+        [_naviView addSubview:backButton];
         //添加消息按钮
-        self.messageButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_messageButton setImage:[UIImage imageNamed:@"message"] forState:(UIControlStateNormal)];
-        _messageButton.frame = CGRectMake(kScreenWidth-35, 28 + _naviBarHeight - 64, 25, 25);
-        _messageButton.adjustsImageWhenHighlighted = NO;
-        [_messageButton addTarget:self action:@selector(checkMessage) forControlEvents:(UIControlEventTouchUpInside)];
-        [_naviView addSubview:_messageButton];
+        UIButton *messageButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        [messageButton setImage:[UIImage imageNamed:@"message"] forState:(UIControlStateNormal)];
+        messageButton.frame = CGRectMake(kScreenWidth-35, 28 + _naviBarHeight - 64, 25, 25);
+        messageButton.adjustsImageWhenHighlighted = NO;
+        [messageButton addTarget:self action:@selector(checkMessage) forControlEvents:(UIControlEventTouchUpInside)];
+        [_naviView addSubview:messageButton];
     }
     return _naviView;
 }

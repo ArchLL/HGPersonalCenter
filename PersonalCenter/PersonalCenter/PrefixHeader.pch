@@ -11,9 +11,10 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
+#import <Masonry.h>
 #import "MBProgressHUD.h"
 #import "MBProgressHUD+NHAdd.h"
+#import "BaseViewController.h"
 
 #define kScreenHeight     [[UIScreen mainScreen] bounds].size.height
 #define kScreenWidth      [[UIScreen mainScreen] bounds].size.width
