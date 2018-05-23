@@ -41,13 +41,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES];
-    self.naviView.hidden = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO];
-    self.naviView.hidden = YES;
 }
 
 - (void)viewDidLoad {
@@ -149,93 +147,89 @@
  * 因为要实现下拉头部放大的问题，tableView设置了contentInset，所以试图刚加载的时候会调用一遍这个方法，所以要做一些特殊处理，
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    //当前偏移量
-    CGFloat yOffset  = scrollView.contentOffset.y;
-    //临界点偏移量(吸顶临界点)
-    CGFloat tabyOffset = [_mainTableView rectForSection:0].origin.y - _naviBarHeight;
-    
-    //第一部分：
-    //更改导航栏的背景图的透明度
-    CGFloat alpha = 0;
-    if (-yOffset <= _naviBarHeight) {
-        alpha = 1;
-    }else if(_naviBarHeight < -yOffset && -yOffset < headimageHeight){
-        alpha = (headimageHeight + yOffset)/(headimageHeight-_naviBarHeight);
-    }else {
-        alpha = 0;
-    }
-    self.naviView.backgroundColor = kRGBA(255,126,15,alpha);
-    
-    //第二部分：
-    //注意：先解决mainTableView的bance问题，如果不用下拉头部刷新/下拉头部放大/为了实现subTableView下拉刷新
-    //1. 不用下拉顶部刷新、不用下拉头部放大、使用subTableView下拉顶部刷新， 可在mainTableView初始化时禁用bance；
-    //2. 如果做下拉顶部刷新、下拉头部放大，就需要对bance做处理，不然当视图滑动到底部后，内外层的scrollView的bance都会起作用，导致视觉上的幻觉(刚滑动到底部/触发内部scrollView的bance的时候，再去点击cell/item/button, 你会发现竟然不管用，再次点就好了，刚开始还以为是点击事件和滑动事件的冲突，后来通过offset的log，发现当内部bance触发的时候，你感觉不到外层bance的变化，并且你会看见，当前列表已经停止滚动了，但是外层scrollView的offset还在变，所以导致首次点击事件失效)
-    if (yOffset > 0) {
-        scrollView.bounces = NO;
-    }else {
-        scrollView.bounces = YES;
-    }
-    
-    //利用contentOffset处理内外层scrollView的滑动冲突问题
-    if (yOffset >= tabyOffset) {
-        //当分页视图滑动至导航栏时，禁止外层tableView滑动
-        scrollView.contentOffset = CGPointMake(0, tabyOffset);
-        _isTopIsCanNotMoveTabView = YES;
-    }else{
-        //当分页视图和顶部导航栏分离时，允许外层tableView滑动
-        _isTopIsCanNotMoveTabView = NO;
-    }
-    
-    //取反
-    _isTopIsCanNotMoveTabViewPre = !_isTopIsCanNotMoveTabView;
-    
-    if (!_isTopIsCanNotMoveTabViewPre) {
-        NSLog(@"分页选择部分滑动到顶端");
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"goTop" object:nil userInfo:@{@"canScroll":@"1"}];
-        _canScroll = NO;
-    }else {
-        NSLog(@"页面滑动到底部后开始下拉");
-        if (!_canScroll) {
-            NSLog(@"分页选择部分保持在顶端");
-            _mainTableView.contentOffset = CGPointMake(0, tabyOffset);
+    if (scrollView == _mainTableView) {
+        
+        //当前偏移量
+        CGFloat yOffset  = scrollView.contentOffset.y;
+        //临界点偏移量(吸顶临界点)
+        CGFloat tabyOffset = [_mainTableView rectForSection:0].origin.y - _naviBarHeight;
+        
+        //第一部分：
+        //更改导航栏的背景图的透明度
+        CGFloat alpha = 0;
+        if (-yOffset <= _naviBarHeight) {
+            alpha = 1;
+        }else if(_naviBarHeight < -yOffset && -yOffset < headimageHeight){
+            alpha = (headimageHeight + yOffset)/(headimageHeight-_naviBarHeight);
+        }else {
+            alpha = 0;
         }
-    }
-    
-    //第三部分：
-    /**
-     * 处理头部自定义背景视图 (如: 下拉放大)
-     * 图片会被拉伸多出状态栏的高度
-     */
-    if(yOffset <= -headimageHeight) {
-        if (_isEnlarge) {
-            CGRect f = self.headImageView.frame;
-            //改变HeadImageView的frame
-            //上下放大
-            f.origin.y = yOffset;
-            f.size.height =  -yOffset;
-            //左右放大
-            f.origin.x = (yOffset*kScreenWidth/headimageHeight+kScreenWidth)/2;
-            f.size.width = -yOffset*kScreenWidth/headimageHeight;
-            //改变头部视图的frame
-            self.headImageView.frame = f;
-            //刷新数据，保证刷新一次
-            if (yOffset ==  - headimageHeight) {
-                _isRefresh = YES;
-            }
-            if (yOffset < -headimageHeight - 30 && _isRefresh) {
-                [self requestData];
-                _isRefresh = NO;
-            }
+        self.naviView.backgroundColor = kRGBA(255,126,15,alpha);
+        
+        //第二部分：
+        //利用contentOffset处理内外层scrollView的滑动冲突问题
+        if (yOffset >= tabyOffset) {
+            //当分页视图滑动至导航栏时，禁止外层tableView滑动
+            scrollView.contentOffset = CGPointMake(0, tabyOffset);
+            _isTopIsCanNotMoveTabView = YES;
         }else{
-            _mainTableView.bounces = NO;
-            if (yOffset == -headimageHeight) {
-                //刷新数据
-                [self requestData];
+            //当分页视图和顶部导航栏分离时，允许外层tableView滑动
+            _isTopIsCanNotMoveTabView = NO;
+        }
+        
+        //取反
+        _isTopIsCanNotMoveTabViewPre = !_isTopIsCanNotMoveTabView;
+        
+        if (!_isTopIsCanNotMoveTabViewPre) {
+            NSLog(@"分页选择部分滑动到顶端");
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"goTop" object:nil userInfo:@{@"canScroll":@"1"}];
+            _canScroll = NO;
+        }else {
+            NSLog(@"页面滑动到底部后开始下拉");
+            if (!_canScroll) {
+                NSLog(@"分页选择部分保持在顶端");
+                _mainTableView.contentOffset = CGPointMake(0, tabyOffset);
             }
         }
-        //刷新数据
-        if (_isRefreshOfdownPull) {
-            [self requestData];
+        
+        //第三部分：
+        /**
+         * 处理头部自定义背景视图 (如: 下拉放大)
+         * 图片会被拉伸多出状态栏的高度
+         */
+        if(yOffset <= -headimageHeight) {
+            if (_isEnlarge) {
+                CGRect f = self.headImageView.frame;
+                //改变HeadImageView的frame
+                //上下放大
+                f.origin.y = yOffset;
+                f.size.height =  -yOffset;
+                //左右放大
+                f.origin.x = (yOffset*kScreenWidth/headimageHeight+kScreenWidth)/2;
+                f.size.width = -yOffset*kScreenWidth/headimageHeight;
+                //改变头部视图的frame
+                self.headImageView.frame = f;
+                //刷新数据，保证刷新一次
+                if (yOffset ==  - headimageHeight) {
+                    _isRefresh = YES;
+                }
+                if (yOffset < -headimageHeight - 30 && _isRefresh) {
+                    [self requestData];
+                    _isRefresh = NO;
+                }
+            }else{
+                scrollView.bounces = NO;
+                if (yOffset == -headimageHeight) {
+                    //刷新数据
+                    [self requestData];
+                }
+            }
+            //刷新数据
+            if (_isRefreshOfdownPull) {
+                [self requestData];
+            }
+        }else {
+            scrollView.bounces = YES;
         }
     }
 }
