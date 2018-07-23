@@ -2,7 +2,7 @@
 //  FirstViewController.m
 //  PersonalCenter
 //
-//  Created by 中资北方 on 2017/6/16.
+//  Created by Arch on 2017/6/16.
 //  Copyright © 2017年 mint_bin. All rights reserved.
 //
 
@@ -10,10 +10,9 @@
 #import "MyMessageViewController.h"
 
 @interface FirstViewController () < UITableViewDelegate, UITableViewDataSource>
-
-@property (nonatomic , strong) UITableView  * tableView;
-@property (nonatomic , assign) NSInteger        page;
-@property (nonatomic , assign) BOOL             isHeader;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, assign) NSInteger page;
+@property (nonatomic, assign) BOOL isHeader;
 
 @end
 
@@ -22,9 +21,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self creatTableView];
+    [self addRefresh];
+    [self.tableView.mj_header beginRefreshing];
 }
+
+- (void)addRefresh {
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self requestData];
+    }];
+}
+
+- (void)requestData {
+    //模拟数据请求
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:2];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView.mj_header endRefreshing];
+        });
+    });
+}
+
 - (void)creatTableView {
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-self.topHeight-segmentMenuHeight)];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - self.topHeight - segmentMenuHeight)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.showsVerticalScrollIndicator = NO;
@@ -54,11 +72,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];//取消选中
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     MyMessageViewController *myMesageVC = [[MyMessageViewController alloc]init];
     [self.navigationController pushViewController:myMesageVC animated:YES];
 }
-
-
 
 @end
