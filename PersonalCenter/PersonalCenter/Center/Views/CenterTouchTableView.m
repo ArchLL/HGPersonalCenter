@@ -9,7 +9,6 @@
 #import "CenterTouchTableView.h"
 
 @implementation CenterTouchTableView
-
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
     return YES;
 }

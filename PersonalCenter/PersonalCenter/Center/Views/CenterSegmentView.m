@@ -26,7 +26,7 @@
 - (instancetype)initWithFrame:(CGRect)frame controllers:(NSArray *)controllers titleArray:(NSArray *)titleArray ParentController:(UIViewController *)parentC selectBtnIndex:(NSUInteger)index lineWidth:(float)lineW lineHeight:(float)lineH {
     if ( self = [super initWithFrame:frame]) {
         float avgWidth = (frame.size.width / controllers.count);
-        
+    
         self.controllers = controllers;
         self.nameArray = titleArray;
         
@@ -67,6 +67,7 @@
                     btn.titleLabel.font = largeFont;
                     //初始化选中的控制器
                     [self.segmentScrollV setContentOffset:CGPointMake((btn.tag - 100) * kWidth, 0) animated:YES ];
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectVC" object:nil userInfo:@{@"selectedVCIndex" : @(self.seleBtn.tag - 100)}];
                 } else {
                     btn.selected = NO;
                     btn.titleLabel.font = smallFont;
@@ -76,6 +77,7 @@
                     btn.selected = YES ;
                     btn.titleLabel.font = largeFont;
                     self.seleBtn = btn;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectVC" object:nil userInfo:@{@"selectedVCIndex" : @(self.seleBtn.tag - 100)}];
                 } else {
                     btn.selected = NO;
                     btn.titleLabel.font = smallFont;
@@ -85,7 +87,7 @@
         }
         
         //分割线
-        self.down = [[UILabel alloc]initWithFrame:CGRectMake(0, 40, frame.size.width, 1)];
+        self.down = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, frame.size.width, 1)];
         self.down.backgroundColor = downColor;
         [self.segmentView addSubview:self.down];
         //选中线
@@ -124,6 +126,16 @@
     }];
     
     [self.segmentScrollV setContentOffset:CGPointMake((sender.tag - 100) * kWidth, 0) animated:YES ];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectVC" object:nil userInfo:@{@"selectedVCIndex" : @(self.seleBtn.tag - 100)}];
+}
+
+//增加分页视图左右滑动和外界tableView上下滑动互斥处理
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [[NSNotificationCenter defaultCenter] postNotificationName:IsEnableScrollPersonalCenterVCMainTableView object:nil userInfo:@{@"canScroll" : @"0"}];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [[NSNotificationCenter defaultCenter] postNotificationName:IsEnableScrollPersonalCenterVCMainTableView object:nil userInfo:@{@"canScroll" : @"1"}];
 }
 
 //滑动下方分页View时的事件处理
@@ -143,6 +155,7 @@
     if (self.pageBlock){
         self.pageBlock(btn.tag-100);
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"SelectVC" object:nil userInfo:@{@"selectedVCIndex" : @(self.seleBtn.tag - 100)}];
 }
 
 @end
