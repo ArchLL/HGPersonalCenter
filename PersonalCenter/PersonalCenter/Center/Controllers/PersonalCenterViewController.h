@@ -10,6 +10,7 @@
 @interface PersonalCenterViewController : UIViewController
 //默认上下左右放大
 @property (nonatomic, assign) BOOL isEnlarge;
-@property (nonatomic, assign) NSUInteger selectIndex;
+@property (nonatomic, assign) NSUInteger selectedIndex;
+@property (nonatomic, readonly, assign) BOOL isBacking;
 
 @end

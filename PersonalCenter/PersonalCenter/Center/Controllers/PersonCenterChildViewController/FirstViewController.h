@@ -1,5 +1,5 @@
 //
-//  ThirdViewController.h
+//  FirstViewController.h
 //  PersonalCenter
 //
 //  Created by Arch on 2017/6/16.
@@ -7,6 +7,7 @@
 //
 
 #import "SegmentViewController.h"
-@interface ThirdViewController : SegmentViewController
+
+@interface FirstViewController : SegmentViewController
 
 @end

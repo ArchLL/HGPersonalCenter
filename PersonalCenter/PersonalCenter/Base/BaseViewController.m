@@ -9,19 +9,20 @@
 #import "BaseViewController.h"
 
 @interface BaseViewController ()
-@property (nonatomic, strong) UIView  *naviView;
-
+@property (nonatomic, strong) UIView *naviView;
+@property (nonatomic, assign) CGFloat naviViewHeight;
 @end
 
 @implementation BaseViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    if (@available(iOS 11.0, *)) {
-        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-    }else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
+    self.naviViewHeight = STATUS_BAR_HEIGHT + 44;
+    [self setupNaviView];
+}
+
+- (void)setupNaviView {
     //设置透明的背景图
     [self.navigationController.navigationBar setBackgroundImage:[self drawPngImageWithAlpha:0] forBarMetrics:(UIBarMetricsDefault)];
     //消除导航栏底部的黑线
@@ -33,7 +34,7 @@
     [self.view addSubview:self.naviView];
 }
 
-#pragma mark ---根据透明度绘制图片
+#pragma mark - 根据透明度绘制图片
 - (UIImage *)drawPngImageWithAlpha:(CGFloat)alpha{
     //透明色(可设置初始颜色，当alpha=0时，为透明色)
     UIColor *color = kRGBA(255, 126, 15, alpha);
@@ -54,10 +55,9 @@
     return image;
 }
 
-#pragma maek - 懒加载
 - (UIView *)naviView {
     if (!_naviView) {
-        _naviView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, NaviBarHeight)];
+        _naviView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.naviViewHeight)];
         _naviView.backgroundColor = kRGBA(0, 255, 143, 1.0);
     }
     return _naviView;

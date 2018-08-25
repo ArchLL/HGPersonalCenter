@@ -7,6 +7,7 @@
 //
 
 #import "SegmentViewController.h"
+
 @interface SecondViewController : SegmentViewController
 
 @end

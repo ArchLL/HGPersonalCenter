@@ -10,7 +10,7 @@
 #import "PersonalCenterViewController.h"
 
 @interface RootViewController ()
-@property (weak, nonatomic) IBOutlet UISwitch * enlargeSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *enlargeSwitch;
 @end
 
 @implementation RootViewController
@@ -22,8 +22,8 @@
 //进入个人中心
 - (IBAction)intoCenterAction:(UIButton *)sender {
     PersonalCenterViewController *personalCenterVC = [[PersonalCenterViewController alloc]init];
-    personalCenterVC.isEnlarge = _enlargeSwitch.on;
-    personalCenterVC.selectIndex = 0;
+    personalCenterVC.isEnlarge = self.enlargeSwitch.on;
+    personalCenterVC.selectedIndex = 0;
     [self.navigationController pushViewController:personalCenterVC animated:YES];
 }
 

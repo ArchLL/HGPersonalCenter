@@ -14,18 +14,20 @@
 #import <Masonry.h>
 #import "MBProgressHUD.h"
 #import "MBProgressHUD+NHAdd.h"
-#import "BaseViewController.h"
 #import <MJRefresh/MJRefresh.h>
+#import "BaseViewController.h"
 
-#define kScreenHeight     [[UIScreen mainScreen] bounds].size.height
-#define kScreenWidth      [[UIScreen mainScreen] bounds].size.width
-#define kRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
-#define kScreenHeight     [[UIScreen mainScreen] bounds].size.height
-#define kScreenWidth      [[UIScreen mainScreen] bounds].size.width
-#define NaviBarHeight  kScreenHeight == 812 ? 88 : 64
-#define isIphoneX  kScreenHeight == 812 ? 1 : 0
+#define SCREEN_HEIGHT [[UIScreen mainScreen] bounds].size.height
+#define SCREEN_WIDTH [[UIScreen mainScreen] bounds].size.width
+
+#define STATUS_BAR_HEIGHT [UIApplication sharedApplication].statusBarFrame.size.height
+static CGFloat const NAVIGATION_BAR_HEIGHT = 44;
+
 #define kRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
-#define IsEnableScrollPersonalCenterVCMainTableView @"IsEnableScrollPersonalCenterVCMainTableView"
+/** notificationName */
+#define IsEnablePersonalCenterVCMainTableViewScroll @"IsEnablePersonalCenterVCMainTableViewScroll"
+#define CurrentSelectedChildViewControllerIndex @"CurrentSelectedChildViewControllerIndex"
+#define PersonalCenterVCBackingStatus @"PersonalCenterVCBackingStatus"
 
 #endif /* PrefixHeader_pch */

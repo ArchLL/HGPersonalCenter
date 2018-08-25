@@ -12,26 +12,27 @@
 		531376111F6A7FD300D646AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531376101F6A7FD300D646AF /* UIKit.framework */; };
 		53137B961F70F556002A95D8 /* MBProgressHUD+NHAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 53137B941F70F4E3002A95D8 /* MBProgressHUD+NHAdd.m */; };
 		53137B971F70F559002A95D8 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 53137B921F70F4E3002A95D8 /* MBProgressHUD.m */; };
-		53D0B8EF1F712DA40014A6BB /* CenterTouchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53D0B8ED1F712DA40014A6BB /* CenterTouchTableView.m */; };
+		A9F7D2D2213134720000EC0D /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7D2CC213134720000EC0D /* SegmentViewController.m */; };
+		A9F7D2D3213134720000EC0D /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7D2CE213134720000EC0D /* FirstViewController.m */; };
+		A9F7D2D4213134720000EC0D /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7D2CF213134720000EC0D /* SecondViewController.m */; };
+		A9F7D2D5213134720000EC0D /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7D2D0213134720000EC0D /* ThirdViewController.m */; };
+		A9F7D2E6213134F50000EC0D /* SegmentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7D2DE213134F50000EC0D /* SegmentHeaderView.m */; };
+		A9F7D2E7213134F50000EC0D /* CenterTouchTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7D2DF213134F50000EC0D /* CenterTouchTableView.m */; };
+		A9F7D2E9213134F50000EC0D /* SegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7D2E1213134F50000EC0D /* SegmentView.m */; };
+		A9F7D2F0213135BF0000EC0D /* center_avatar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A9F7D2EB213135BF0000EC0D /* center_avatar.jpeg */; };
+		A9F7D2F1213135BF0000EC0D /* center_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9F7D2EC213135BF0000EC0D /* center_bg.jpg */; };
+		A9F7D2F2213135BF0000EC0D /* cartoon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9F7D2ED213135BF0000EC0D /* cartoon.jpg */; };
+		A9F7D2F3213135BF0000EC0D /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7D2EE213135BF0000EC0D /* message.png */; };
+		A9F7D2F4213135BF0000EC0D /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = A9F7D2EF213135BF0000EC0D /* back.png */; };
+		A9F7D2F8213135E00000EC0D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F7D2F6213135E00000EC0D /* BaseViewController.m */; };
 		D24F5E2D1EF3D9CD0011AB07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E2C1EF3D9CD0011AB07 /* main.m */; };
 		D24F5E301EF3D9CD0011AB07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E2F1EF3D9CD0011AB07 /* AppDelegate.m */; };
 		D24F5E361EF3D9CD0011AB07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24F5E341EF3D9CD0011AB07 /* Main.storyboard */; };
 		D24F5E381EF3D9CD0011AB07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24F5E371EF3D9CD0011AB07 /* Assets.xcassets */; };
 		D24F5E3B1EF3D9CD0011AB07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D24F5E391EF3D9CD0011AB07 /* LaunchScreen.storyboard */; };
 		D24F5E5B1EF3D9FA0011AB07 /* PersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E451EF3D9FA0011AB07 /* PersonalCenterViewController.m */; };
-		D24F5E5C1EF3D9FA0011AB07 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E481EF3D9FA0011AB07 /* FirstViewController.m */; };
-		D24F5E5D1EF3D9FA0011AB07 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E4A1EF3D9FA0011AB07 /* SecondViewController.m */; };
-		D24F5E5E1EF3D9FA0011AB07 /* SegmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E4C1EF3D9FA0011AB07 /* SegmentViewController.m */; };
-		D24F5E5F1EF3D9FA0011AB07 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E4E1EF3D9FA0011AB07 /* ThirdViewController.m */; };
-		D24F5E601EF3D9FA0011AB07 /* CenterSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E521EF3D9FA0011AB07 /* CenterSegmentView.m */; };
-		D24F5E621EF3D9FA0011AB07 /* center_avatar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D24F5E561EF3D9FA0011AB07 /* center_avatar.jpeg */; };
-		D24F5E631EF3D9FA0011AB07 /* center_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D24F5E571EF3D9FA0011AB07 /* center_bg.jpg */; };
 		D24F5E651EF3D9FA0011AB07 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E5A1EF3D9FA0011AB07 /* RootViewController.m */; };
-		D277E1F11EF78889001C0DC1 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = D277E1F01EF78889001C0DC1 /* back.png */; };
-		D277E1F31EF78BA6001C0DC1 /* message.png in Resources */ = {isa = PBXBuildFile; fileRef = D277E1F21EF78BA6001C0DC1 /* message.png */; };
-		D277E1F51EF78C3C001C0DC1 /* 动漫.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D277E1F41EF78C3C001C0DC1 /* 动漫.jpg */; };
-		D277E1F81EF78CA3001C0DC1 /* MyMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D277E1F71EF78CA3001C0DC1 /* MyMessageViewController.m */; };
-		D277E1FC1EF78DA3001C0DC1 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D277E1FB1EF78DA3001C0DC1 /* BaseViewController.m */; };
+		D277E1F81EF78CA3001C0DC1 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D277E1F71EF78CA3001C0DC1 /* MessageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,9 +44,28 @@
 		53137B931F70F4E3002A95D8 /* MBProgressHUD+NHAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+NHAdd.h"; sourceTree = "<group>"; };
 		53137B941F70F4E3002A95D8 /* MBProgressHUD+NHAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+NHAdd.m"; sourceTree = "<group>"; };
 		53137B951F70F4E3002A95D8 /* MBProgressHUD_NHExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD_NHExtend.h; sourceTree = "<group>"; };
-		53D0B8ED1F712DA40014A6BB /* CenterTouchTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CenterTouchTableView.m; sourceTree = "<group>"; };
-		53D0B8EE1F712DA40014A6BB /* CenterTouchTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CenterTouchTableView.h; sourceTree = "<group>"; };
 		53F1415C1F6BB05F00AB9BEF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		A9F7D2CA213134720000EC0D /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		A9F7D2CB213134720000EC0D /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		A9F7D2CC213134720000EC0D /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
+		A9F7D2CD213134720000EC0D /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		A9F7D2CE213134720000EC0D /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		A9F7D2CF213134720000EC0D /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		A9F7D2D0213134720000EC0D /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		A9F7D2D1213134720000EC0D /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
+		A9F7D2D9213134F50000EC0D /* SegmentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentHeaderView.h; sourceTree = "<group>"; };
+		A9F7D2DB213134F50000EC0D /* SegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentView.h; sourceTree = "<group>"; };
+		A9F7D2DC213134F50000EC0D /* CenterTouchTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterTouchTableView.h; sourceTree = "<group>"; };
+		A9F7D2DE213134F50000EC0D /* SegmentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentHeaderView.m; sourceTree = "<group>"; };
+		A9F7D2DF213134F50000EC0D /* CenterTouchTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterTouchTableView.m; sourceTree = "<group>"; };
+		A9F7D2E1213134F50000EC0D /* SegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentView.m; sourceTree = "<group>"; };
+		A9F7D2EB213135BF0000EC0D /* center_avatar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = center_avatar.jpeg; sourceTree = "<group>"; };
+		A9F7D2EC213135BF0000EC0D /* center_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = center_bg.jpg; sourceTree = "<group>"; };
+		A9F7D2ED213135BF0000EC0D /* cartoon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cartoon.jpg; sourceTree = "<group>"; };
+		A9F7D2EE213135BF0000EC0D /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
+		A9F7D2EF213135BF0000EC0D /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		A9F7D2F6213135E00000EC0D /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		A9F7D2F7213135E00000EC0D /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		D24F5E281EF3D9CD0011AB07 /* PersonalCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24F5E2C1EF3D9CD0011AB07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D24F5E2E1EF3D9CD0011AB07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,27 +76,10 @@
 		D24F5E3C1EF3D9CD0011AB07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D24F5E441EF3D9FA0011AB07 /* PersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterViewController.h; sourceTree = "<group>"; };
 		D24F5E451EF3D9FA0011AB07 /* PersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterViewController.m; sourceTree = "<group>"; };
-		D24F5E471EF3D9FA0011AB07 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		D24F5E481EF3D9FA0011AB07 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		D24F5E491EF3D9FA0011AB07 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		D24F5E4A1EF3D9FA0011AB07 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		D24F5E4B1EF3D9FA0011AB07 /* SegmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SegmentViewController.h; sourceTree = "<group>"; };
-		D24F5E4C1EF3D9FA0011AB07 /* SegmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SegmentViewController.m; sourceTree = "<group>"; };
-		D24F5E4D1EF3D9FA0011AB07 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
-		D24F5E4E1EF3D9FA0011AB07 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		D24F5E511EF3D9FA0011AB07 /* CenterSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterSegmentView.h; sourceTree = "<group>"; };
-		D24F5E521EF3D9FA0011AB07 /* CenterSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterSegmentView.m; sourceTree = "<group>"; };
-		D24F5E561EF3D9FA0011AB07 /* center_avatar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = center_avatar.jpeg; sourceTree = "<group>"; };
-		D24F5E571EF3D9FA0011AB07 /* center_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = center_bg.jpg; sourceTree = "<group>"; };
 		D24F5E591EF3D9FA0011AB07 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		D24F5E5A1EF3D9FA0011AB07 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		D277E1F01EF78889001C0DC1 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		D277E1F21EF78BA6001C0DC1 /* message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = message.png; sourceTree = "<group>"; };
-		D277E1F41EF78C3C001C0DC1 /* 动漫.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "动漫.jpg"; sourceTree = "<group>"; };
-		D277E1F61EF78CA3001C0DC1 /* MyMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMessageViewController.h; sourceTree = "<group>"; };
-		D277E1F71EF78CA3001C0DC1 /* MyMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMessageViewController.m; sourceTree = "<group>"; };
-		D277E1FA1EF78DA3001C0DC1 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
-		D277E1FB1EF78DA3001C0DC1 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		D277E1F61EF78CA3001C0DC1 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		D277E1F71EF78CA3001C0DC1 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		D8C0A4C5A30C82D2D3EF880E /* Pods-PersonalCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalCenter.release.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalCenter/Pods-PersonalCenter.release.xcconfig"; sourceTree = "<group>"; };
 		EEC61715961AFF357FFAE7F5 /* Pods-PersonalCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PersonalCenter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PersonalCenter/Pods-PersonalCenter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +145,56 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A9F7D2C9213134720000EC0D /* PersonCenterChildViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A9F7D2CC213134720000EC0D /* SegmentViewController.m */,
+				A9F7D2D1213134720000EC0D /* SegmentViewController.h */,
+				A9F7D2CE213134720000EC0D /* FirstViewController.m */,
+				A9F7D2CA213134720000EC0D /* FirstViewController.h */,
+				A9F7D2CB213134720000EC0D /* SecondViewController.h */,
+				A9F7D2CF213134720000EC0D /* SecondViewController.m */,
+				A9F7D2CD213134720000EC0D /* ThirdViewController.h */,
+				A9F7D2D0213134720000EC0D /* ThirdViewController.m */,
+			);
+			path = PersonCenterChildViewController;
+			sourceTree = "<group>";
+		};
+		A9F7D2D6213134F50000EC0D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9F7D2DB213134F50000EC0D /* SegmentView.h */,
+				A9F7D2E1213134F50000EC0D /* SegmentView.m */,
+				A9F7D2D9213134F50000EC0D /* SegmentHeaderView.h */,
+				A9F7D2DE213134F50000EC0D /* SegmentHeaderView.m */,
+				A9F7D2DC213134F50000EC0D /* CenterTouchTableView.h */,
+				A9F7D2DF213134F50000EC0D /* CenterTouchTableView.m */,
+			);
+			name = View;
+			path = PersonalCenter/Center/View;
+			sourceTree = SOURCE_ROOT;
+		};
+		A9F7D2EA213135BF0000EC0D /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				A9F7D2EB213135BF0000EC0D /* center_avatar.jpeg */,
+				A9F7D2EC213135BF0000EC0D /* center_bg.jpg */,
+				A9F7D2ED213135BF0000EC0D /* cartoon.jpg */,
+				A9F7D2EE213135BF0000EC0D /* message.png */,
+				A9F7D2EF213135BF0000EC0D /* back.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		A9F7D2F5213135E00000EC0D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A9F7D2F7213135E00000EC0D /* BaseViewController.h */,
+				A9F7D2F6213135E00000EC0D /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		D24F5E1F1EF3D9CD0011AB07 = {
 			isa = PBXGroup;
 			children = (
@@ -163,9 +216,9 @@
 		D24F5E2A1EF3D9CD0011AB07 /* PersonalCenter */ = {
 			isa = PBXGroup;
 			children = (
+				A9F7D2F5213135E00000EC0D /* Base */,
+				A9F7D2EA213135BF0000EC0D /* Image */,
 				2E4DAE681F702A71007C1EE2 /* Tools */,
-				D24F5E551EF3D9FA0011AB07 /* Images */,
-				D277E1F91EF78D95001C0DC1 /* Base */,
 				D24F5E421EF3D9FA0011AB07 /* Center */,
 				D24F5E2E1EF3D9CD0011AB07 /* AppDelegate.h */,
 				D24F5E2F1EF3D9CD0011AB07 /* AppDelegate.m */,
@@ -193,7 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				D24F5E431EF3D9FA0011AB07 /* Controllers */,
-				D24F5E501EF3D9FA0011AB07 /* Views */,
+				A9F7D2D6213134F50000EC0D /* View */,
 			);
 			path = Center;
 			sourceTree = "<group>";
@@ -203,58 +256,11 @@
 			children = (
 				D24F5E441EF3D9FA0011AB07 /* PersonalCenterViewController.h */,
 				D24F5E451EF3D9FA0011AB07 /* PersonalCenterViewController.m */,
-				D277E1F61EF78CA3001C0DC1 /* MyMessageViewController.h */,
-				D277E1F71EF78CA3001C0DC1 /* MyMessageViewController.m */,
-				D24F5E461EF3D9FA0011AB07 /* SegmentVC */,
+				D277E1F61EF78CA3001C0DC1 /* MessageViewController.h */,
+				D277E1F71EF78CA3001C0DC1 /* MessageViewController.m */,
+				A9F7D2C9213134720000EC0D /* PersonCenterChildViewController */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		D24F5E461EF3D9FA0011AB07 /* SegmentVC */ = {
-			isa = PBXGroup;
-			children = (
-				D24F5E4B1EF3D9FA0011AB07 /* SegmentViewController.h */,
-				D24F5E4C1EF3D9FA0011AB07 /* SegmentViewController.m */,
-				D24F5E471EF3D9FA0011AB07 /* FirstViewController.h */,
-				D24F5E481EF3D9FA0011AB07 /* FirstViewController.m */,
-				D24F5E491EF3D9FA0011AB07 /* SecondViewController.h */,
-				D24F5E4A1EF3D9FA0011AB07 /* SecondViewController.m */,
-				D24F5E4D1EF3D9FA0011AB07 /* ThirdViewController.h */,
-				D24F5E4E1EF3D9FA0011AB07 /* ThirdViewController.m */,
-			);
-			path = SegmentVC;
-			sourceTree = "<group>";
-		};
-		D24F5E501EF3D9FA0011AB07 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				D24F5E511EF3D9FA0011AB07 /* CenterSegmentView.h */,
-				D24F5E521EF3D9FA0011AB07 /* CenterSegmentView.m */,
-				53D0B8EE1F712DA40014A6BB /* CenterTouchTableView.h */,
-				53D0B8ED1F712DA40014A6BB /* CenterTouchTableView.m */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		D24F5E551EF3D9FA0011AB07 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				D277E1F21EF78BA6001C0DC1 /* message.png */,
-				D277E1F01EF78889001C0DC1 /* back.png */,
-				D24F5E561EF3D9FA0011AB07 /* center_avatar.jpeg */,
-				D24F5E571EF3D9FA0011AB07 /* center_bg.jpg */,
-				D277E1F41EF78C3C001C0DC1 /* 动漫.jpg */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
-		D277E1F91EF78D95001C0DC1 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				D277E1FA1EF78DA3001C0DC1 /* BaseViewController.h */,
-				D277E1FB1EF78DA3001C0DC1 /* BaseViewController.m */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,14 +323,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D277E1F51EF78C3C001C0DC1 /* 动漫.jpg in Resources */,
-				D24F5E631EF3D9FA0011AB07 /* center_bg.jpg in Resources */,
+				A9F7D2F2213135BF0000EC0D /* cartoon.jpg in Resources */,
+				A9F7D2F0213135BF0000EC0D /* center_avatar.jpeg in Resources */,
+				A9F7D2F1213135BF0000EC0D /* center_bg.jpg in Resources */,
 				D24F5E3B1EF3D9CD0011AB07 /* LaunchScreen.storyboard in Resources */,
-				D277E1F31EF78BA6001C0DC1 /* message.png in Resources */,
-				D24F5E621EF3D9FA0011AB07 /* center_avatar.jpeg in Resources */,
-				D277E1F11EF78889001C0DC1 /* back.png in Resources */,
+				A9F7D2F4213135BF0000EC0D /* back.png in Resources */,
 				D24F5E381EF3D9CD0011AB07 /* Assets.xcassets in Resources */,
 				D24F5E361EF3D9CD0011AB07 /* Main.storyboard in Resources */,
+				A9F7D2F3213135BF0000EC0D /* message.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,19 +380,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D24F5E5E1EF3D9FA0011AB07 /* SegmentViewController.m in Sources */,
-				D277E1FC1EF78DA3001C0DC1 /* BaseViewController.m in Sources */,
-				53D0B8EF1F712DA40014A6BB /* CenterTouchTableView.m in Sources */,
-				D24F5E5D1EF3D9FA0011AB07 /* SecondViewController.m in Sources */,
+				A9F7D2E6213134F50000EC0D /* SegmentHeaderView.m in Sources */,
+				A9F7D2D4213134720000EC0D /* SecondViewController.m in Sources */,
+				A9F7D2D2213134720000EC0D /* SegmentViewController.m in Sources */,
 				D24F5E5B1EF3D9FA0011AB07 /* PersonalCenterViewController.m in Sources */,
 				D24F5E301EF3D9CD0011AB07 /* AppDelegate.m in Sources */,
+				A9F7D2D5213134720000EC0D /* ThirdViewController.m in Sources */,
+				A9F7D2F8213135E00000EC0D /* BaseViewController.m in Sources */,
+				A9F7D2E7213134F50000EC0D /* CenterTouchTableView.m in Sources */,
 				53137B961F70F556002A95D8 /* MBProgressHUD+NHAdd.m in Sources */,
-				D277E1F81EF78CA3001C0DC1 /* MyMessageViewController.m in Sources */,
+				D277E1F81EF78CA3001C0DC1 /* MessageViewController.m in Sources */,
+				A9F7D2D3213134720000EC0D /* FirstViewController.m in Sources */,
 				D24F5E651EF3D9FA0011AB07 /* RootViewController.m in Sources */,
 				D24F5E2D1EF3D9CD0011AB07 /* main.m in Sources */,
-				D24F5E601EF3D9FA0011AB07 /* CenterSegmentView.m in Sources */,
-				D24F5E5C1EF3D9FA0011AB07 /* FirstViewController.m in Sources */,
-				D24F5E5F1EF3D9FA0011AB07 /* ThirdViewController.m in Sources */,
+				A9F7D2E9213134F50000EC0D /* SegmentView.m in Sources */,
 				53137B971F70F559002A95D8 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

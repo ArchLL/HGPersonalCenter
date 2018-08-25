@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#define segmentMenuHeight 41 //分页菜单栏的高度
+#import "SegmentHeaderView.h"
 
-//此类为子控制器的父类
 @interface SegmentViewController : UIViewController
-@property (nonatomic, assign) NSInteger topHeight;
 
 @end
