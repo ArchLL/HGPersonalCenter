@@ -150,8 +150,8 @@
 			children = (
 				A9F7D2CC213134720000EC0D /* SegmentViewController.m */,
 				A9F7D2D1213134720000EC0D /* SegmentViewController.h */,
-				A9F7D2CE213134720000EC0D /* FirstViewController.m */,
 				A9F7D2CA213134720000EC0D /* FirstViewController.h */,
+				A9F7D2CE213134720000EC0D /* FirstViewController.m */,
 				A9F7D2CB213134720000EC0D /* SecondViewController.h */,
 				A9F7D2CF213134720000EC0D /* SecondViewController.m */,
 				A9F7D2CD213134720000EC0D /* ThirdViewController.h */,
