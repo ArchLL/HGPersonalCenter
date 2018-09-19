@@ -17,6 +17,7 @@
 static CGFloat const HeaderImageViewHeight = 240;
 
 @interface PersonalCenterViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
+
 @property (nonatomic, strong) CenterTouchTableView *mainTableView;
 @property (nonatomic, strong) SegmentView *segmentView;
 @property (nonatomic, strong) UIView *naviView;
@@ -24,14 +25,8 @@ static CGFloat const HeaderImageViewHeight = 240;
 @property (nonatomic, strong) UIView *headerContentView;
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) UILabel *nickNameLabel;
-/** mainTableView是否可以滚动 */
-@property (nonatomic, assign) BOOL canScroll;
-/** segmentHeaderView到达顶部, mainTableView不能移动 */
-@property (nonatomic, assign) BOOL isTopIsCanNotMoveTabView;
-/** segmentHeaderView离开顶部,childViewController的滚动视图不能移动 */
-@property (nonatomic, assign) BOOL isTopIsCanNotMoveTabViewPre;
-/** 是否正在pop */
-@property (nonatomic, assign) BOOL isBacking;
+@property (nonatomic, assign) BOOL canScroll;//mainTableView是否可以滚动
+@property (nonatomic, assign) BOOL isBacking;//是否正在pop
 
 @end
 
@@ -63,13 +58,13 @@ static CGFloat const HeaderImageViewHeight = 240;
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     self.isBacking = NO;
-    [[NSNotificationCenter defaultCenter] postNotificationName:PersonalCenterVCBackingStatus object:nil userInfo:@{@"isBacking" : @(self.isBacking)}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PersonalCenterVCBackingStatus object:nil userInfo:@{@"isBacking":@(self.isBacking)}];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.isBacking = YES;
-    [[NSNotificationCenter defaultCenter] postNotificationName:PersonalCenterVCBackingStatus object:nil userInfo:@{@"isBacking" : @(self.isBacking)}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PersonalCenterVCBackingStatus object:nil userInfo:@{@"isBacking":@(self.isBacking)}];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -130,78 +125,74 @@ static CGFloat const HeaderImageViewHeight = 240;
         NSString *canScroll = userInfo[@"canScroll"];
         if ([canScroll isEqualToString:@"1"]) {
             self.mainTableView.scrollEnabled = YES;
-        }else if([canScroll isEqualToString:@"0"]) {
+        } else if([canScroll isEqualToString:@"0"]) {
             self.mainTableView.scrollEnabled = NO;
         }
     }
 }
 
 #pragma mark - UiScrollViewDelegate
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
+    //通知分页子控制器列表返回顶部
+    [[NSNotificationCenter defaultCenter] postNotificationName:SegementViewChildVCBackToTop object:nil];
+    return YES;
+}
+
 /**
  * 处理联动
  * 因为要实现下拉头部放大的问题，tableView设置了contentInset，所以试图刚加载的时候会调用一遍这个方法，所以要做一些特殊处理，
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView == self.mainTableView) {
-        //当前y轴偏移量
-        CGFloat yOffset  = scrollView.contentOffset.y;
-        //临界点偏移量(吸顶临界点)
-        CGFloat tabyOffset = [self.mainTableView rectForSection:0].origin.y - STATUS_BAR_HEIGHT - NAVIGATION_BAR_HEIGHT;
-        
-        //第一部分: 更改导航栏的背景图的透明度
-        CGFloat alpha = 0;
-        if (-yOffset <= STATUS_BAR_HEIGHT + NAVIGATION_BAR_HEIGHT) {
-            alpha = 1;
-        } else if ((-yOffset > STATUS_BAR_HEIGHT + NAVIGATION_BAR_HEIGHT) && -yOffset < HeaderImageViewHeight) {
-            alpha = (HeaderImageViewHeight + yOffset) / (HeaderImageViewHeight - STATUS_BAR_HEIGHT - NAVIGATION_BAR_HEIGHT);
-        }else {
-            alpha = 0;
+    //当前y轴偏移量
+    CGFloat currentOffsetY  = scrollView.contentOffset.y;
+    //临界点偏移量
+    CGFloat criticalPointOffsetY = [self.mainTableView rectForSection:0].origin.y - STATUS_BAR_HEIGHT - NAVIGATION_BAR_HEIGHT;
+    
+    //第一部分: 更改导航栏的背景图的透明度
+    CGFloat alpha = 0;
+    if (-currentOffsetY <= STATUS_BAR_HEIGHT + NAVIGATION_BAR_HEIGHT) {
+        alpha = 1;
+    } else if ((-currentOffsetY > STATUS_BAR_HEIGHT + NAVIGATION_BAR_HEIGHT) && -currentOffsetY < HeaderImageViewHeight) {
+        alpha = (HeaderImageViewHeight + currentOffsetY) / (HeaderImageViewHeight - STATUS_BAR_HEIGHT - NAVIGATION_BAR_HEIGHT);
+    } else {
+        alpha = 0;
+    }
+    self.naviView.backgroundColor = kRGBA(255, 126, 15, alpha);
+    
+    //第二部分：
+    //利用contentOffset处理内外层scrollView的滑动冲突问题
+    if (currentOffsetY >= criticalPointOffsetY) {
+        scrollView.contentOffset = CGPointMake(0, criticalPointOffsetY);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"goTop" object:nil userInfo:@{@"canScroll":@"1"}];
+        self.canScroll = NO;
+    } else {
+        if (!self.canScroll) {
+            scrollView.contentOffset = CGPointMake(0, criticalPointOffsetY);
         }
-        self.naviView.backgroundColor = kRGBA(255, 126, 15, alpha);
-        
-        //第二部分：
-        //利用contentOffset处理内外层scrollView的滑动冲突问题
-        if (yOffset >= tabyOffset) {
-            scrollView.contentOffset = CGPointMake(0, tabyOffset);
-            _isTopIsCanNotMoveTabView = YES;
+    }
+    
+    //第三部分：
+    /**
+     * 处理头部自定义背景视图 (如: 下拉放大)
+     * 图片会被拉伸多出状态栏的高度
+     */
+    if(currentOffsetY <= -HeaderImageViewHeight) {
+        if (self.isEnlarge) {
+            CGRect f = self.headerImageView.frame;
+            //改变HeadImageView的frame
+            //上下放大
+            f.origin.y = currentOffsetY;
+            f.size.height = -currentOffsetY;
+            //左右放大
+            f.origin.x = (currentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight + SCREEN_WIDTH) / 2;
+            f.size.width = -currentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight;
+            //改变头部视图的frame
+            self.headerImageView.frame = f;
         }else{
-            _isTopIsCanNotMoveTabView = NO;
+            scrollView.bounces = NO;
         }
-        
-        _isTopIsCanNotMoveTabViewPre = !_isTopIsCanNotMoveTabView;
-        
-        if (!_isTopIsCanNotMoveTabViewPre) {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"goTop" object:nil userInfo:@{@"canScroll":@"1"}];
-            _canScroll = NO;
-        } else{
-            if (!_canScroll) {
-                _mainTableView.contentOffset = CGPointMake(0, tabyOffset);
-            }
-        }
-        
-        //第三部分：
-        /**
-         * 处理头部自定义背景视图 (如: 下拉放大)
-         * 图片会被拉伸多出状态栏的高度
-         */
-        if(yOffset <= -HeaderImageViewHeight) {
-            if (_isEnlarge) {
-                CGRect f = self.headerImageView.frame;
-                //改变HeadImageView的frame
-                //上下放大
-                f.origin.y = yOffset;
-                f.size.height = -yOffset;
-                //左右放大
-                f.origin.x = (yOffset * SCREEN_WIDTH / HeaderImageViewHeight + SCREEN_WIDTH) / 2;
-                f.size.width = -yOffset * SCREEN_WIDTH / HeaderImageViewHeight;
-                //改变头部视图的frame
-                self.headerImageView.frame = f;
-            }else{
-                scrollView.bounces = NO;
-            }
-        }else {
-            scrollView.bounces = YES;
-        }
+    }else {
+        scrollView.bounces = YES;
     }
 }
 
@@ -251,7 +242,6 @@ static CGFloat const HeaderImageViewHeight = 240;
         //⚠️这里的属性初始化一定要放在mainTableView.contentInset的设置滚动之前, 不然首次进来视图就会偏移到临界位置，contentInset会调用scrollViewDidScroll这个方法。
         //初始化变量
         self.canScroll = YES;
-        self.isTopIsCanNotMoveTabView = NO;
         
         self.mainTableView = [[CenterTouchTableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
         _mainTableView.delegate = self;
@@ -292,7 +282,7 @@ static CGFloat const HeaderImageViewHeight = 240;
         _nickNameLabel.textAlignment = NSTextAlignmentCenter;
         _nickNameLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _nickNameLabel.numberOfLines = 0;
-        _nickNameLabel.text = @"撒哈拉下雪了";
+        _nickNameLabel.text = @"下雪天";
     }
     return _nickNameLabel;
 }

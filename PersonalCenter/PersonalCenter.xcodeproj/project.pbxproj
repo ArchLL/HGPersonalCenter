@@ -148,8 +148,8 @@
 		A9F7D2C9213134720000EC0D /* PersonCenterChildViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A9F7D2CC213134720000EC0D /* SegmentViewController.m */,
 				A9F7D2D1213134720000EC0D /* SegmentViewController.h */,
+				A9F7D2CC213134720000EC0D /* SegmentViewController.m */,
 				A9F7D2CA213134720000EC0D /* FirstViewController.h */,
 				A9F7D2CE213134720000EC0D /* FirstViewController.m */,
 				A9F7D2CB213134720000EC0D /* SecondViewController.h */,
