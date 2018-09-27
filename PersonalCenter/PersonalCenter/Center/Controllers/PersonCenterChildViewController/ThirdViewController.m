@@ -11,8 +11,7 @@
 static NSString *const ThirdViewControllerCollectionViewCellIdentifier = @"ThirdViewControllerCollectionViewCell";
 
 @interface ThirdViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, strong) UICollectionView * collectionView;
-
+@property (nonatomic, strong) UICollectionView *collectionView;
 @end
 
 @implementation ThirdViewController
@@ -28,7 +27,7 @@ static NSString *const ThirdViewControllerCollectionViewCellIdentifier = @"Third
         flowLayout.minimumInteritemSpacing = 10;
         flowLayout.minimumLineSpacing = 10;
         flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 5, 10);
-        flowLayout.itemSize = CGSizeMake((SCREEN_WIDTH - 30) / 2, 200);
+        flowLayout.itemSize = CGSizeMake((SCREEN_WIDTH - 30) / 2.0, 200);
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - STATUS_BAR_HEIGHT - NAVIGATION_BAR_HEIGHT - SegmentHeaderViewHeight) collectionViewLayout:flowLayout];
@@ -36,6 +35,8 @@ static NSString *const ThirdViewControllerCollectionViewCellIdentifier = @"Third
         _collectionView.dataSource = self;
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
+        //解决在吸顶状态下，当collectionView的内容显示不满屏时（该示例中item <= 6 时会出现）出现竖直方向滑动失效的问题
+        _collectionView.alwaysBounceVertical = YES;
         _collectionView.backgroundColor = [UIColor colorWithRed:242/255. green:242/255. blue:242/255. alpha:1.];
         [_collectionView registerClass :[UICollectionViewCell class] forCellWithReuseIdentifier:ThirdViewControllerCollectionViewCellIdentifier];
     }
@@ -44,7 +45,7 @@ static NSString *const ThirdViewControllerCollectionViewCellIdentifier = @"Third
 
 #pragma mark -- UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 15;
+    return 5;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

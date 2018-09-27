@@ -33,10 +33,10 @@
         weakSelf.headerView.selectedItemHelper = ^(NSUInteger index) {
             __strong typeof(weakSelf) strongSelf = weakSelf;
             [strongSelf.contentScrollView setContentOffset:CGPointMake(index * kWidth, 0) animated:NO];
-            [[NSNotificationCenter defaultCenter] postNotificationName:CurrentSelectedChildViewControllerIndex object:nil userInfo:@{@"selectedPageIndex" : @(index)}];
+            [[NSNotificationCenter defaultCenter] postNotificationName:CurrentSelectedChildViewControllerIndex object:nil userInfo:@{@"selectedPageIndex":@(index)}];
         };
         
-        self.contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, SegmentHeaderViewHeight, kWidth, kHeight-SegmentHeaderViewHeight)];
+        self.contentScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, SegmentHeaderViewHeight, kWidth, kHeight - SegmentHeaderViewHeight)];
         self.contentScrollView.contentSize = CGSizeMake(kWidth * controllers.count, 0);
         self.contentScrollView.delegate = self;
         self.contentScrollView.showsHorizontalScrollIndicator = NO;
@@ -44,7 +44,7 @@
         self.contentScrollView.bounces = NO;
         [self addSubview:self.contentScrollView];
         
-        [controllers enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [controllers enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             UIViewController *controller = obj;
             [self.contentScrollView addSubview:controller.view];
             controller.view.frame = CGRectMake(idx * kWidth, 0, kWidth, kHeight);
@@ -58,24 +58,24 @@
 #pragma mark - Setter
 - (void)setSelectedIndex:(NSUInteger)selectedIndex {
     _selectedIndex = selectedIndex;
-    self.headerView.selectedIndex =  selectedIndex;
-    [[NSNotificationCenter defaultCenter] postNotificationName:CurrentSelectedChildViewControllerIndex object:nil userInfo:@{@"selectedPageIndex" : @(selectedIndex)}];
+    self.headerView.selectedIndex = selectedIndex;
+    [[NSNotificationCenter defaultCenter] postNotificationName:CurrentSelectedChildViewControllerIndex object:nil userInfo:@{@"selectedPageIndex":@(selectedIndex)}];
 }
 
 #pragma mark - UIScrollViewDelegate
 //增加分页视图左右滑动和外界tableView上下滑动互斥处理
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    [[NSNotificationCenter defaultCenter] postNotificationName:IsEnablePersonalCenterVCMainTableViewScroll object:nil userInfo:@{@"canScroll" : @"0"}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:IsEnablePersonalCenterVCMainTableViewScroll object:nil userInfo:@{@"canScroll":@"0"}];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    [[NSNotificationCenter defaultCenter] postNotificationName:IsEnablePersonalCenterVCMainTableViewScroll object:nil userInfo:@{@"canScroll" : @"1"}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:IsEnablePersonalCenterVCMainTableViewScroll object:nil userInfo:@{@"canScroll":@"1"}];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSUInteger selectedIndex = (NSUInteger)self.contentScrollView.contentOffset.x / kWidth;
     [self.headerView changeItemWithTargetIndex:selectedIndex];
-    [[NSNotificationCenter defaultCenter] postNotificationName:CurrentSelectedChildViewControllerIndex object:nil userInfo:@{@"selectedPageIndex" : @(selectedIndex)}];
+    [[NSNotificationCenter defaultCenter] postNotificationName:CurrentSelectedChildViewControllerIndex object:nil userInfo:@{@"selectedPageIndex":@(selectedIndex)}];
 }
 
 @end
