@@ -32,6 +32,7 @@ static CGFloat const HeaderImageViewHeight = 240;
 
 @implementation PersonalCenterViewController
 
+#pragma mark Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"个人中心";
@@ -112,7 +113,6 @@ static CGFloat const HeaderImageViewHeight = 240;
     [self.navigationController pushViewController:myMessageVC animated:YES];
 }
 
-#pragma mark -  Notification
 - (void)acceptMsg:(NSNotification *)notification {
     NSDictionary *userInfo = notification.userInfo;
     
@@ -196,11 +196,6 @@ static CGFloat const HeaderImageViewHeight = 240;
     }
 }
 
-#pragma mark - UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return SCREEN_HEIGHT - STATUS_BAR_HEIGHT - NAVIGATION_BAR_HEIGHT;
-}
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -211,6 +206,11 @@ static CGFloat const HeaderImageViewHeight = 240;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell.contentView addSubview:self.setPageViewControllers];
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return SCREEN_HEIGHT - STATUS_BAR_HEIGHT - NAVIGATION_BAR_HEIGHT;
 }
 
 #pragma mark - Lazy
