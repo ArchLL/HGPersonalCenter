@@ -18,6 +18,9 @@
 - (void)makePageViewControllerScroll:(BOOL)canScroll {
     self.canScroll = canScroll;
     self.scrollView.showsVerticalScrollIndicator = canScroll;
+    if (!canScroll) {
+        self.scrollView.contentOffset = CGPointZero;
+    }
 }
 
 - (void)makePageViewControllerScrollToTop {
@@ -26,19 +29,19 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (!self.canScroll) {
-        [scrollView setContentOffset:CGPointZero];
-    }
-    CGFloat offsetY = scrollView.contentOffset.y;
-    if (offsetY <= 0) {
-        self.canScroll = NO;
-        self.scrollView.contentOffset = CGPointZero;
-        self.scrollView.showsVerticalScrollIndicator = NO;
-        if (self.delegate && [self.delegate respondsToSelector:@selector(pageViewControllerLeaveTop)]) {
-            [self.delegate pageViewControllerLeaveTop];
-        }
-    }
     self.scrollView = scrollView;
+    
+    if (self.canScroll) {
+        CGFloat offsetY = scrollView.contentOffset.y;
+        if (offsetY <= 0) {
+            [self makePageViewControllerScroll:NO];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(pageViewControllerLeaveTop)]) {
+                [self.delegate pageViewControllerLeaveTop];
+            }
+        }
+    } else {
+        [self makePageViewControllerScroll:NO];
+    }
 }
 
 @end

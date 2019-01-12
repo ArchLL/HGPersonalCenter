@@ -24,7 +24,7 @@ static CGFloat const HeaderImageViewHeight = 240;
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) UILabel *nickNameLabel;
 @property (nonatomic, strong) HGSegmentedPageViewController *segmentedPageViewController;
-@property (nonatomic) BOOL canScroll;
+@property (nonatomic) BOOL cannotScroll;
 @end
 
 @implementation HGPersonalCenterViewController
@@ -108,33 +108,33 @@ static CGFloat const HeaderImageViewHeight = 240;
     [self updateNavigationBarBackgroundColor];
     
     //第二部分：处理手势冲突
-    CGFloat currentOffsetY = scrollView.contentOffset.y;
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
     //吸顶临界点(此时的临界点不是视觉感官上导航栏的底部，而是当前屏幕的顶部相对scrollViewContentView的位置)
     CGFloat criticalPointOffsetY = [self.tableView rectForSection:0].origin.y - NAVIGATION_BAR_HEIGHT;
     
     //利用contentOffset处理内外层scrollView的滑动冲突问题
-    if (currentOffsetY >= criticalPointOffsetY) {
+    if (contentOffsetY >= criticalPointOffsetY) {
         /*
-         * 到达临界点 ：此状态下有两种情况
+         * 到达临界点：
          * 1.未吸顶状态 -> 吸顶状态
-         * 2.维持吸顶状态 (categoryView的子控制器的tableView或collectionView在竖直方向上的contentOffsetY大于0)
+         * 2.维持吸顶状态(pageViewController.scrollView.contentOffsetY > 0)
          */
         //“进入吸顶状态”以及“维持吸顶状态”
-        self.canScroll = NO;
+        self.cannotScroll = YES;
         scrollView.contentOffset = CGPointMake(0, criticalPointOffsetY);
         [self.segmentedPageViewController.currentPageViewController makePageViewControllerScroll:YES];
     } else {
         /*
-         * 未达到临界点 ：此状态下有两种情况，且这两种情况完全相反，这也是引入一个canScroll属性的重要原因
+         * 未达到临界点：
          * 1.吸顶状态 -> 不吸顶状态
-         * 2.维持吸顶状态 (categoryView的子控制器的tableView或collectionView在竖直方向上的contentOffsetY大于0)
+         * 2.维持吸顶状态(pageViewController.scrollView.contentOffsetY > 0)
          */
-        if (!self.canScroll) {
+        if (self.cannotScroll) {
             //“维持吸顶状态”
             scrollView.contentOffset = CGPointMake(0, criticalPointOffsetY);
         } else {
             /* 吸顶状态 -> 不吸顶状态
-             * categoryView的子控制器的tableView或collectionView在竖直方向上的contentOffsetY小于等于0时，会通过代理的方式改变当前控制器self.canScroll的值；
+             * pageViewController.scrollView.contentOffsetY <= 0时，会通过代理HGPageViewControllerDelegate来改变当前控制器self.cannotScroll的值；
              */
         }
     }
@@ -144,16 +144,16 @@ static CGFloat const HeaderImageViewHeight = 240;
      * 处理头部自定义背景视图 (如: 下拉放大)
      * 图片会被拉伸多出状态栏的高度
      */
-    if(currentOffsetY <= -HeaderImageViewHeight) {
+    if(contentOffsetY <= -HeaderImageViewHeight) {
         if (self.isEnlarge) {
             CGRect f = self.headerImageView.frame;
             //改变HeadImageView的frame
             //上下放大
-            f.origin.y = currentOffsetY;
-            f.size.height = -currentOffsetY;
+            f.origin.y = contentOffsetY;
+            f.size.height = -contentOffsetY;
             //左右放大
-            f.origin.x = (currentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight + SCREEN_WIDTH) / 2;
-            f.size.width = -currentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight;
+            f.origin.x = (contentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight + SCREEN_WIDTH) / 2;
+            f.size.width = -contentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight;
             //改变头部视图的frame
             self.headerImageView.frame = f;
         }else{
@@ -197,15 +197,12 @@ static CGFloat const HeaderImageViewHeight = 240;
 
 #pragma mark - HGPageViewControllerDelegate
 - (void)pageViewControllerLeaveTop {
-    self.canScroll = YES;
+    self.cannotScroll = NO;
 }
 
 #pragma mark - Lazy
 - (UITableView *)tableView {
     if (!_tableView) {
-        //⚠️这里的属性初始化一定要放在mainTableView.contentInset的设置之前, 不然首次进来视图就会偏移到临界位置，contentInset会调用scrollViewDidScroll这个方法。
-        self.canScroll = YES;
-        
         _tableView = [[HGCenterBaseTableView alloc] init];
         _tableView.delegate = self;
         _tableView.dataSource = self;
@@ -260,8 +257,9 @@ static CGFloat const HeaderImageViewHeight = 240;
 
 - (HGSegmentedPageViewController *)segmentedPageViewController {
     if (!_segmentedPageViewController) {
+        NSArray *titles = @[@"华盛顿", @"夏威夷", @"拉斯维加斯", @"纽约", @"西雅图", @"底特律", @"费城", @"旧金山", @"芝加哥"];
         NSMutableArray *controllers = [NSMutableArray array];
-        for (int i = 0; i < 9; i ++) {
+        for (int i = 0; i < titles.count; i ++) {
             HGPageViewController *controller;
             if (i % 3 == 0) {
                  controller = [[HGThirdViewController alloc] init];
@@ -275,7 +273,7 @@ static CGFloat const HeaderImageViewHeight = 240;
         }
         _segmentedPageViewController = [[HGSegmentedPageViewController alloc] init];
         _segmentedPageViewController.pageViewControllers = controllers.copy;
-        _segmentedPageViewController.categoryView.titles = @[@"华盛顿", @"夏威夷", @"拉斯维加斯", @"纽约", @"西雅图", @"底特律", @"费城", @"旧金山", @"芝加哥"];;
+        _segmentedPageViewController.categoryView.titles = titles;
         _segmentedPageViewController.categoryView.originalIndex = self.selectedIndex;
         _segmentedPageViewController.delegate = self;
     }
