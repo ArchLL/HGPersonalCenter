@@ -29,7 +29,7 @@ end
 
 ## Show  
 
-![image](https://github.com/ArchLL/HGPersonalCenterExtend/blob/master/show.gif)
+![image](https://github.com/ArchLL/HGPersonalCenter/blob/master/show.gif)
 
 
 ## Usage
