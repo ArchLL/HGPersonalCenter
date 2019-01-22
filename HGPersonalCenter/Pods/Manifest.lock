@@ -1,16 +1,20 @@
 PODS:
+  - HGPersonalCenterExtend (0.1.1):
+    - Masonry (~> 1.1.0)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
-  - Masonry
+  - HGPersonalCenterExtend (~> 0.1.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - HGPersonalCenterExtend
     - Masonry
 
 SPEC CHECKSUMS:
+  HGPersonalCenterExtend: 491282266aee31dbf4790bc6153469c09179b5ac
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: ebb2adbf875a6057e3bae9e5bf9e573071704845
+PODFILE CHECKSUM: a02b68b28be49ab8ea282cc9dc3ed12e4e4cb7ff
 
 COCOAPODS: 1.5.3

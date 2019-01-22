@@ -7,7 +7,6 @@
 //
 
 #import "HGFirstViewController.h"
-#import "HGMessageViewController.h"
 
 @interface HGFirstViewController () < UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -34,15 +33,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:FirstViewControllerTableViewCellIdentifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"快点我%ld -> 进入我的消息",indexPath.row];
+    cell.textLabel.text = @"我要这天，再遮不住我眼";
     return cell;
-}
-
-#pragma mark - UITableViewDelegate
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    HGMessageViewController *messageViewController = [[HGMessageViewController alloc] init];
-    [self.navigationController pushViewController:messageViewController animated:YES];
 }
 
 #pragma mark - Getters

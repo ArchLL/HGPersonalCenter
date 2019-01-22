@@ -12,15 +12,10 @@
 		531376111F6A7FD300D646AF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531376101F6A7FD300D646AF /* UIKit.framework */; };
 		A9E72A6D21E5CE4F008F7ACA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9E72A6B21E5CE4F008F7ACA /* Main.storyboard */; };
 		A9F80B8321DF0113000334BE /* HGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B6421DF0113000334BE /* HGBaseViewController.m */; };
-		A9F80B8421DF0113000334BE /* HGMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B6521DF0113000334BE /* HGMessageViewController.m */; };
 		A9F80B8521DF0113000334BE /* HGPersonalCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B6921DF0113000334BE /* HGPersonalCenterViewController.m */; };
-		A9F80B8621DF0113000334BE /* HGPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B6B21DF0113000334BE /* HGPageViewController.m */; };
 		A9F80B8721DF0113000334BE /* HGFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B6C21DF0113000334BE /* HGFirstViewController.m */; };
 		A9F80B8821DF0113000334BE /* HGThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B6E21DF0113000334BE /* HGThirdViewController.m */; };
 		A9F80B8921DF0113000334BE /* HGSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B7021DF0113000334BE /* HGSecondViewController.m */; };
-		A9F80B8A21DF0113000334BE /* HGSegmentedPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B7321DF0113000334BE /* HGSegmentedPageViewController.m */; };
-		A9F80B8C21DF0113000334BE /* HGCenterBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B7A21DF0113000334BE /* HGCenterBaseTableView.m */; };
-		A9F80B9021DF0113000334BE /* HGCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B7F21DF0113000334BE /* HGCategoryView.m */; };
 		A9F80B9121DF0113000334BE /* HGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B8221DF0113000334BE /* HGHomeViewController.m */; };
 		D24F5E2D1EF3D9CD0011AB07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E2C1EF3D9CD0011AB07 /* main.m */; };
 		D24F5E301EF3D9CD0011AB07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E2F1EF3D9CD0011AB07 /* AppDelegate.m */; };
@@ -37,24 +32,14 @@
 		A9F80B6221DF0113000334BE /* HGHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGHomeViewController.h; sourceTree = "<group>"; };
 		A9F80B6321DF0113000334BE /* HGBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGBaseViewController.h; sourceTree = "<group>"; };
 		A9F80B6421DF0113000334BE /* HGBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGBaseViewController.m; sourceTree = "<group>"; };
-		A9F80B6521DF0113000334BE /* HGMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGMessageViewController.m; sourceTree = "<group>"; };
-		A9F80B6621DF0113000334BE /* HGMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGMessageViewController.h; sourceTree = "<group>"; };
 		A9F80B6921DF0113000334BE /* HGPersonalCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGPersonalCenterViewController.m; sourceTree = "<group>"; };
-		A9F80B6B21DF0113000334BE /* HGPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGPageViewController.m; sourceTree = "<group>"; };
 		A9F80B6C21DF0113000334BE /* HGFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGFirstViewController.m; sourceTree = "<group>"; };
 		A9F80B6D21DF0113000334BE /* HGSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGSecondViewController.h; sourceTree = "<group>"; };
 		A9F80B6E21DF0113000334BE /* HGThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGThirdViewController.m; sourceTree = "<group>"; };
-		A9F80B6F21DF0113000334BE /* HGPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGPageViewController.h; sourceTree = "<group>"; };
 		A9F80B7021DF0113000334BE /* HGSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGSecondViewController.m; sourceTree = "<group>"; };
 		A9F80B7121DF0113000334BE /* HGFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGFirstViewController.h; sourceTree = "<group>"; };
 		A9F80B7221DF0113000334BE /* HGThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGThirdViewController.h; sourceTree = "<group>"; };
-		A9F80B7321DF0113000334BE /* HGSegmentedPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGSegmentedPageViewController.m; sourceTree = "<group>"; };
 		A9F80B7421DF0113000334BE /* HGPersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGPersonalCenterViewController.h; sourceTree = "<group>"; };
-		A9F80B7521DF0113000334BE /* HGSegmentedPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGSegmentedPageViewController.h; sourceTree = "<group>"; };
-		A9F80B7A21DF0113000334BE /* HGCenterBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGCenterBaseTableView.m; sourceTree = "<group>"; };
-		A9F80B7B21DF0113000334BE /* HGCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGCategoryView.h; sourceTree = "<group>"; };
-		A9F80B7F21DF0113000334BE /* HGCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGCategoryView.m; sourceTree = "<group>"; };
-		A9F80B8021DF0113000334BE /* HGCenterBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGCenterBaseTableView.h; sourceTree = "<group>"; };
 		A9F80B8221DF0113000334BE /* HGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGHomeViewController.m; sourceTree = "<group>"; };
 		D24F5E281EF3D9CD0011AB07 /* HGPersonalCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HGPersonalCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24F5E2C1EF3D9CD0011AB07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,32 +85,9 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A9F80B6721DF0113000334BE /* HGPersonalCenter */ = {
-			isa = PBXGroup;
-			children = (
-				A9F80B6821DF0113000334BE /* Controller */,
-				A9F80B7621DF0113000334BE /* View */,
-			);
-			path = HGPersonalCenter;
-			sourceTree = "<group>";
-		};
-		A9F80B6821DF0113000334BE /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A9F80B7421DF0113000334BE /* HGPersonalCenterViewController.h */,
-				A9F80B6921DF0113000334BE /* HGPersonalCenterViewController.m */,
-				A9F80B7521DF0113000334BE /* HGSegmentedPageViewController.h */,
-				A9F80B7321DF0113000334BE /* HGSegmentedPageViewController.m */,
-				A9F80B6A21DF0113000334BE /* PageViewControllers */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		A9F80B6A21DF0113000334BE /* PageViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A9F80B6F21DF0113000334BE /* HGPageViewController.h */,
-				A9F80B6B21DF0113000334BE /* HGPageViewController.m */,
 				A9F80B7121DF0113000334BE /* HGFirstViewController.h */,
 				A9F80B6C21DF0113000334BE /* HGFirstViewController.m */,
 				A9F80B6D21DF0113000334BE /* HGSecondViewController.h */,
@@ -134,17 +96,6 @@
 				A9F80B6E21DF0113000334BE /* HGThirdViewController.m */,
 			);
 			path = PageViewControllers;
-			sourceTree = "<group>";
-		};
-		A9F80B7621DF0113000334BE /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A9F80B7B21DF0113000334BE /* HGCategoryView.h */,
-				A9F80B7F21DF0113000334BE /* HGCategoryView.m */,
-				A9F80B8021DF0113000334BE /* HGCenterBaseTableView.h */,
-				A9F80B7A21DF0113000334BE /* HGCenterBaseTableView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D24F5E1F1EF3D9CD0011AB07 = {
@@ -172,9 +123,9 @@
 				A9F80B6421DF0113000334BE /* HGBaseViewController.m */,
 				A9F80B6221DF0113000334BE /* HGHomeViewController.h */,
 				A9F80B8221DF0113000334BE /* HGHomeViewController.m */,
-				A9F80B6621DF0113000334BE /* HGMessageViewController.h */,
-				A9F80B6521DF0113000334BE /* HGMessageViewController.m */,
-				A9F80B6721DF0113000334BE /* HGPersonalCenter */,
+				A9F80B7421DF0113000334BE /* HGPersonalCenterViewController.h */,
+				A9F80B6921DF0113000334BE /* HGPersonalCenterViewController.m */,
+				A9F80B6A21DF0113000334BE /* PageViewControllers */,
 				D24F5E2B1EF3D9CD0011AB07 /* Supporting Files */,
 			);
 			path = HGPersonalCenter;
@@ -183,14 +134,14 @@
 		D24F5E2B1EF3D9CD0011AB07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D24F5E371EF3D9CD0011AB07 /* Assets.xcassets */,
-				A9E72A6B21E5CE4F008F7ACA /* Main.storyboard */,
-				D24F5E391EF3D9CD0011AB07 /* LaunchScreen.storyboard */,
-				D24F5E2E1EF3D9CD0011AB07 /* AppDelegate.h */,
-				D24F5E2F1EF3D9CD0011AB07 /* AppDelegate.m */,
 				D24F5E2C1EF3D9CD0011AB07 /* main.m */,
 				D24F5E3C1EF3D9CD0011AB07 /* Info.plist */,
+				D24F5E2E1EF3D9CD0011AB07 /* AppDelegate.h */,
+				D24F5E2F1EF3D9CD0011AB07 /* AppDelegate.m */,
 				53F1415C1F6BB05F00AB9BEF /* PrefixHeader.pch */,
+				A9E72A6B21E5CE4F008F7ACA /* Main.storyboard */,
+				D24F5E391EF3D9CD0011AB07 /* LaunchScreen.storyboard */,
+				D24F5E371EF3D9CD0011AB07 /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -288,15 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9F80B8421DF0113000334BE /* HGMessageViewController.m in Sources */,
-				A9F80B8C21DF0113000334BE /* HGCenterBaseTableView.m in Sources */,
-				A9F80B8A21DF0113000334BE /* HGSegmentedPageViewController.m in Sources */,
 				D24F5E301EF3D9CD0011AB07 /* AppDelegate.m in Sources */,
 				A9F80B8321DF0113000334BE /* HGBaseViewController.m in Sources */,
 				A9F80B8721DF0113000334BE /* HGFirstViewController.m in Sources */,
-				A9F80B9021DF0113000334BE /* HGCategoryView.m in Sources */,
 				A9F80B8921DF0113000334BE /* HGSecondViewController.m in Sources */,
-				A9F80B8621DF0113000334BE /* HGPageViewController.m in Sources */,
 				A9F80B8821DF0113000334BE /* HGThirdViewController.m in Sources */,
 				A9F80B9121DF0113000334BE /* HGHomeViewController.m in Sources */,
 				D24F5E2D1EF3D9CD0011AB07 /* main.m in Sources */,

@@ -1,17 +1,14 @@
 //
 //  HGCategoryView.m
-//  HGPersonalCenter
+//  HGPersonalCenterExtend
 //
 //  Created by Arch on 2018/8/20.
 //  Copyright © 2018年 mint_bin. All rights reserved.
 //
 
 #import "HGCategoryView.h"
-
-#define kWidth self.frame.size.width
-#define NORMAL_FONT [UIFont systemFontOfSize:18]
-#define NORMAL_COLOR [UIColor grayColor]
-#define SELECTED_COLOR [UIColor orangeColor]
+#import "HGPersonalCenterMacro.h"
+#import "Masonry.h"
 
 @interface HGCategoryViewCollectionViewCell ()
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -34,26 +31,22 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = NORMAL_FONT;
-        _titleLabel.textColor = NORMAL_COLOR;
     }
     return _titleLabel;
 }
+
 @end
 
 @interface HGCategoryView () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) UIView *moveLine;
+@property (nonatomic, strong) UIView *underline;
 @property (nonatomic, strong) UIView *separator;
 @property (nonatomic) NSInteger selectedIndex;
 @property (nonatomic) BOOL selectedCellExist;
 @end
 
-CGFloat const HGCategoryViewHeight = 41;
 static NSString * const SegmentHeaderViewCollectionViewCellIdentifier = @"SegmentHeaderViewCollectionViewCell";
-static CGFloat const MoveLineHeight = 2;
 static CGFloat const SeparatorHeight = 0.5;
-static CGFloat const CellSpacing = 15;
 
 @implementation HGCategoryView
 
@@ -61,7 +54,15 @@ static CGFloat const CellSpacing = 15;
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         _selectedIndex = self.originalIndex;
+        self.height = 41;
+        self.cellSpacing = 10;
+        self.underlineHeight = 2;
+        self.titleNormalColor = [UIColor grayColor];
+        self.titleSelectedColor = [UIColor orangeColor];
+        self.titleNomalFont = [UIFont systemFontOfSize:18];
+        self.titleSelectedFont = [UIFont systemFontOfSize:20];
         [self setupSubViews];
+        self.underline.backgroundColor = self.titleSelectedColor;
     }
     return self;
 }
@@ -83,11 +84,13 @@ static CGFloat const CellSpacing = 15;
     }
     HGCategoryViewCollectionViewCell *selectedCell = [self getCell:self.selectedIndex];
     if (selectedCell) {
-        selectedCell.titleLabel.textColor = NORMAL_COLOR;
+        selectedCell.titleLabel.textColor = self.titleNormalColor;
+        selectedCell.titleLabel.font = self.titleNomalFont;
     }
     HGCategoryViewCollectionViewCell *targetCell = [self getCell:targetIndex];
     if (targetCell) {
-        targetCell.titleLabel.textColor = SELECTED_COLOR;
+        targetCell.titleLabel.textColor = self.titleSelectedColor;
+        targetCell.titleLabel.font = self.titleSelectedFont;
     }
     self.selectedIndex = targetIndex;
 }
@@ -95,16 +98,16 @@ static CGFloat const CellSpacing = 15;
 #pragma mark - Private Method
 - (void)setupSubViews {
     [self addSubview:self.collectionView];
-    [self.collectionView addSubview:self.moveLine];
+    [self.collectionView addSubview:self.underline];
     [self addSubview:self.separator];
     
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(0);
-        make.height.mas_equalTo(HGCategoryViewHeight - SeparatorHeight);
+        make.height.mas_equalTo(self.height - SeparatorHeight);
     }];
-    [self.moveLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(HGCategoryViewHeight - SeparatorHeight - MoveLineHeight);
-        make.height.mas_equalTo(MoveLineHeight);
+    [self.underline mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.height - SeparatorHeight - self.underlineHeight);
+        make.height.mas_equalTo(self.underlineHeight);
     }];
     [self.separator mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.collectionView.mas_bottom);
@@ -140,18 +143,18 @@ static CGFloat const CellSpacing = 15;
 
 - (void)setupMoveLineDefaultLocation {
     CGFloat firstCellWidth = [self getWidthWithContent:self.titles[0]];
-    [self.moveLine mas_updateConstraints:^(MASConstraintMaker *make) {
+    [self.underline mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(firstCellWidth);
-        make.left.mas_equalTo(CellSpacing);
+        make.left.mas_equalTo(self.cellSpacing);
     }];
 }
 
 - (void)updateMoveLineLocation {
     HGCategoryViewCollectionViewCell *cell = [self getCell:self.selectedIndex];
     [UIView animateWithDuration:0.15 animations:^{
-        [self.moveLine mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(HGCategoryViewHeight - SeparatorHeight - MoveLineHeight);
-            make.height.mas_equalTo(MoveLineHeight);
+        [self.underline mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.height - SeparatorHeight - self.underlineHeight);
+            make.height.mas_equalTo(self.underlineHeight);
             make.width.centerX.equalTo(cell.titleLabel);
         }];
         [self.collectionView setNeedsLayout];
@@ -160,9 +163,9 @@ static CGFloat const CellSpacing = 15;
 }
 
 - (CGFloat)getWidthWithContent:(NSString *)content {
-    CGRect rect = [content boundingRectWithSize:CGSizeMake(MAXFLOAT, HGCategoryViewHeight - SeparatorHeight)
+    CGRect rect = [content boundingRectWithSize:CGSizeMake(MAXFLOAT, self.height - SeparatorHeight)
                                         options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
-                                     attributes:@{NSFontAttributeName:NORMAL_FONT}
+                                     attributes:@{NSFontAttributeName:self.titleSelectedFont}
                                         context:nil
                    ];
     return ceilf(rect.size.width);;
@@ -171,7 +174,7 @@ static CGFloat const CellSpacing = 15;
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat itemWidth = [self getWidthWithContent:self.titles[indexPath.row]];
-    return CGSizeMake(itemWidth, HGCategoryViewHeight - 1);
+    return CGSizeMake(itemWidth, self.height - 1);
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -182,7 +185,8 @@ static CGFloat const CellSpacing = 15;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     HGCategoryViewCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SegmentHeaderViewCollectionViewCellIdentifier forIndexPath:indexPath];
     cell.titleLabel.text = self.titles[indexPath.row];
-    cell.titleLabel.textColor = self.selectedIndex == indexPath.row ? SELECTED_COLOR : NORMAL_COLOR;
+    cell.titleLabel.textColor = self.selectedIndex == indexPath.row ? self.titleSelectedColor : self.titleNormalColor;
+    cell.titleLabel.font = self.selectedIndex == indexPath.row ? self.titleSelectedFont : self.titleNomalFont;
     return cell;
 }
 
@@ -222,8 +226,8 @@ static CGFloat const CellSpacing = 15;
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         flowLayout.minimumLineSpacing = 0;
-        flowLayout.minimumInteritemSpacing = CellSpacing;
-        flowLayout.sectionInset = UIEdgeInsetsMake(0, CellSpacing, 0, CellSpacing);
+        flowLayout.minimumInteritemSpacing = self.cellSpacing;
+        flowLayout.sectionInset = UIEdgeInsetsMake(0, self.cellSpacing, 0, self.cellSpacing);
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         _collectionView.showsHorizontalScrollIndicator = NO;
@@ -236,12 +240,11 @@ static CGFloat const CellSpacing = 15;
     return _collectionView;
 }
 
-- (UIView *)moveLine {
-    if (!_moveLine) {
-        _moveLine = [[UIView alloc] init];
-        _moveLine.backgroundColor = [UIColor orangeColor];
+- (UIView *)underline {
+    if (!_underline) {
+        _underline = [[UIView alloc] init];
     }
-    return _moveLine;
+    return _underline;
 }
 
 - (UIView *)separator {
@@ -250,6 +253,10 @@ static CGFloat const CellSpacing = 15;
         _separator.backgroundColor = [UIColor lightGrayColor];
     }
     return _separator;
+}
+
+- (CGFloat)height {
+    return _height ?: HGCategoryViewDefaultHeight;
 }
 
 @end

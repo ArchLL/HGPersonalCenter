@@ -1,6 +1,6 @@
 //
 //  HGSegmentedPageViewController.m
-//  HGPersonalCenter
+//  HGPersonalCenterExtend
 //
 //  Created by Arch on 2019/1/3.
 //  Copyright © 2019 mint_bin. All rights reserved.
@@ -9,6 +9,7 @@
 #import "HGSegmentedPageViewController.h"
 #import "HGCategoryView.h"
 #import "HGPageViewController.h"
+#import "Masonry.h"
 
 #define kWidth self.view.frame.size.width
 
@@ -31,7 +32,7 @@
     
     [self.categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
-        make.height.mas_equalTo(HGCategoryViewHeight);
+        make.height.mas_equalTo(self->_categoryView.height);
     }];
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.categoryView.mas_bottom);

@@ -11,15 +11,15 @@
 #import "HGSecondViewController.h"
 #import "HGThirdViewController.h"
 #import "HGCenterBaseTableView.h"
-#import "HGMessageViewController.h"
+
+//HGPersonalCenterExtend
 #import "HGSegmentedPageViewController.h"
+#import "HGPageViewController.h"
 
 static CGFloat const HeaderImageViewHeight = 240;
 
 @interface HGPersonalCenterViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, HGSegmentedPageViewControllerDelegate, HGPageViewControllerDelegate>
 @property (nonatomic, strong) HGCenterBaseTableView *tableView;
-@property (nonatomic, strong) UIView *footerView;
-@property (nonatomic, strong) UIButton *messageButton;
 @property (nonatomic, strong) UIImageView *headerImageView;
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) UILabel *nickNameLabel;
@@ -34,7 +34,7 @@ static CGFloat const HeaderImageViewHeight = 240;
     [super viewDidLoad];
     if (@available(iOS 11.0, *)) {
         [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
-    }else {
+    } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     //如果使用自定义的按钮去替换系统默认返回按钮，会出现滑动返回手势失效的情况
@@ -50,18 +50,12 @@ static CGFloat const HeaderImageViewHeight = 240;
 #pragma mark - Private Methods
 - (void)setupSubViews {
     [self.view insertSubview:self.tableView belowSubview:self.navigationBar];
-    [self.navigationBar addSubview:self.messageButton];
     [self.tableView addSubview:self.headerImageView];
     [self.headerImageView addSubview:self.avatarImageView];
     [self.headerImageView addSubview:self.nickNameLabel];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
-    }];
-    [self.messageButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(-10);
-        make.right.mas_equalTo(-15);
-        make.size.mas_equalTo(CGSizeMake(25, 25));
     }];
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.headerImageView);
@@ -73,11 +67,6 @@ static CGFloat const HeaderImageViewHeight = 240;
         make.width.mas_lessThanOrEqualTo(200);
         make.bottom.mas_equalTo(-40);
     }];
-}
-
-- (void)gotoMessagePage {
-    HGMessageViewController *vc = [[HGMessageViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)updateNavigationBarBackgroundColor {
@@ -186,6 +175,23 @@ static CGFloat const HeaderImageViewHeight = 240;
     return SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT;
 }
 
+//解决tableView在group类型下tableView头部和底部多余空白的问题
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return nil;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return CGFLOAT_MIN;
+}
+
 #pragma mark - HGSegmentedPageViewControllerDelegate
 - (void)segmentedPageViewControllerWillBeginDragging {
     self.tableView.scrollEnabled = NO;
@@ -203,24 +209,14 @@ static CGFloat const HeaderImageViewHeight = 240;
 #pragma mark - Lazy
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[HGCenterBaseTableView alloc] init];
+        _tableView = [[HGCenterBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.contentInset = UIEdgeInsetsMake(HeaderImageViewHeight, 0, 0, 0);//内容视图开始正常显示的坐标为(0, HeaderImageViewHeight)
+        _tableView.contentInset = UIEdgeInsetsMake(HeaderImageViewHeight, 0, 0, 0);
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
-}
-
-- (UIButton *)messageButton {
-    if (!_messageButton) {
-        _messageButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_messageButton setImage:[UIImage imageNamed:@"message"] forState:(UIControlStateNormal)];
-        _messageButton.adjustsImageWhenHighlighted = NO;
-        [_messageButton addTarget:self action:@selector(gotoMessagePage) forControlEvents:(UIControlEventTouchUpInside)];
-    }
-    return _messageButton;
 }
 
 - (UIImageView *)avatarImageView {
@@ -278,14 +274,6 @@ static CGFloat const HeaderImageViewHeight = 240;
         _segmentedPageViewController.delegate = self;
     }
     return _segmentedPageViewController;
-}
-
-- (UIView *)footerView {
-    if (!_footerView) {
-        _footerView = [[UIView alloc] init];
-        _footerView.frame = CGRectMake(0, 0, self.tableView.frame.size.width, SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT);
-    }
-    return _footerView;
 }
 
 @end

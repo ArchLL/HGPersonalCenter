@@ -1,6 +1,6 @@
 //
 //  HGBasePageViewController.m
-//  HGPersonalCenter
+//  HGPersonalCenterExtend
 //
 //  Created by Arch on 2017/6/16.
 //  Copyright © 2017年 mint_bin. All rights reserved.
@@ -14,6 +14,7 @@
 @end
 
 @implementation HGPageViewController
+
 #pragma mark - Private Methods
 - (void)makePageViewControllerScroll:(BOOL)canScroll {
     self.canScroll = canScroll;
@@ -23,7 +24,7 @@
     }
 }
 
-- (void)makePageViewControllerScrollToTop {
+- (void)makePageViewControllerScrollToTop{
     [self.scrollView setContentOffset:CGPointZero];
 }
 
