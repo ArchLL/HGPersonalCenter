@@ -14,11 +14,9 @@
 platform :ios, '8.0'
 
 target 'HGPersonalCenter' do
-
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
   pod 'HGPersonalCenterExtend', '~> 0.1.1'
-  
 end
 
 ```
@@ -33,8 +31,8 @@ end
 
 
 ## Usage
+主要代码：例如你的CenterViewController是`HGPersonalCenterViewController`
 
-例如你的CenterViewController是`HGPersonalCenterViewController`
 ```Objc
 在 HGPersonalCenterViewController 下进行如下操作：
 
@@ -51,7 +49,13 @@ end
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (@available(iOS 11.0, *)) {
+        [[UIScrollView appearance] setContentInsetAdjustmentBehavior:UIScrollViewContentInsetAdjustmentNever];
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }    
     self.navigationController.interactivePopGestureRecognizer.delegate = self;  
+    
     [self.tableView addSubview:self.headerImageView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -79,23 +83,6 @@ end
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT;
-}
-
-//解决tableView在group类型下tableView头部和底部多余空白的问题
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return nil;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    return nil;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return CGFLOAT_MIN;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return CGFLOAT_MIN;
 }
 
 #pragma mark - UIScrollViewDelegate
