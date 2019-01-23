@@ -255,14 +255,14 @@ static CGFloat const HeaderImageViewHeight = 240;
     if (!_segmentedPageViewController) {
         NSArray *titles = @[@"华盛顿", @"夏威夷", @"拉斯维加斯", @"纽约", @"西雅图", @"底特律", @"费城", @"旧金山", @"芝加哥"];
         NSMutableArray *controllers = [NSMutableArray array];
-        for (int i = 0; i < titles.count; i ++) {
+        for (int i = 0; i < titles.count; i++) {
             HGPageViewController *controller;
             if (i % 3 == 0) {
-                 controller = [[HGThirdViewController alloc] init];
+                controller = [[HGThirdViewController alloc] init];
             } else if (i % 2 == 0) {
-                 controller = [[HGSecondViewController alloc] init];
+                controller = [[HGSecondViewController alloc] init];
             } else {
-                 controller = [[HGFirstViewController alloc] init];
+                controller = [[HGFirstViewController alloc] init];
             }
             controller.delegate = self;
             [controllers addObject:controller];

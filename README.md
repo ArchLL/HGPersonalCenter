@@ -169,14 +169,14 @@ end
     if (!_segmentedPageViewController) {
         NSMutableArray *controllers = [NSMutableArray array];
         NSArray *titles = @[@"华盛顿", @"夏威夷", @"拉斯维加斯", @"纽约", @"西雅图", @"底特律", @"费城", @"旧金山", @"芝加哥"];
-        for (int i = 0; i < titles.count; i ++) {
+        for (int i = 0; i < titles.count; i++) {
             HGPageViewController *controller;
             if (i % 3 == 0) {
-                 controller = [[HGThirdViewController alloc] init];
+                controller = [[HGThirdViewController alloc] init];
             } else if (i % 2 == 0) {
-                 controller = [[HGSecondViewController alloc] init];
+                controller = [[HGSecondViewController alloc] init];
             } else {
-                 controller = [[HGFirstViewController alloc] init];
+                controller = [[HGFirstViewController alloc] init];
             }
             controller.delegate = self;
             [controllers addObject:controller];
@@ -197,7 +197,6 @@ end
 //解决categoryView在吸顶状态下，且collectionView的显示内容不满屏时，出现竖直方向滑动失效的问题
 _collectionView.alwaysBounceVertical = YES;
 ```
-
 
 ## Author
 
