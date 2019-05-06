@@ -16,7 +16,7 @@ platform :ios, '8.0'
 target 'HGPersonalCenter' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
-  pod 'HGPersonalCenterExtend', '~> 0.1.2'
+  pod 'HGPersonalCenterExtend', '~> 0.1.3'
 end
 
 ```
@@ -114,16 +114,16 @@ static CGFloat const HeaderImageViewHeight = 240;
     //处理下拉放大
     if (contentOffsetY <= -HeaderImageViewHeight) {
         if (self.isEnlarge) {
-            CGRect f = self.headerImageView.frame;
-            f.origin.y = contentOffsetY;
-            f.size.height = -contentOffsetY;
-            f.origin.x = (contentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight + SCREEN_WIDTH) / 2;
-            f.size.width = -contentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight;
-            self.headerImageView.frame = f;
+            CGRect frame = self.headerImageView.frame;
+            frame.origin.y = contentOffsetY;
+            frame.size.height = -contentOffsetY;
+            frame.origin.x = (contentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight + SCREEN_WIDTH) / 2;
+            frame.size.width = -contentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight;
+            self.headerImageView.frame = frame;
         } else {
             scrollView.bounces = NO;
         }
-    }else {
+    } else {
         scrollView.bounces = YES;
     }
 }
@@ -164,13 +164,13 @@ static CGFloat const HeaderImageViewHeight = 240;
 }
 
 /*设置segmentedPageViewController的categoryView以及pageViewControllers
- *这里可以对categoryView进行自定义，包括高度、背景颜色、字体颜色、字体大小、下划线高度和颜色等
+ *这里可以对categoryView进行自定义，包括分布方式(左、中、右)、高度、背景颜色、字体颜色、字体大小、下划线高度和颜色等
  *这里用到的pageViewController需要继承自HGPageViewController
  */
 - (HGSegmentedPageViewController *)segmentedPageViewController {
     if (!_segmentedPageViewController) {
         NSMutableArray *controllers = [NSMutableArray array];
-        NSArray *titles = @[@"华盛顿", @"夏威夷", @"拉斯维加斯", @"纽约", @"西雅图", @"底特律", @"费城", @"旧金山", @"芝加哥"];
+        NSArray *titles = @[@"主页", @"动态", @"关注", @"粉丝"];
         for (int i = 0; i < titles.count; i++) {
             HGPageViewController *controller;
             if (i % 3 == 0) {
@@ -186,8 +186,11 @@ static CGFloat const HeaderImageViewHeight = 240;
         _segmentedPageViewController = [[HGSegmentedPageViewController alloc] init];
         _segmentedPageViewController.pageViewControllers = controllers.copy;
         _segmentedPageViewController.categoryView.titles = titles;
+        _segmentedPageViewController.categoryView.alignment = HGCategoryViewAlignmentLeft;
         _segmentedPageViewController.categoryView.originalIndex = self.selectedIndex;
-        _segmentedPageViewController.categoryView.collectionView.backgroundColor = [UIColor yellowColor];
+        _segmentedPageViewController.categoryView.itemSpacing = 25;
+        _segmentedPageViewController.categoryView.backgroundColor = [UIColor yellowColor];
+        _segmentedPageViewController.categoryView.isEqualParts = YES;
         _segmentedPageViewController.delegate = self;
     }
     return _segmentedPageViewController;

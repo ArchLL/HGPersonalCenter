@@ -133,22 +133,22 @@ static CGFloat const HeaderImageViewHeight = 240;
      * 处理头部自定义背景视图 (如: 下拉放大)
      * 图片会被拉伸多出状态栏的高度
      */
-    if(contentOffsetY <= -HeaderImageViewHeight) {
+    if (contentOffsetY <= -HeaderImageViewHeight) {
         if (self.isEnlarge) {
-            CGRect f = self.headerImageView.frame;
+            CGRect frame = self.headerImageView.frame;
             //改变HeadImageView的frame
             //上下放大
-            f.origin.y = contentOffsetY;
-            f.size.height = -contentOffsetY;
+            frame.origin.y = contentOffsetY;
+            frame.size.height = -contentOffsetY;
             //左右放大
-            f.origin.x = (contentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight + SCREEN_WIDTH) / 2;
-            f.size.width = -contentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight;
+            frame.origin.x = (contentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight + SCREEN_WIDTH) / 2;
+            frame.size.width = -contentOffsetY * SCREEN_WIDTH / HeaderImageViewHeight;
             //改变头部视图的frame
-            self.headerImageView.frame = f;
-        }else{
+            self.headerImageView.frame = frame;
+        } else{
             scrollView.bounces = NO;
         }
-    }else {
+    } else {
         scrollView.bounces = YES;
     }
 }
@@ -253,8 +253,8 @@ static CGFloat const HeaderImageViewHeight = 240;
 
 - (HGSegmentedPageViewController *)segmentedPageViewController {
     if (!_segmentedPageViewController) {
-        NSArray *titles = @[@"华盛顿", @"夏威夷", @"拉斯维加斯", @"纽约", @"西雅图", @"底特律", @"费城", @"旧金山", @"芝加哥"];
         NSMutableArray *controllers = [NSMutableArray array];
+        NSArray *titles = @[@"主页", @"动态", @"关注", @"粉丝"];
         for (int i = 0; i < titles.count; i++) {
             HGPageViewController *controller;
             if (i % 3 == 0) {
@@ -268,10 +268,13 @@ static CGFloat const HeaderImageViewHeight = 240;
             [controllers addObject:controller];
         }
         _segmentedPageViewController = [[HGSegmentedPageViewController alloc] init];
-        _segmentedPageViewController.pageViewControllers = controllers.copy;
+        _segmentedPageViewController.pageViewControllers = controllers;
         _segmentedPageViewController.categoryView.titles = titles;
+        _segmentedPageViewController.categoryView.alignment = HGCategoryViewAlignmentLeft;
         _segmentedPageViewController.categoryView.originalIndex = self.selectedIndex;
-        _segmentedPageViewController.categoryView.collectionView.backgroundColor = [UIColor yellowColor];
+        _segmentedPageViewController.categoryView.itemSpacing = 25;
+        _segmentedPageViewController.categoryView.backgroundColor = [UIColor yellowColor];
+        _segmentedPageViewController.categoryView.isEqualParts = YES;
         _segmentedPageViewController.delegate = self;
     }
     return _segmentedPageViewController;
