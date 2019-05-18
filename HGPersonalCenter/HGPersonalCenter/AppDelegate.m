@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[GKNavigationBarConfigure sharedInstance] setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+        configure.gk_translationX = 15;
+        configure.gk_translationY = 20;
+        configure.gk_scaleX = 0.90;
+        configure.gk_scaleY = 0.92;
+    }];
+    
     return YES;
 }
 

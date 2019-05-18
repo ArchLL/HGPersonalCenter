@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.gk_navTitle = @"主页";
 }
 
 //进入个人中心

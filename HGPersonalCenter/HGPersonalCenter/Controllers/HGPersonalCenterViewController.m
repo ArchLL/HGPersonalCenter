@@ -11,20 +11,18 @@
 #import "HGSecondViewController.h"
 #import "HGThirdViewController.h"
 #import "HGCenterBaseTableView.h"
-
-//HGPersonalCenterExtend
-#import "HGSegmentedPageViewController.h"
-#import "HGPageViewController.h"
-
-static CGFloat const HeaderImageViewHeight = 240;
+#import "HGHeaderImageView.h"
+#import "HGMessageViewController.h"
+#import "HGPersonalCenterExtend.h"
 
 @interface HGPersonalCenterViewController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate, HGSegmentedPageViewControllerDelegate, HGPageViewControllerDelegate>
+@property (nonatomic, strong) UIButton *messageButton;
 @property (nonatomic, strong) HGCenterBaseTableView *tableView;
-@property (nonatomic, strong) UIImageView *headerImageView;
-@property (nonatomic, strong) UIImageView *avatarImageView;
-@property (nonatomic, strong) UILabel *nickNameLabel;
+@property (nonatomic, strong) HGHeaderImageView *headerImageView;
+@property (nonatomic, strong) UIView *footerView;
 @property (nonatomic, strong) HGSegmentedPageViewController *segmentedPageViewController;
 @property (nonatomic) BOOL cannotScroll;
+
 @end
 
 @implementation HGPersonalCenterViewController
@@ -37,49 +35,49 @@ static CGFloat const HeaderImageViewHeight = 240;
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    //如果使用自定义的按钮去替换系统默认返回按钮，会出现滑动返回手势失效的情况
-    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    
+    [self setupNavigationBar];
     [self setupSubViews];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self updateNavigationBarBackgroundColor];
+#pragma mark - Private Methods
+- (void)setupNavigationBar {
+    self.gk_navBarAlpha = 0;
+    UIBarButtonItem *messageItem = [[UIBarButtonItem alloc] initWithCustomView:self.messageButton];
+    self.gk_navRightBarButtonItem = messageItem;
 }
 
-#pragma mark - Private Methods
 - (void)setupSubViews {
-    [self.view insertSubview:self.tableView belowSubview:self.navigationBar];
+    [self.view addSubview:self.tableView];
     [self.tableView addSubview:self.headerImageView];
-    [self.headerImageView addSubview:self.avatarImageView];
-    [self.headerImageView addSubview:self.nickNameLabel];
+    [self addChildViewController:self.segmentedPageViewController];
+    [self.footerView addSubview:self.segmentedPageViewController.view];
+    [self.segmentedPageViewController didMoveToParentViewController:self];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.headerImageView);
-        make.size.mas_equalTo(CGSizeMake(80, 80));
-        make.bottom.mas_equalTo(-70);
-    }];
-    [self.nickNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.headerImageView);
-        make.width.mas_lessThanOrEqualTo(200);
-        make.bottom.mas_equalTo(-40);
+    [self.segmentedPageViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.footerView);
     }];
 }
 
-- (void)updateNavigationBarBackgroundColor {
+- (void)changeNavigationBarAlpha {
     CGFloat alpha = 0;
     CGFloat currentOffsetY = self.tableView.contentOffset.y;
-    if (-currentOffsetY <= NAVIGATION_BAR_HEIGHT) {
+    if (-currentOffsetY <= TOP_BAR_HEIGHT) {
         alpha = 1;
-    } else if ((-currentOffsetY > NAVIGATION_BAR_HEIGHT) && -currentOffsetY < HeaderImageViewHeight) {
-        alpha = (HeaderImageViewHeight + currentOffsetY) / (HeaderImageViewHeight - NAVIGATION_BAR_HEIGHT);
+    } else if ((-currentOffsetY > TOP_BAR_HEIGHT) && -currentOffsetY < HeaderImageViewHeight) {
+        alpha = (HeaderImageViewHeight + currentOffsetY) / (HeaderImageViewHeight - TOP_BAR_HEIGHT);
     } else {
         alpha = 0;
     }
-    self.navigationBar.backgroundColor = kRGBA(28, 162, 223, alpha);
+    self.gk_navBarAlpha = alpha;
+}
+
+- (void)viewMessage {
+    HGMessageViewController *vc = [[HGMessageViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -94,12 +92,12 @@ static CGFloat const HeaderImageViewHeight = 240;
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     //第一部分：处理导航栏
-    [self updateNavigationBarBackgroundColor];
+    [self changeNavigationBarAlpha];
     
     //第二部分：处理手势冲突
     CGFloat contentOffsetY = scrollView.contentOffset.y;
     //吸顶临界点(此时的临界点不是视觉感官上导航栏的底部，而是当前屏幕的顶部相对scrollViewContentView的位置)
-    CGFloat criticalPointOffsetY = [self.tableView rectForSection:0].origin.y - NAVIGATION_BAR_HEIGHT;
+    CGFloat criticalPointOffsetY = [self.tableView rectForSection:0].origin.y - TOP_BAR_HEIGHT;
     
     //利用contentOffset处理内外层scrollView的滑动冲突问题
     if (contentOffsetY >= criticalPointOffsetY) {
@@ -159,20 +157,12 @@ static CGFloat const HeaderImageViewHeight = 240;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [self addChildViewController:self.segmentedPageViewController];
-    [cell.contentView addSubview:self.segmentedPageViewController.view];
-    [self.segmentedPageViewController didMoveToParentViewController:self];
-    [self.segmentedPageViewController.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(cell.contentView);
-    }];
-    return cell;
+    return [UITableViewCell new];
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT;
+    return CGFLOAT_MIN;
 }
 
 //解决tableView在group类型下tableView头部和底部多余空白的问题
@@ -207,48 +197,45 @@ static CGFloat const HeaderImageViewHeight = 240;
 }
 
 #pragma mark - Lazy
+- (UIButton *)messageButton {
+    if (!_messageButton) {
+        _messageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_messageButton setTitle:@"消息" forState:UIControlStateNormal];
+        [_messageButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _messageButton.titleLabel.font = [UIFont systemFontOfSize:17];
+        [_messageButton addTarget:self action:@selector(viewMessage) forControlEvents:UIControlEventTouchUpInside];
+        [_messageButton sizeToFit];
+    }
+    return _messageButton;
+}
+
+- (HGHeaderImageView *)headerImageView {
+    if (!_headerImageView) {
+        _headerImageView = [[HGHeaderImageView alloc] initWithFrame:CGRectMake(0, -HeaderImageViewHeight, SCREEN_WIDTH, HeaderImageViewHeight)];
+    }
+    return _headerImageView;
+}
+
+- (UIView *)footerView {
+    if (!_footerView) {
+        //如果当前控制器存在TabBar/ToolBar, 还需要减去TabBarHeight/ToolBarHeight和SAFE_AREA_INSERTS_BOTTOM
+        _footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - TOP_BAR_HEIGHT)];
+    }
+    return _footerView;
+}
+
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[HGCenterBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.tableFooterView = self.footerView;
         _tableView.contentInset = UIEdgeInsetsMake(HeaderImageViewHeight, 0, 0, 0);
+        [_tableView setContentOffset:CGPointMake(0, -HeaderImageViewHeight)];
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _tableView;
-}
-
-- (UIImageView *)avatarImageView {
-    if (!_avatarImageView) {
-        _avatarImageView = [[UIImageView alloc] init];
-        _avatarImageView.image = [UIImage imageNamed:@"center_avatar.jpeg"];
-        _avatarImageView.userInteractionEnabled = YES;
-        _avatarImageView.layer.masksToBounds = YES;
-        _avatarImageView.layer.borderWidth = 1;
-        _avatarImageView.layer.borderColor = kRGBA(255, 253, 253, 1).CGColor;
-        _avatarImageView.layer.cornerRadius = 40;
-    }
-    return _avatarImageView;
-}
-
-- (UILabel *)nickNameLabel {
-    if (!_nickNameLabel) {
-        _nickNameLabel = [[UILabel alloc] init];
-        _nickNameLabel.font = [UIFont systemFontOfSize:16];
-        _nickNameLabel.textColor = [UIColor whiteColor];
-        _nickNameLabel.textAlignment = NSTextAlignmentCenter;
-        _nickNameLabel.text = @"下雪天";
-    }
-    return _nickNameLabel;
-}
-
-- (UIImageView *)headerImageView {
-    if (!_headerImageView) {
-        _headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -HeaderImageViewHeight, SCREEN_WIDTH, HeaderImageViewHeight)];
-        _headerImageView.image = [UIImage imageNamed:@"center_bg.jpg"];
-    }
-    return _headerImageView;
 }
 
 - (HGSegmentedPageViewController *)segmentedPageViewController {

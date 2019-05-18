@@ -17,6 +17,9 @@
 		A9F80B8821DF0113000334BE /* HGThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B6E21DF0113000334BE /* HGThirdViewController.m */; };
 		A9F80B8921DF0113000334BE /* HGSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B7021DF0113000334BE /* HGSecondViewController.m */; };
 		A9F80B9121DF0113000334BE /* HGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B8221DF0113000334BE /* HGHomeViewController.m */; };
+		A9FB4F2C228E9B1200525B36 /* HGDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FB4F2A228E9B1200525B36 /* HGDeviceHelper.m */; };
+		A9FB4F3B228EB92500525B36 /* HGMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FB4F3A228EB92500525B36 /* HGMessageViewController.m */; };
+		A9FB4F3F228EBB2800525B36 /* HGHeaderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FB4F3E228EBB2800525B36 /* HGHeaderImageView.m */; };
 		D24F5E2D1EF3D9CD0011AB07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E2C1EF3D9CD0011AB07 /* main.m */; };
 		D24F5E301EF3D9CD0011AB07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E2F1EF3D9CD0011AB07 /* AppDelegate.m */; };
 		D24F5E381EF3D9CD0011AB07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24F5E371EF3D9CD0011AB07 /* Assets.xcassets */; };
@@ -41,6 +44,13 @@
 		A9F80B7221DF0113000334BE /* HGThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGThirdViewController.h; sourceTree = "<group>"; };
 		A9F80B7421DF0113000334BE /* HGPersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGPersonalCenterViewController.h; sourceTree = "<group>"; };
 		A9F80B8221DF0113000334BE /* HGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGHomeViewController.m; sourceTree = "<group>"; };
+		A9FB4F2A228E9B1200525B36 /* HGDeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGDeviceHelper.m; sourceTree = "<group>"; };
+		A9FB4F2B228E9B1200525B36 /* HGDeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGDeviceHelper.h; sourceTree = "<group>"; };
+		A9FB4F2D228E9BE400525B36 /* HGMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGMacro.h; sourceTree = "<group>"; };
+		A9FB4F39228EB92500525B36 /* HGMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGMessageViewController.h; sourceTree = "<group>"; };
+		A9FB4F3A228EB92500525B36 /* HGMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGMessageViewController.m; sourceTree = "<group>"; };
+		A9FB4F3D228EBB2800525B36 /* HGHeaderImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HGHeaderImageView.h; sourceTree = "<group>"; };
+		A9FB4F3E228EBB2800525B36 /* HGHeaderImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HGHeaderImageView.m; sourceTree = "<group>"; };
 		D24F5E281EF3D9CD0011AB07 /* HGPersonalCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HGPersonalCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24F5E2C1EF3D9CD0011AB07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D24F5E2E1EF3D9CD0011AB07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +108,48 @@
 			path = PageViewControllers;
 			sourceTree = "<group>";
 		};
+		A9FB4F27228E980500525B36 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9FB4F28228E982F00525B36 /* BaseControllers */,
+				A9F80B6A21DF0113000334BE /* PageViewControllers */,
+				A9F80B6221DF0113000334BE /* HGHomeViewController.h */,
+				A9F80B8221DF0113000334BE /* HGHomeViewController.m */,
+				A9F80B7421DF0113000334BE /* HGPersonalCenterViewController.h */,
+				A9F80B6921DF0113000334BE /* HGPersonalCenterViewController.m */,
+				A9FB4F39228EB92500525B36 /* HGMessageViewController.h */,
+				A9FB4F3A228EB92500525B36 /* HGMessageViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A9FB4F28228E982F00525B36 /* BaseControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A9F80B6321DF0113000334BE /* HGBaseViewController.h */,
+				A9F80B6421DF0113000334BE /* HGBaseViewController.m */,
+			);
+			path = BaseControllers;
+			sourceTree = "<group>";
+		};
+		A9FB4F29228E9B1200525B36 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A9FB4F2A228E9B1200525B36 /* HGDeviceHelper.m */,
+				A9FB4F2B228E9B1200525B36 /* HGDeviceHelper.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		A9FB4F3C228EBAF000525B36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A9FB4F3D228EBB2800525B36 /* HGHeaderImageView.h */,
+				A9FB4F3E228EBB2800525B36 /* HGHeaderImageView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D24F5E1F1EF3D9CD0011AB07 = {
 			isa = PBXGroup;
 			children = (
@@ -119,13 +171,9 @@
 		D24F5E2A1EF3D9CD0011AB07 /* HGPersonalCenter */ = {
 			isa = PBXGroup;
 			children = (
-				A9F80B6321DF0113000334BE /* HGBaseViewController.h */,
-				A9F80B6421DF0113000334BE /* HGBaseViewController.m */,
-				A9F80B6221DF0113000334BE /* HGHomeViewController.h */,
-				A9F80B8221DF0113000334BE /* HGHomeViewController.m */,
-				A9F80B7421DF0113000334BE /* HGPersonalCenterViewController.h */,
-				A9F80B6921DF0113000334BE /* HGPersonalCenterViewController.m */,
-				A9F80B6A21DF0113000334BE /* PageViewControllers */,
+				A9FB4F29228E9B1200525B36 /* Tools */,
+				A9FB4F27228E980500525B36 /* Controllers */,
+				A9FB4F3C228EBAF000525B36 /* Views */,
 				D24F5E2B1EF3D9CD0011AB07 /* Supporting Files */,
 			);
 			path = HGPersonalCenter;
@@ -138,6 +186,7 @@
 				D24F5E3C1EF3D9CD0011AB07 /* Info.plist */,
 				D24F5E2E1EF3D9CD0011AB07 /* AppDelegate.h */,
 				D24F5E2F1EF3D9CD0011AB07 /* AppDelegate.m */,
+				A9FB4F2D228E9BE400525B36 /* HGMacro.h */,
 				53F1415C1F6BB05F00AB9BEF /* PrefixHeader.pch */,
 				A9E72A6B21E5CE4F008F7ACA /* Main.storyboard */,
 				D24F5E391EF3D9CD0011AB07 /* LaunchScreen.storyboard */,
@@ -157,6 +206,7 @@
 				D24F5E241EF3D9CD0011AB07 /* Sources */,
 				D24F5E251EF3D9CD0011AB07 /* Frameworks */,
 				D24F5E261EF3D9CD0011AB07 /* Resources */,
+				A30EAEF5BE177E55011AF215 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,7 +223,7 @@
 		D24F5E201EF3D9CD0011AB07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = mint_bin;
 				TargetAttributes = {
 					D24F5E271EF3D9CD0011AB07 = {
@@ -187,6 +237,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -214,6 +265,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A30EAEF5BE177E55011AF215 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HGPersonalCenter/Pods-HGPersonalCenter-resources.sh",
+				"${PODS_ROOT}/GKNavigationBarViewController/GKNavigationBarViewController/GKNavigationBarViewController.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GKNavigationBarViewController.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HGPersonalCenter/Pods-HGPersonalCenter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D925C69D94FFF40FCB2D437E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,10 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FB4F3F228EBB2800525B36 /* HGHeaderImageView.m in Sources */,
 				D24F5E301EF3D9CD0011AB07 /* AppDelegate.m in Sources */,
 				A9F80B8321DF0113000334BE /* HGBaseViewController.m in Sources */,
+				A9FB4F3B228EB92500525B36 /* HGMessageViewController.m in Sources */,
 				A9F80B8721DF0113000334BE /* HGFirstViewController.m in Sources */,
 				A9F80B8921DF0113000334BE /* HGSecondViewController.m in Sources */,
+				A9FB4F2C228E9B1200525B36 /* HGDeviceHelper.m in Sources */,
 				A9F80B8821DF0113000334BE /* HGThirdViewController.m in Sources */,
 				A9F80B9121DF0113000334BE /* HGHomeViewController.m in Sources */,
 				D24F5E2D1EF3D9CD0011AB07 /* main.m in Sources */,
@@ -276,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -286,6 +363,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -293,6 +371,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -331,6 +410,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -341,6 +421,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -348,6 +429,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HGBaseViewController : UIViewController
-@property (nonatomic, strong, readonly) UIView *navigationBar;
+NS_ASSUME_NONNULL_BEGIN
+
+@interface HGBaseViewController : GKNavigationBarViewController
+
 @end
+
+NS_ASSUME_NONNULL_END
