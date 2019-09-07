@@ -17,19 +17,14 @@
 @property (nonatomic, strong) HGCategoryView *categoryView;
 @property (nonatomic, strong) HGPopGestureCompatibleScrollView *scrollView;
 @property (nonatomic, strong) HGPageViewController *currentPageViewController;
-@property (nonatomic) NSInteger selectedIndex;
+@property (nonatomic) NSInteger currentPageIndex;
+@property (nonatomic) CGFloat whenBeginDraggingContentOffsetX;
 @end
 
 @implementation HGSegmentedPageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.currentPageViewController = self.pageViewControllers[self.categoryView.originalIndex];
-    self.selectedIndex = self.categoryView.originalIndex;
-    [self setupViews];
-}
-
-- (void)setupViews {
     [self.view addSubview:self.categoryView];
     [self.view addSubview:self.scrollView];
     
@@ -41,21 +36,48 @@
         make.top.equalTo(self.categoryView.mas_bottom);
         make.left.right.bottom.mas_equalTo(self.view);
     }];
-    [self.pageViewControllers enumerateObjectsUsingBlock:^(UIViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self addChildViewController:obj];
-        [self.scrollView addSubview:obj.view];
-        [obj didMoveToParentViewController:self];
-        [obj.view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(idx * kWidth);
-            make.top.width.height.equalTo(self.scrollView);
-        }];
+}
+
+#pragma mark - Public Methods
+- (void)makePageViewControllersScrollToTop {
+    [self.pageViewControllers enumerateObjectsUsingBlock:^(HGPageViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj scrollToTop];
+    }];
+}
+
+- (void)makePageViewControllersScrollState:(BOOL)canScroll {
+    [self.pageViewControllers enumerateObjectsUsingBlock:^(HGPageViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        obj.canScroll = canScroll;
     }];
 }
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.whenBeginDraggingContentOffsetX = scrollView.contentOffset.x;
     if ([self.delegate respondsToSelector:@selector(segmentedPageViewControllerWillBeginDragging)]) {
         [self.delegate segmentedPageViewControllerWillBeginDragging];
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat scale = scrollView.contentOffset.x / kWidth;
+    NSInteger leftPage = floor(scale);
+    NSInteger rightPage = ceil(scale);
+    
+    if (scrollView.contentOffset.x > self.whenBeginDraggingContentOffsetX) { //向右切换
+        if (leftPage == rightPage) {
+            leftPage = rightPage - 1;
+        }
+        if (rightPage < self.pageViewControllers.count) {
+            [self.categoryView scrollToTargetIndex:rightPage sourceIndex:leftPage percent:scale - leftPage];
+        }
+    } else { //向左切换
+        if (leftPage == rightPage) {
+            rightPage = leftPage + 1;
+        }
+        if (rightPage < self.pageViewControllers.count) {
+            [self.categoryView scrollToTargetIndex:leftPage sourceIndex:rightPage percent:1 - (scale - leftPage)];
+        }
     }
 }
 
@@ -67,24 +89,55 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSUInteger index = (NSUInteger)(self.scrollView.contentOffset.x / kWidth);
-    [self.categoryView changeItemToTargetIndex:index];
-    self.currentPageViewController = self.pageViewControllers[index];
-    self.selectedIndex = index;
+    self.currentPageIndex = index;
     if ([self.delegate respondsToSelector:@selector(segmentedPageViewControllerDidEndDeceleratingWithPageIndex:)]) {
         [self.delegate segmentedPageViewControllerDidEndDeceleratingWithPageIndex:index];
     }
+}
+
+#pragma mark - Setters
+- (void)setCurrentPageIndex:(NSInteger)currentPageIndex {
+    self.currentPageViewController = self.pageViewControllers[self.categoryView.originalIndex];
+}
+
+- (void)setPageViewControllers:(NSArray<HGPageViewController *> *)pageViewControllers {
+    if (self.pageViewControllers.count > 0) {
+        //remove pageViewControllers
+        [self.pageViewControllers enumerateObjectsUsingBlock:^(HGPageViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [obj willMoveToParentViewController:nil];
+            [obj.view removeFromSuperview];
+            [obj removeFromParentViewController];
+        }];
+    }
+    
+    _pageViewControllers = pageViewControllers;
+    
+    //add pageViewControllers
+    [self.pageViewControllers enumerateObjectsUsingBlock:^(HGPageViewController * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self addChildViewController:obj];
+        [self.scrollView addSubview:obj.view];
+        [obj didMoveToParentViewController:self];
+        [obj.view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(idx * kWidth);
+            make.top.width.height.equalTo(self.scrollView);
+        }];
+    }];
+    
+    self.scrollView.contentSize = CGSizeMake(kWidth * self.pageViewControllers.count, 0);
+    self.categoryView.userInteractionEnabled = YES;
+    self.currentPageIndex = self.categoryView.originalIndex;
 }
 
 #pragma mark - Getters
 - (HGCategoryView *)categoryView {
     if (!_categoryView) {
         _categoryView = [[HGCategoryView alloc] init];
+        _categoryView.userInteractionEnabled = NO;
         @weakify(self)
         _categoryView.selectedItemHelper = ^(NSUInteger index) {
             @strongify(self)
             [self.scrollView setContentOffset:CGPointMake(index * kWidth, 0) animated:NO];
-            self.currentPageViewController = self.pageViewControllers[index];
-            self.selectedIndex = index;
+            self.currentPageIndex = index;
         };
     }
     return _categoryView;
@@ -93,7 +146,6 @@
 - (HGPopGestureCompatibleScrollView *)scrollView {
     if (!_scrollView) {
         _scrollView = [[HGPopGestureCompatibleScrollView alloc] init];
-        _scrollView.contentSize = CGSizeMake(kWidth * self.pageViewControllers.count, 0);
         _scrollView.delegate = self;
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.pagingEnabled = YES;

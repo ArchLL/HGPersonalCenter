@@ -36,8 +36,11 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
+    
     [self setupNavigationBar];
     [self setupSubViews];
+    //可以在请求数据成功后设置/改变pageViewControllers, 但是要保证titles.count=pageViewControllers.count
+    [self setupPageViewControllers];
 }
 
 #pragma mark - Private Methods
@@ -62,6 +65,30 @@
     }];
 }
 
+- (void)setupPageViewControllers {
+    NSMutableArray *controllers = [NSMutableArray array];
+    NSArray *titles = @[@"主页", @"动态", @"关注", @"粉丝"];
+    for (int i = 0; i < titles.count; i++) {
+        HGPageViewController *controller;
+        if (i % 3 == 0) {
+            controller = [[HGThirdViewController alloc] init];
+        } else if (i % 2 == 0) {
+            controller = [[HGSecondViewController alloc] init];
+        } else {
+            controller = [[HGFirstViewController alloc] init];
+        }
+        controller.delegate = self;
+        [controllers addObject:controller];
+    }
+    _segmentedPageViewController.pageViewControllers = controllers;
+    _segmentedPageViewController.categoryView.titles = titles;
+    _segmentedPageViewController.categoryView.alignment = HGCategoryViewAlignmentLeft;
+    _segmentedPageViewController.categoryView.originalIndex = self.selectedIndex;
+    _segmentedPageViewController.categoryView.itemSpacing = 25;
+    _segmentedPageViewController.categoryView.backgroundColor = [UIColor yellowColor];
+    _segmentedPageViewController.categoryView.isEqualParts = YES;
+}
+
 - (void)changeNavigationBarAlpha {
     CGFloat alpha = 0;
     CGFloat currentOffsetY = self.tableView.contentOffset.y;
@@ -82,7 +109,7 @@
 
 #pragma mark - UIScrollViewDelegate
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
-    [self.segmentedPageViewController.currentPageViewController makePageViewControllerScrollToTop];
+    [self.segmentedPageViewController makePageViewControllersScrollToTop];
     return YES;
 }
 
@@ -109,7 +136,7 @@
         //“进入吸顶状态”以及“维持吸顶状态”
         self.cannotScroll = YES;
         scrollView.contentOffset = CGPointMake(0, criticalPointOffsetY);
-        [self.segmentedPageViewController.currentPageViewController makePageViewControllerScroll:YES];
+        [self.segmentedPageViewController makePageViewControllersScrollState:YES];
     } else {
         /*
          * 未达到临界点：
@@ -193,6 +220,7 @@
 
 #pragma mark - HGPageViewControllerDelegate
 - (void)pageViewControllerLeaveTop {
+    [self.segmentedPageViewController makePageViewControllersScrollToTop];
     self.cannotScroll = NO;
 }
 
@@ -240,28 +268,7 @@
 
 - (HGSegmentedPageViewController *)segmentedPageViewController {
     if (!_segmentedPageViewController) {
-        NSMutableArray *controllers = [NSMutableArray array];
-        NSArray *titles = @[@"主页", @"动态", @"关注", @"粉丝"];
-        for (int i = 0; i < titles.count; i++) {
-            HGPageViewController *controller;
-            if (i % 3 == 0) {
-                controller = [[HGThirdViewController alloc] init];
-            } else if (i % 2 == 0) {
-                controller = [[HGSecondViewController alloc] init];
-            } else {
-                controller = [[HGFirstViewController alloc] init];
-            }
-            controller.delegate = self;
-            [controllers addObject:controller];
-        }
         _segmentedPageViewController = [[HGSegmentedPageViewController alloc] init];
-        _segmentedPageViewController.pageViewControllers = controllers;
-        _segmentedPageViewController.categoryView.titles = titles;
-        _segmentedPageViewController.categoryView.alignment = HGCategoryViewAlignmentLeft;
-        _segmentedPageViewController.categoryView.originalIndex = self.selectedIndex;
-        _segmentedPageViewController.categoryView.itemSpacing = 25;
-        _segmentedPageViewController.categoryView.backgroundColor = [UIColor yellowColor];
-        _segmentedPageViewController.categoryView.isEqualParts = YES;
         _segmentedPageViewController.delegate = self;
     }
     return _segmentedPageViewController;

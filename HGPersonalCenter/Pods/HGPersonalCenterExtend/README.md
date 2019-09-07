@@ -20,7 +20,7 @@ HGPersonalCenterExtend is available through [CocoaPods](https://cocoapods.org). 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'HGPersonalCenterExtend', '~> 0.1.6'
+pod 'HGPersonalCenterExtend', '~> 0.1.9'
 ```
 
 ## Blog
@@ -29,10 +29,10 @@ pod 'HGPersonalCenterExtend', '~> 0.1.6'
 ## Main 
 1.使用Masonry方式布局；  
 2.解决外层和内层滚动视图的上下滑动冲突问题；  
-3.解决segmentedPageViewController的scrollView左右滚动和外层scrollView上下滑动不能互斥的问题等；
-4.优化侧滑返回；
-5.支持全屏返回；
-6.计划：优化操作体验、支持刷新、HGCategoryView支持更多样式)； 
+3.解决segmentedPageViewController的scrollView左右滚动和外层scrollView上下滑动不能互斥的问题等；  
+4.优化侧滑返回；  
+5.支持全屏返回；  
+6.计划：支持刷新、HGCategoryView支持更多样式)； 
 
 #### 如果想实现头部背景视图放大的效果，可关注我另一个库：[HGPersonalCenter](https://github.com/ArchLL/HGPersonalCenter)  
 
@@ -66,6 +66,8 @@ Example: HGPersonalCenterExtend/Example
     self.extendedLayoutIncludesOpaqueBars = YES;
 
     [self setupSubViews];
+    //可以在请求数据成功后设置/改变pageViewControllers, 但是要保证titles.count=pageViewControllers.count
+    [self setupPageViewControllers];
 }
 
 #pragma mark - Private Methods
@@ -83,6 +85,33 @@ Example: HGPersonalCenterExtend/Example
     }];
 }
 
+/**设置segmentedPageViewController的pageViewControllers和categoryView
+* 这里可以对categoryView进行自定义，包括分布方式(左、中、右)、高度、背景颜色、字体颜色、字体大小、下划线高度和颜色等
+* 这里用到的pageViewController需要继承自HGPageViewController
+*/
+- (void)setupPageViewControllers {
+    NSMutableArray *controllers = [NSMutableArray array];
+    NSArray *titles = @[@"主页", @"动态", @"关注", @"粉丝"];
+    for (int i = 0; i < titles.count; i++) {
+        HGPageViewController *controller;
+        if (i % 3 == 0) {
+            controller = [[HGThirdViewController alloc] init];
+        } else if (i % 2 == 0) {
+            controller = [[HGSecondViewController alloc] init];
+        } else {
+            controller = [[HGFirstViewController alloc] init];
+        }
+        controller.delegate = self;
+        [controllers addObject:controller];
+    }
+    _segmentedPageViewController.pageViewControllers = controllers;
+    _segmentedPageViewController.categoryView.titles = titles;
+    _segmentedPageViewController.categoryView.alignment = HGCategoryViewAlignmentLeft;
+    _segmentedPageViewController.categoryView.originalIndex = self.selectedIndex;
+    _segmentedPageViewController.categoryView.itemSpacing = 25;
+    _segmentedPageViewController.categoryView.backgroundColor = [UIColor yellowColor];
+}
+
 #pragma mark - UIScrollViewDelegate
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
     [self.segmentedPageViewController.currentPageViewController makePageViewControllerScrollToTop];
@@ -95,10 +124,10 @@ Example: HGPersonalCenterExtend/Example
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat contentOffsetY = scrollView.contentOffset.y;
     CGFloat criticalPointOffsetY = scrollView.contentSize.height - SCREEN_HEIGHT;
-    if (contentOffsetY >= criticalPointOffsetY) {
+    if (contentOffsetY - criticalPointOffsetY >= FLT_EPSILON) {
         self.cannotScroll = YES;
         scrollView.contentOffset = CGPointMake(0, criticalPointOffsetY);
-        [self.segmentedPageViewController.currentPageViewController makePageViewControllerScroll:YES];
+        [self.segmentedPageViewController makePageViewControllersScrollState:YES];
     } else {
         if (self.cannotScroll) {
             scrollView.contentOffset = CGPointMake(0, criticalPointOffsetY);
@@ -117,6 +146,7 @@ Example: HGPersonalCenterExtend/Example
 
 #pragma mark - HGPageViewControllerDelegate
 - (void)pageViewControllerLeaveTop {
+    [self.segmentedPageViewController makePageViewControllersScrollToTop];
     self.cannotScroll = NO;
 }
 
@@ -149,33 +179,9 @@ Example: HGPersonalCenterExtend/Example
     return _footerView;
 }
 
-/*设置segmentedPageViewController的categoryView以及pageViewControllers
-*这里可以对categoryView进行自定义，包括分布方式(左、中、右)、高度、背景颜色、字体颜色、字体大小、下划线高度和颜色等
-*这里用到的pageViewController需要继承自HGPageViewController
-*/
 - (HGSegmentedPageViewController *)segmentedPageViewController {
-    if (!_segmentedPageViewController) {
-        NSMutableArray *controllers = [NSMutableArray array];
-        NSArray *titles = @[@"主页", @"动态", @"关注", @"粉丝"];
-        for (int i = 0; i < titles.count; i++) {
-            HGPageViewController *controller;
-            if (i % 3 == 0) {
-            controller = [[HGThirdViewController alloc] init];
-        } else if (i % 2 == 0) {
-            controller = [[HGSecondViewController alloc] init];
-        } else {
-            controller = [[HGFirstViewController alloc] init];
-        }
-        controller.delegate = self;
-        [controllers addObject:controller];
-    }
+  if (!_segmentedPageViewController) {
     _segmentedPageViewController = [[HGSegmentedPageViewController alloc] init];
-    _segmentedPageViewController.pageViewControllers = controllers;
-    _segmentedPageViewController.categoryView.titles = titles;
-    _segmentedPageViewController.categoryView.alignment = HGCategoryViewAlignmentLeft;
-    _segmentedPageViewController.categoryView.originalIndex = self.selectedIndex;
-    _segmentedPageViewController.categoryView.itemSpacing = 25;
-    _segmentedPageViewController.categoryView.backgroundColor = [UIColor yellowColor];
     _segmentedPageViewController.delegate = self;
   }
   return _segmentedPageViewController;
