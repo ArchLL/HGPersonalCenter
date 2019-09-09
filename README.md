@@ -16,7 +16,7 @@ platform :ios, '8.0'
 target 'HGPersonalCenter' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
-  pod 'HGPersonalCenterExtend', '~> 0.1.9'
+  pod 'HGPersonalCenterExtend', '~> 1.0.1'
 end
 
 ```
@@ -32,6 +32,8 @@ end
 
 ## Usage
 请参照`HGPersonalCenterViewController`
+
+⚠️ Pods里面的第三方库可能不是最新版本，运行demo之前先执行`pod install`
 
 ⚠️ 如果你的pageViewController下的scrollView是UICollectionView类型，需要进行如下设置：
 ```Objc
