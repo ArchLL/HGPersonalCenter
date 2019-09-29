@@ -3,7 +3,7 @@ platform :ios, '8.0'
 
 target 'HGPersonalCenter' do
 
-  pod 'HGPersonalCenterExtend', '~> 1.0.1'
+  pod 'HGPersonalCenterExtend', '~> 1.0.2'
   pod 'GKNavigationBarViewController', '~> 2.3.4'
 
 end
