@@ -1,1 +1,1 @@
-../../../HGPersonalCenterExtend/HGPersonalCenterExtend/Classes/HGPersonalCenterExtend.h
+../../../HGPersonalCenterExtend/HGPersonalCenterExtend/HGPersonalCenterExtend.h

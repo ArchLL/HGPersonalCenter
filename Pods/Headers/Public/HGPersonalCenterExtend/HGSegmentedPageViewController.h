@@ -1,1 +1,1 @@
-../../../HGPersonalCenterExtend/HGPersonalCenterExtend/Classes/HGSegmentedPageViewController.h
+../../../HGPersonalCenterExtend/HGPersonalCenterExtend/HGSegmentedPageViewController.h

@@ -1,1 +1,1 @@
-../../../HGPersonalCenterExtend/HGPersonalCenterExtend/Classes/HGCenterBaseTableView.h
+../../../HGPersonalCenterExtend/HGPersonalCenterExtend/HGCenterBaseTableView.h

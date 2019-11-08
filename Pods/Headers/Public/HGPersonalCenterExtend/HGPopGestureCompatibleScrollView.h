@@ -1,1 +1,1 @@
-../../../HGPersonalCenterExtend/HGPersonalCenterExtend/Classes/HGPopGestureCompatibleScrollView.h
+../../../HGPersonalCenterExtend/HGPersonalCenterExtend/HGPopGestureCompatibleScrollView.h
