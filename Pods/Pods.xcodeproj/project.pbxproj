@@ -7,86 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		038F5599910941D16A9A2E8653E5A1D0 /* HGPersonalCenterExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = ECD1C36A970839DD0F2E88ADFCA40761 /* HGPersonalCenterExtend.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		065DC5B6142CE6AB3C83AF0B847AB84C /* UIBarButtonItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D61468E6A1E872B2D0AA17E09E74B8F /* UIBarButtonItem+GKCategory.m */; };
-		0696D6EC6FB126D42EB1A0430D5D5641 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1C6FF3084C82B12FA600D7E4A622AE /* GKPushTransitionAnimation.m */; };
-		0A142D4AB20C5D2E6A1BE84C7E2EA8CA /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 6ECD85F29DC05BF2D2DBE88E78DD218C /* MASUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		0E88BC78AA2E7C89A8F9DC719DB890A6 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F52ACFBF7D138215F5DD3922314CB5 /* NSArray+MASAdditions.m */; };
-		10F5893157D91A2215F704775A91C992 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5513AA3E6C6A45F22ABB8F704E430097 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		12C2CCF5680743F495F16EF09A308BFF /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = DE645EBE0C6C65A839ACCA339C54D847 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		12FA4F01CEBAE75A100301D05EC49BEC /* GKNavigationBarViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B32E49B455E0B8D85ECD3C25EB7C6C3 /* GKNavigationBarViewController-dummy.m */; };
-		18F8FA4123996B94F31BEC956A74ECC4 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 171A84D58AA8B55A713F6D507BFB1DD5 /* MASCompositeConstraint.m */; };
-		19E83EC34C6BE761A55F66A98217473A /* GKNavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2D2B763A00ADDFC7B828DABA60270A /* GKNavigationBarViewController.m */; };
-		1A68565711D25BCB4A8E893EC92825EC /* GKNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = BB98E267F98F831DD76A25988F47E2B8 /* GKNavigationBar.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1A97CA2B724483537F7BE83240A0862E /* HGPersonalCenterExtend-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 568DCFBC267248D7AE388918DB3FF975 /* HGPersonalCenterExtend-dummy.m */; };
-		220226BF0913CBC332B0F4BBD1FE0759 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1F180BED3A6C55E8A25D4EEA14E4F6 /* MASConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2B230375C8355EE67EF0BB40849DEC6F /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D018036CAC15F31A9C2C16739C1E56F /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2BF7C25A5F631A6B09474B9F35569896 /* GKCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0370AA0191A5226FFC15654B2F460826 /* GKCommon.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3689E5CE9467D9C08B317A67E5171261 /* GKNavigationBarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8823CAAE16A6004E7AD9031C84FAD965 /* GKNavigationBarViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3B5F7B752F0FFDB4A07D92EE3ED39DE9 /* HGPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FF01FE22CE83F6DE1DA22100373E6BA /* HGPageViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		484A78F4ADBDFCFC99638B9EB6B4327B /* HGPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39F0AA671DD2F3896419446B635F8077 /* HGPageViewController.m */; };
-		4A08FDC9BB66AC8ED85128231FD4037D /* UINavigationController+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = E0C36A5E37C964874DC6782E137466B7 /* UINavigationController+GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4B476A78FE53FED83EDE5C1DFFB8D989 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FF904C72312DD7F8D9E5B85165AFA39F /* MASViewConstraint.m */; };
-		52DE1D9A2E1770CFCC442002EBD71483 /* UINavigationItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5F6E2A823C15CED7E655D66B7B3A80 /* UINavigationItem+GKCategory.m */; };
-		56F5126E3EF1D7C8400692257C9E7F45 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D8654CE7FA2FB4BC5F35CFB0D2285BA /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		5B97D7395B6165F5BF7ECF0999903D08 /* HGCenterBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1828C50D5CB223AB7C42D43EB556C9 /* HGCenterBaseTableView.m */; };
-		5DCA8826F18D372C8ECF7BBD955A6609 /* HGPopGestureCompatibleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86637216E322F173076A661873A0CF40 /* HGPopGestureCompatibleScrollView.m */; };
-		5FA5A3E5A557E676EE672DEA1E890D35 /* HGSegmentedPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = A46218A14FB5D541F375B901ADE88839 /* HGSegmentedPageViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		610950D6D569158020365E0888B4C5AE /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 900C85A3FFFFBFADCFBCAACDD3ABE1D0 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		611FD6AEE1067579642037E38BF68CC3 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD2A484AAF0A1DD0FBA5D53AE5C2B20 /* ViewController+MASAdditions.m */; };
-		62A0DA5EB5F1C399B434F8EFCCF081D8 /* GKBaseTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2533F3D413799FCE7EA96FC78EB65E5A /* GKBaseTransitionAnimation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		62CAB02D781897D16F51383A5C77947C /* HGCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BEAAA125C464E79BD586000510B6E7 /* HGCategoryView.m */; };
-		62E810CFA0E2FEBD429222B19783DCE5 /* UIViewController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E21A591A1DD019391D0ED0C0FC51CAA3 /* UIViewController+GKRotation.m */; };
-		6304163F807241725A50ECEE68E2AD7E /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 335A4CF6A25951B2E2322229350F8007 /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		6EFBBBF1C388495A1616881452114DE0 /* GKPushTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 72D0E090844077D505075EE86E4516AD /* GKPushTransitionAnimation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7151C15D955AC8706411D1BD2F87020C /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 450B9AE50691F63A9EEFEE7E8F811852 /* MASConstraint.m */; };
-		81AE883A75976207D13572F5E010EC6F /* UIViewController+GKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = CCA862A1FAB73703EEB2EF1AE6519591 /* UIViewController+GKRotation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8C5BCE77FFC3AB1DE61A6FC03D7A0913 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39BF13F8D502A804E9A82064FDB0309C /* Masonry-dummy.m */; };
-		9337E7D20CC48FF30D053510EE11717E /* UIScrollView+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 12979835CEFB7428E6EBC5C11C837F33 /* UIScrollView+GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		96508A800ECF3B3AAFD68A14DE2121A4 /* HGSegmentedPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7194AC1B12D8C4A283804B8976FDD0F6 /* HGSegmentedPageViewController.m */; };
-		98E3A7EF542CE25AC71D3F7BE2D2F18E /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4801173E12393DF9EC13557B6DC9AD /* View+MASAdditions.m */; };
-		990A3C90666E401B1DA06CF2C2C3875E /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = CF19978E11353C4FB8FFF4318E460C46 /* MASViewAttribute.m */; };
-		9BFFC5D0823AA73C705D3984A1FD0A4C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FE5D15BFAF9720425EDB7103631042 /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		9F0420DB7084E3824C31CE2E1EDFD838 /* HGCategoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22348FA613787A447E71EA83EA8D14A5 /* HGCategoryView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A3C60618791F99A7A80127FA597524EE /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 619BFD8F798A804E3258E9DA3E18C672 /* MASConstraintMaker.m */; };
-		B0A45B69AFDFC68C6DBCD8572D0C6911 /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C410C08F736306FB0071663BC12335A0 /* GKPopTransitionAnimation.m */; };
-		B1F5B3B89C6B98365CC9473CE87C0703 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = F50919E55A7B4331A74CFE57F845236A /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B2C4F1E4F06E84BF06DDCD5DA1D159E7 /* UINavigationItem+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D3DC16159BECE7DF1B89CF81EA9C2E2 /* UINavigationItem+GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B50146371D8351C8D697555336B7A096 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 92474D3D2AD24CF417530E1455B1A9CD /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B5392AB4CCCD5B4034063D34D173C656 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 40A9187B1624632AE37F2E995AC84C2A /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B78A49BE311199CB39A4A4D16F17DEAE /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F3EEF7ADCF2C073717F4100D0EC559EA /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B8D79C02784C5D8F31EFB4F858E33B6A /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BE832C3ED405CAE1E18262C431EF41C /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0A142D4AB20C5D2E6A1BE84C7E2EA8CA /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = FB1D48448EFFF09BC2E8D44019F40960 /* MASUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0E88BC78AA2E7C89A8F9DC719DB890A6 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9398008435C9FA8AF65B12DD95095915 /* NSArray+MASAdditions.m */; };
+		10C226D92AFA2F0A2CEB1B94A10C3565 /* HGPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EA4508B67D415646B890B42B41A37D /* HGPageViewController.m */; };
+		10F5893157D91A2215F704775A91C992 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 617947338B22EE3E3A42FFC4C5A4E2B8 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		12C2CCF5680743F495F16EF09A308BFF /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = B4E3BFC675C7DB439589B53889613A0F /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		16EC246CA21BC19FD31AC427C2E3DEE5 /* HGPagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A32B1FE5830F8A8B614388C3D2D63FD2 /* HGPagesViewController.m */; };
+		18F8FA4123996B94F31BEC956A74ECC4 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 80785A647E4E321ABBCDE04309AC69BB /* MASCompositeConstraint.m */; };
+		1D5BE1B7BA9BA96826508E105A2FFC17 /* GKDelegateHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FB78F3A7E23F549768CEFDCB7245177 /* GKDelegateHandler.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		220226BF0913CBC332B0F4BBD1FE0759 /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 1693B826F525F8F7BC4316444671201A /* MASConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2249FAD817643F715378AE898313050F /* UIViewController+GKCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 091D0D791BD8BA8A79E3C93E1063B39E /* UIViewController+GKCapture.m */; };
+		28FF5AAFC78ADCA3237E187232BB0364 /* GKNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 610FA0CD12016C1CB098B959CAE95985 /* GKNavigationBar.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2B230375C8355EE67EF0BB40849DEC6F /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 839FEA9830D0C2B429EB8DF676533AB6 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		34D915ABCB0772D13F8278E4A4C5CE0C /* GKBaseTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 55D0BCA77D4863222EE91D52D005DC64 /* GKBaseTransitionAnimation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		350499D7177960139C9F1B27C5A51684 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E765C83A43C32B81A81EC48108669C0 /* UIViewController+GKCategory.m */; };
+		3C9080FF8B308416E072C05236C2401E /* UINavigationItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B1F0C5D344458476D4853A13896810 /* UINavigationItem+GKCategory.m */; };
+		3CA64E58CAB0B514C8D0FB284A52554C /* HGPersonalCenterExtend.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC1AB110F55937FFCFD84D8CDCB0BA5 /* HGPersonalCenterExtend.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3CF71DCCA5C0C990967C768EDA7D6528 /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = F96A95B77B9E3194D3ACDE31D0F0A859 /* GKNavigationBarConfigure.m */; };
+		3D5441E4F4504363EFC713DDC0C1C057 /* UIViewController+GKCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A8BFD22E37174702B76FD78EB5DBEE7 /* UIViewController+GKCapture.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3FA0E4C46071C8973010B36CEBDAE059 /* HGPopGestureCompatibleCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = E90B17EBEE52F5C40197EB5675DA32ED /* HGPopGestureCompatibleCollectionView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4380C7562AB4672B611BBA0FE1ADE568 /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D25B28BA40A095C189FAD7F9CA89C3 /* GKDelegateHandler.m */; };
+		43885216C3AB2AFC5C0D3667C665D9F0 /* UIViewController+GKRotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 33B426BEA5A86656503E484F2236FC8B /* UIViewController+GKRotation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		442BD22A0B5C8A02E3F424AF5F7E7C78 /* GKBaseTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C8FE0372074D589DA686BEC0C9AE5B /* GKBaseTransitionAnimation.m */; };
+		45442CF6A38D6E81A07E4C8ADDD08622 /* HGCenterBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02DFFA93B1041BC592B10BB0E01D5E5D /* HGCenterBaseTableView.m */; };
+		4B476A78FE53FED83EDE5C1DFFB8D989 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DC7F735BA55B5D1AFD1B89D426CFC5 /* MASViewConstraint.m */; };
+		502131E4C639412CE763C55C31C9546D /* GKNavigationBarViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 37C5C4A2D7A81AB39C12F7A6B55F9147 /* GKNavigationBarViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		550A62504EDAF8B5EC4786221662AF62 /* UINavigationItem+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 71A06FE0B83C900210C8593E94E47F63 /* UINavigationItem+GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		56F5126E3EF1D7C8400692257C9E7F45 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = E05EA70FCF1E13D1C496E31A1015DF1D /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		5876A67FBF97997ECACF8E2CEE6B4D06 /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C252F543D2DE7F43F5BA48A65FF98D3B /* GKPopTransitionAnimation.m */; };
+		610950D6D569158020365E0888B4C5AE /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D40AEBE99343E421AA8D167FEBB6EB /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		611FD6AEE1067579642037E38BF68CC3 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B74929C51DA0131685DFA69DB3B91DC /* ViewController+MASAdditions.m */; };
+		61615B1EEDE47C4F84A633344A7324BF /* HGSegmentedPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CDE3BD198BA7F7593978E7CDBEE1BC8 /* HGSegmentedPageViewController.m */; };
+		62CAB02D781897D16F51383A5C77947C /* HGCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 480CBE43F600DED1ADCCE81B0C41A5AF /* HGCategoryView.m */; };
+		6304163F807241725A50ECEE68E2AD7E /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 68461CBBBE7B63F647C319D00D48EB39 /* Masonry.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		6516D9163B7CA258A3075ADBEA7D6212 /* HGPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 95B39C07E0CC32B9C23BD4E8CB6C7928 /* HGPageViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		669E0629252591AFDCC0030C3120AD26 /* UIViewController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D128E2A605ABB60081AC4AF3A87B1E /* UIViewController+GKRotation.m */; };
+		7151C15D955AC8706411D1BD2F87020C /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E98FD1D6F0C24F21E13B03324C6D09 /* MASConstraint.m */; };
+		7753520E587E5345484A9BFEBC8CCD13 /* GKCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = DC189CE2582C57D11EFDE6470E7494FF /* GKCommon.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		77F4C5DA64A98ED942FF6D3A43431C84 /* UIScrollView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F805B679741BCF7CC3C27429E2793EBB /* UIScrollView+GKCategory.m */; };
+		81457A8FE9AAC0D7B52AE65B2BD0A46C /* GKNavigationBarViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A915F8D4D4014B80EB424D3FCA9F7D /* GKNavigationBarViewController-dummy.m */; };
+		858C021249F066E8268E39FCE21FB63B /* GKNavigationBarConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D02579481D2CDCBE79F4B4078A1D4E5 /* GKNavigationBarConfigure.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		864F464E36F2B59F37064EFE4FE3E7DB /* UINavigationController+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = C3A95F25046BC4FBBC2A4AD83D8AC09E /* UINavigationController+GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8C419F05AAE106B340BD973C73B5E239 /* GKNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 488D5EBA7A423F30C4E9CB99F0F3C211 /* GKNavigationBar.m */; };
+		8C5BCE77FFC3AB1DE61A6FC03D7A0913 /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1E21619C88B1CF0020DF858626302 /* Masonry-dummy.m */; };
+		9583E644D7E4A3BC58D72F0BA02B0205 /* GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 003C2A5E5AE570C647D56F17500246AC /* GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		98E3A7EF542CE25AC71D3F7BE2D2F18E /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7239181A58A9E66992B805C874376D0 /* View+MASAdditions.m */; };
+		990A3C90666E401B1DA06CF2C2C3875E /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B5411BBC5E568D9D2B9777DF9CA866 /* MASViewAttribute.m */; };
+		9BFFC5D0823AA73C705D3984A1FD0A4C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F84FE0C5B943F46167870177F6A8A26D /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		9DF345B2D17E40880DEEA074D95F1E7F /* UIBarButtonItem+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CD4C92EB6A8ECC45A6AA9EC0413DC60 /* UIBarButtonItem+GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9F0420DB7084E3824C31CE2E1EDFD838 /* HGCategoryView.h in Headers */ = {isa = PBXBuildFile; fileRef = 50C93782109A32FBBFBDCA3A5D846339 /* HGCategoryView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A12531E4FC62514C2FEDEC0B22D003A3 /* GKNavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0B718E44408974E929F5F008D23389D /* GKNavigationBarViewController.m */; };
+		A2A67A4FE629F7A2AC3A0FB11D771103 /* HGCenterBaseTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 95E3CF5DF0C81CDD2C83F2BF0656A4C2 /* HGCenterBaseTableView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A3C60618791F99A7A80127FA597524EE /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 10FF081F4205EC42341BF89131FF3CD2 /* MASConstraintMaker.m */; };
+		A516F7B307540835FA3F2B656C47C347 /* UIScrollView+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 20146D85F1D4C80B6C0EAA7D5752D8E3 /* UIScrollView+GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B1F5B3B89C6B98365CC9473CE87C0703 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 7136EEF821400AA11BB8C4768241828B /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B50146371D8351C8D697555336B7A096 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 03436A6278409653E8754EEB690686A8 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B5392AB4CCCD5B4034063D34D173C656 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 20FFA9F4FE709B40FE433F2D0B05D1C2 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B78A49BE311199CB39A4A4D16F17DEAE /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 45E4B9E546964A114C73A49D7411CD13 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B8D79C02784C5D8F31EFB4F858E33B6A /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3D03DB067BF8DC0CB30B87B595E708 /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B8E98177AD875435A05B33AEAB049464 /* HGPagesViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = C93399CD149FF48C31681BD2990B9A8B /* HGPagesViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B9EBCB791D9DD722CD1443F3ED76775F /* Pods-HGPersonalCenter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F2F9D6240A23D8BEBF1BC2D9A80A62B /* Pods-HGPersonalCenter-dummy.m */; };
-		C5C669774CE0C0D570FF0AE02FED9FA0 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 62EB333D3295AA801100C9EAD83B0103 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C7B165103EAD22B28085105026704C89 /* GKNavigationBarConfigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 60830745FC9DC12CB05CB67669003786 /* GKNavigationBarConfigure.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C7E9A9AE383F583789E5793D231086FB /* UIViewController+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = AC986D58EC66B726FBCA26B2E95557E0 /* UIViewController+GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CC444986D4851CB2D43F3D18F5A317D2 /* HGCenterBaseTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 21B90FB5F5A35C559ED5F4E4CA27F1CD /* HGCenterBaseTableView.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CCEF73EF027E5F517EBF6C076A95B85A /* UIScrollView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A92E8B503D98BB2D4B635A8D7A777E /* UIScrollView+GKCategory.m */; };
-		CD46404AF3B719F372BE848033A55D6E /* GKNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 75251F0329760FD354518879FB6C0FEB /* GKNavigationBar.m */; };
-		CDEF6170C58082DDCEF0D57489759D82 /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C21ADE04B05791F44DA62327BF3D94 /* GKDelegateHandler.m */; };
-		D0DB7EF5C69E4284843593D79245DB2D /* GKBaseTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 87BD30B8E950852D92C972D8DC644B0E /* GKBaseTransitionAnimation.m */; };
-		D6647D9576E4707C35F35398093BFC4D /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF8493BE394530B395D21C61D10C480 /* GKNavigationBarConfigure.m */; };
-		D8EB4895FB58F29F97D4958AE909C418 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CB405C8D4A4544A332605147D175AE5D /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D9F18516E69D353441E8A77ACE2171FA /* GKPopTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = DADC79932EA9CD43A7991EAFDF9AD105 /* GKPopTransitionAnimation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		DE2A6DE3D06E7BFCBF3D96BD009BFAF2 /* UINavigationController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CD76EEF07B75FB2CFD665C485538ECBF /* UINavigationController+GKCategory.m */; };
-		EAEEFFE304667161E95CDF3AE248B467 /* GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = AAE27C6D76589CD4C4B66C63E3E49C50 /* GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EBB783422CA80711A1301EDE0D116860 /* GKDelegateHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = ADD5EBEE56B1DA2773B4EDC9480E42A8 /* GKDelegateHandler.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		EF4E388BDA896FF3C43FA66FC2D83569 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C41A31BAE495231238B6FAEDFAB09478 /* UIViewController+GKCategory.m */; };
-		EF7FDD427B2EE9FE720CF07DECAC79F0 /* HGCategoryView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A960C48ACDDDFD9F909B906BF83ABA0 /* HGCategoryView-dummy.m */; };
-		F1EA007BD9273FCAB70EBFA2CAEF4B3C /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 38B142A3704D80C5BA592FB3B34B33C6 /* MASLayoutConstraint.m */; };
-		F513C46F1F9450D9976E219CA3A7AE46 /* UIBarButtonItem+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 0540DAF367A39A1AEEB53371E9EFCFBD /* UIBarButtonItem+GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F82FC8FCCC21A0ED992E53A494FD1EBB /* HGPopGestureCompatibleScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = F42D031896AAA79672795349C308D95F /* HGPopGestureCompatibleScrollView.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BB03ADD31170B59C6B1FC5EF3BFF7CAD /* GKPopTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0897817D8B3DED62459BB2D51164F990 /* GKPopTransitionAnimation.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		BFCDF2F80318A8B3F1090E9F31E48D81 /* HGSegmentedPageViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B4F535D30204080113AFE115F0E3915D /* HGSegmentedPageViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		C5C669774CE0C0D570FF0AE02FED9FA0 /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = CF14458B36C7DD5A1B177FD286B08713 /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		D142373254DD0CF62616CAF8807A6FCA /* HGPersonalCenterExtend-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 195AABE5697F131C4749A708E65B5F70 /* HGPersonalCenterExtend-dummy.m */; };
+		D8EB4895FB58F29F97D4958AE909C418 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 86CAD6071266C022C7D5AE9AC0CAF556 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DB453BBFE0CF1FB21F01FFB657F80E56 /* UIViewController+GKCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = D96D5BA1B467F1EB024EB5EC6BF89087 /* UIViewController+GKCategory.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		DDF6CDCD5673BCF7EF3BAF065EF85379 /* HGPopGestureCompatibleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEF81F7ADDADE47E7EA34DE9B0FDA6F /* HGPopGestureCompatibleCollectionView.m */; };
+		E185D576727F545394208C0E972D9176 /* UINavigationController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F9CD7F94507F86A12A71C92B427058CD /* UINavigationController+GKCategory.m */; };
+		E5DA0769E4954C975795E6826962EAF3 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8302508B80664A3DECAF6B04C57C5916 /* GKPushTransitionAnimation.m */; };
+		E7188D0F18E7A02806A39BD6C895F741 /* UIBarButtonItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E49A1E8B585F64C9F9A8A8F663E36C5 /* UIBarButtonItem+GKCategory.m */; };
+		EF7FDD427B2EE9FE720CF07DECAC79F0 /* HGCategoryView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD448F1B5A8090688664481CAF97EAE1 /* HGCategoryView-dummy.m */; };
+		F1EA007BD9273FCAB70EBFA2CAEF4B3C /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A280DE0D7C9DA4C2104DA4162D8163 /* MASLayoutConstraint.m */; };
+		FED8CE666744FD9CB0D00ED01559AA10 /* GKPushTransitionAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 138D661C793A084E2718787EEC822597 /* GKPushTransitionAnimation.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		394974C416F254CFF4544D4A8049C03E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
-			remoteInfo = Masonry;
-		};
-		6B9A6A1A643285DC6630E774CBBBDCED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -114,12 +111,12 @@
 			remoteGlobalIDString = C921F96150B62CC49CBC3AC767EB543F;
 			remoteInfo = GKNavigationBarViewController;
 		};
-		D627872903CCD3AD8B29D85A1BA8E93A /* PBXContainerItemProxy */ = {
+		D8755099548B2B67B521A3AA064932CE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FF2AA169A94910901058A8AADDAF9835;
-			remoteInfo = HGCategoryView;
+			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
+			remoteInfo = Masonry;
 		};
 		D8838E2B9FA42DF96816DC317D035150 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -128,108 +125,112 @@
 			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
 			remoteInfo = Masonry;
 		};
+		F943FB5CAA4EF0C7FB53564E75EB647F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF2AA169A94910901058A8AADDAF9835;
+			remoteInfo = HGCategoryView;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0370AA0191A5226FFC15654B2F460826 /* GKCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKCommon.h; path = GKNavigationBarViewController/GKCommon.h; sourceTree = "<group>"; };
-		0540DAF367A39A1AEEB53371E9EFCFBD /* UIBarButtonItem+GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+GKCategory.h"; path = "GKNavigationBarViewController/Category/UIBarButtonItem+GKCategory.h"; sourceTree = "<group>"; };
-		12979835CEFB7428E6EBC5C11C837F33 /* UIScrollView+GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+GKCategory.h"; path = "GKNavigationBarViewController/Category/UIScrollView+GKCategory.h"; sourceTree = "<group>"; };
-		14BEAAA125C464E79BD586000510B6E7 /* HGCategoryView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGCategoryView.m; path = HGCategoryView/HGCategoryView.m; sourceTree = "<group>"; };
-		171A84D58AA8B55A713F6D507BFB1DD5 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		003C2A5E5AE570C647D56F17500246AC /* GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKCategory.h; path = GKNavigationBarViewController/Category/GKCategory.h; sourceTree = "<group>"; };
+		02C6953613D45A00007FBB5F34F1B680 /* HGCategoryView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HGCategoryView.xcconfig; sourceTree = "<group>"; };
+		02DFFA93B1041BC592B10BB0E01D5E5D /* HGCenterBaseTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGCenterBaseTableView.m; path = HGPersonalCenterExtend/HGCenterBaseTableView.m; sourceTree = "<group>"; };
+		03436A6278409653E8754EEB690686A8 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		07EA4508B67D415646B890B42B41A37D /* HGPageViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGPageViewController.m; path = HGPersonalCenterExtend/HGPageViewController.m; sourceTree = "<group>"; };
+		0897817D8B3DED62459BB2D51164F990 /* GKPopTransitionAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKPopTransitionAnimation.h; path = GKNavigationBarViewController/TransitionAnimation/GKPopTransitionAnimation.h; sourceTree = "<group>"; };
+		091D0D791BD8BA8A79E3C93E1063B39E /* UIViewController+GKCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+GKCapture.m"; path = "GKNavigationBarViewController/TransitionAnimation/UIViewController+GKCapture.m"; sourceTree = "<group>"; };
+		0AC1AB110F55937FFCFD84D8CDCB0BA5 /* HGPersonalCenterExtend.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGPersonalCenterExtend.h; path = HGPersonalCenterExtend/HGPersonalCenterExtend.h; sourceTree = "<group>"; };
+		0ACA05073BDD868ECA68FAD794E5EE14 /* GKNavigationBarViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GKNavigationBarViewController.xcconfig; sourceTree = "<group>"; };
+		0B74929C51DA0131685DFA69DB3B91DC /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		0CD4C92EB6A8ECC45A6AA9EC0413DC60 /* UIBarButtonItem+GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+GKCategory.h"; path = "GKNavigationBarViewController/Category/UIBarButtonItem+GKCategory.h"; sourceTree = "<group>"; };
+		0E49A1E8B585F64C9F9A8A8F663E36C5 /* UIBarButtonItem+GKCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+GKCategory.m"; path = "GKNavigationBarViewController/Category/UIBarButtonItem+GKCategory.m"; sourceTree = "<group>"; };
+		0E765C83A43C32B81A81EC48108669C0 /* UIViewController+GKCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+GKCategory.m"; path = "GKNavigationBarViewController/Category/UIViewController+GKCategory.m"; sourceTree = "<group>"; };
+		10FF081F4205EC42341BF89131FF3CD2 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		138D661C793A084E2718787EEC822597 /* GKPushTransitionAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKPushTransitionAnimation.h; path = GKNavigationBarViewController/TransitionAnimation/GKPushTransitionAnimation.h; sourceTree = "<group>"; };
+		1693B826F525F8F7BC4316444671201A /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
+		195AABE5697F131C4749A708E65B5F70 /* HGPersonalCenterExtend-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HGPersonalCenterExtend-dummy.m"; sourceTree = "<group>"; };
+		1CDE3BD198BA7F7593978E7CDBEE1BC8 /* HGSegmentedPageViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGSegmentedPageViewController.m; path = HGPersonalCenterExtend/HGSegmentedPageViewController.m; sourceTree = "<group>"; };
 		1FFED36A657123030ABB700256D73F15 /* libMasonry.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMasonry.a; path = libMasonry.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		21B90FB5F5A35C559ED5F4E4CA27F1CD /* HGCenterBaseTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGCenterBaseTableView.h; path = HGPersonalCenterExtend/HGCenterBaseTableView.h; sourceTree = "<group>"; };
-		22348FA613787A447E71EA83EA8D14A5 /* HGCategoryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGCategoryView.h; path = HGCategoryView/HGCategoryView.h; sourceTree = "<group>"; };
-		2533F3D413799FCE7EA96FC78EB65E5A /* GKBaseTransitionAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKBaseTransitionAnimation.h; path = GKNavigationBarViewController/TransitionAnimation/GKBaseTransitionAnimation.h; sourceTree = "<group>"; };
-		25D3818CCAD2D222E4EF411BE7786F10 /* HGCategoryView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HGCategoryView.xcconfig; sourceTree = "<group>"; };
-		2FF01FE22CE83F6DE1DA22100373E6BA /* HGPageViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGPageViewController.h; path = HGPersonalCenterExtend/HGPageViewController.h; sourceTree = "<group>"; };
-		335A4CF6A25951B2E2322229350F8007 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
-		38B142A3704D80C5BA592FB3B34B33C6 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
-		39BF13F8D502A804E9A82064FDB0309C /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
-		39F0AA671DD2F3896419446B635F8077 /* HGPageViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGPageViewController.m; path = HGPersonalCenterExtend/HGPageViewController.m; sourceTree = "<group>"; };
-		3D3DC16159BECE7DF1B89CF81EA9C2E2 /* UINavigationItem+GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+GKCategory.h"; path = "GKNavigationBarViewController/Category/UINavigationItem+GKCategory.h"; sourceTree = "<group>"; };
-		40A9187B1624632AE37F2E995AC84C2A /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		450B9AE50691F63A9EEFEE7E8F811852 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
-		48DA174E4D351B91A6894FBC84B00970 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
-		5513AA3E6C6A45F22ABB8F704E430097 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
-		568DCFBC267248D7AE388918DB3FF975 /* HGPersonalCenterExtend-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HGPersonalCenterExtend-dummy.m"; sourceTree = "<group>"; };
-		5B32E49B455E0B8D85ECD3C25EB7C6C3 /* GKNavigationBarViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GKNavigationBarViewController-dummy.m"; sourceTree = "<group>"; };
-		5F0DD3659D47BCFF2184DAE805858E3C /* HGPersonalCenterExtend-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HGPersonalCenterExtend-prefix.pch"; sourceTree = "<group>"; };
-		5F4801173E12393DF9EC13557B6DC9AD /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
-		6071C1C51F8447452BF9E6008B2D1D2C /* GKNavigationBarViewController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GKNavigationBarViewController.bundle; path = GKNavigationBarViewController/GKNavigationBarViewController.bundle; sourceTree = "<group>"; };
-		60830745FC9DC12CB05CB67669003786 /* GKNavigationBarConfigure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKNavigationBarConfigure.h; path = GKNavigationBarViewController/GKNavigationBarConfigure.h; sourceTree = "<group>"; };
-		619BFD8F798A804E3258E9DA3E18C672 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		20146D85F1D4C80B6C0EAA7D5752D8E3 /* UIScrollView+GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+GKCategory.h"; path = "GKNavigationBarViewController/Category/UIScrollView+GKCategory.h"; sourceTree = "<group>"; };
+		20FFA9F4FE709B40FE433F2D0B05D1C2 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		2B0CA33AB9F3659A0C50B25551920B27 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
+		31B5411BBC5E568D9D2B9777DF9CA866 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
+		33B426BEA5A86656503E484F2236FC8B /* UIViewController+GKRotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+GKRotation.h"; path = "GKNavigationBarViewController/Category/UIViewController+GKRotation.h"; sourceTree = "<group>"; };
+		37C5C4A2D7A81AB39C12F7A6B55F9147 /* GKNavigationBarViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKNavigationBarViewController.h; path = GKNavigationBarViewController/GKNavigationBarViewController.h; sourceTree = "<group>"; };
+		3B3D03DB067BF8DC0CB30B87B595E708 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
+		45E4B9E546964A114C73A49D7411CD13 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		480CBE43F600DED1ADCCE81B0C41A5AF /* HGCategoryView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGCategoryView.m; path = HGCategoryView/HGCategoryView.m; sourceTree = "<group>"; };
+		488D5EBA7A423F30C4E9CB99F0F3C211 /* GKNavigationBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKNavigationBar.m; path = GKNavigationBarViewController/GKNavigationBar.m; sourceTree = "<group>"; };
+		50C93782109A32FBBFBDCA3A5D846339 /* HGCategoryView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGCategoryView.h; path = HGCategoryView/HGCategoryView.h; sourceTree = "<group>"; };
+		55D0BCA77D4863222EE91D52D005DC64 /* GKBaseTransitionAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKBaseTransitionAnimation.h; path = GKNavigationBarViewController/TransitionAnimation/GKBaseTransitionAnimation.h; sourceTree = "<group>"; };
+		5B88AF1EF150DB0C3371E01A7E47C97D /* GKNavigationBarViewController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GKNavigationBarViewController.bundle; path = GKNavigationBarViewController/GKNavigationBarViewController.bundle; sourceTree = "<group>"; };
+		5D02579481D2CDCBE79F4B4078A1D4E5 /* GKNavigationBarConfigure.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKNavigationBarConfigure.h; path = GKNavigationBarViewController/GKNavigationBarConfigure.h; sourceTree = "<group>"; };
+		610FA0CD12016C1CB098B959CAE95985 /* GKNavigationBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKNavigationBar.h; path = GKNavigationBarViewController/GKNavigationBar.h; sourceTree = "<group>"; };
+		617947338B22EE3E3A42FFC4C5A4E2B8 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		620D6E66D60CCD6DE607F6EA7B7B9B5B /* libPods-HGPersonalCenter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-HGPersonalCenter.a"; path = "libPods-HGPersonalCenter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		62EB333D3295AA801100C9EAD83B0103 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		63D40AEBE99343E421AA8D167FEBB6EB /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		66B1E21619C88B1CF0020DF858626302 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		67E1FDC11FD4AB5327B241068745817C /* Pods-HGPersonalCenter-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HGPersonalCenter-resources.sh"; sourceTree = "<group>"; };
-		6A1828C50D5CB223AB7C42D43EB556C9 /* HGCenterBaseTableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGCenterBaseTableView.m; path = HGPersonalCenterExtend/HGCenterBaseTableView.m; sourceTree = "<group>"; };
-		6A960C48ACDDDFD9F909B906BF83ABA0 /* HGCategoryView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HGCategoryView-dummy.m"; sourceTree = "<group>"; };
-		6D018036CAC15F31A9C2C16739C1E56F /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
-		6ECD85F29DC05BF2D2DBE88E78DD218C /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
-		7194AC1B12D8C4A283804B8976FDD0F6 /* HGSegmentedPageViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGSegmentedPageViewController.m; path = HGPersonalCenterExtend/HGSegmentedPageViewController.m; sourceTree = "<group>"; };
-		72D0E090844077D505075EE86E4516AD /* GKPushTransitionAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKPushTransitionAnimation.h; path = GKNavigationBarViewController/TransitionAnimation/GKPushTransitionAnimation.h; sourceTree = "<group>"; };
-		75251F0329760FD354518879FB6C0FEB /* GKNavigationBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKNavigationBar.m; path = GKNavigationBarViewController/GKNavigationBar.m; sourceTree = "<group>"; };
+		68461CBBBE7B63F647C319D00D48EB39 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
+		7136EEF821400AA11BB8C4768241828B /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		71A06FE0B83C900210C8593E94E47F63 /* UINavigationItem+GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+GKCategory.h"; path = "GKNavigationBarViewController/Category/UINavigationItem+GKCategory.h"; sourceTree = "<group>"; };
 		75560DCB04D169046DB7B7F7201C3BA6 /* Pods-HGPersonalCenter-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HGPersonalCenter-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7CDBF602B06E0F8BF6C8D5B41D5F1B8F /* HGCategoryView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HGCategoryView-prefix.pch"; sourceTree = "<group>"; };
-		7D8654CE7FA2FB4BC5F35CFB0D2285BA /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		86637216E322F173076A661873A0CF40 /* HGPopGestureCompatibleScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGPopGestureCompatibleScrollView.m; path = HGPersonalCenterExtend/HGPopGestureCompatibleScrollView.m; sourceTree = "<group>"; };
-		87BD30B8E950852D92C972D8DC644B0E /* GKBaseTransitionAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKBaseTransitionAnimation.m; path = GKNavigationBarViewController/TransitionAnimation/GKBaseTransitionAnimation.m; sourceTree = "<group>"; };
-		8823CAAE16A6004E7AD9031C84FAD965 /* GKNavigationBarViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKNavigationBarViewController.h; path = GKNavigationBarViewController/GKNavigationBarViewController.h; sourceTree = "<group>"; };
-		8BE832C3ED405CAE1E18262C431EF41C /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
-		8C5F6E2A823C15CED7E655D66B7B3A80 /* UINavigationItem+GKCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+GKCategory.m"; path = "GKNavigationBarViewController/Category/UINavigationItem+GKCategory.m"; sourceTree = "<group>"; };
+		7A8BFD22E37174702B76FD78EB5DBEE7 /* UIViewController+GKCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+GKCapture.h"; path = "GKNavigationBarViewController/TransitionAnimation/UIViewController+GKCapture.h"; sourceTree = "<group>"; };
+		7D2E8ADC06691E22265A3C9EF852A87E /* HGCategoryView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HGCategoryView-prefix.pch"; sourceTree = "<group>"; };
+		80785A647E4E321ABBCDE04309AC69BB /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
+		8302508B80664A3DECAF6B04C57C5916 /* GKPushTransitionAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKPushTransitionAnimation.m; path = GKNavigationBarViewController/TransitionAnimation/GKPushTransitionAnimation.m; sourceTree = "<group>"; };
+		839FEA9830D0C2B429EB8DF676533AB6 /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
+		86B1F0C5D344458476D4853A13896810 /* UINavigationItem+GKCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+GKCategory.m"; path = "GKNavigationBarViewController/Category/UINavigationItem+GKCategory.m"; sourceTree = "<group>"; };
+		86CAD6071266C022C7D5AE9AC0CAF556 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		88DC7F735BA55B5D1AFD1B89D426CFC5 /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 		8F2F9D6240A23D8BEBF1BC2D9A80A62B /* Pods-HGPersonalCenter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HGPersonalCenter-dummy.m"; sourceTree = "<group>"; };
-		900C85A3FFFFBFADCFBCAACDD3ABE1D0 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
-		92474D3D2AD24CF417530E1455B1A9CD /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+MASDebugAdditions.h"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
-		96364BFF8B0402301E2672C90C9F18DB /* GKNavigationBarViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GKNavigationBarViewController.xcconfig; sourceTree = "<group>"; };
-		9D61468E6A1E872B2D0AA17E09E74B8F /* UIBarButtonItem+GKCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+GKCategory.m"; path = "GKNavigationBarViewController/Category/UIBarButtonItem+GKCategory.m"; sourceTree = "<group>"; };
+		8FB78F3A7E23F549768CEFDCB7245177 /* GKDelegateHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKDelegateHandler.h; path = GKNavigationBarViewController/TransitionAnimation/GKDelegateHandler.h; sourceTree = "<group>"; };
+		9398008435C9FA8AF65B12DD95095915 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		95B39C07E0CC32B9C23BD4E8CB6C7928 /* HGPageViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGPageViewController.h; path = HGPersonalCenterExtend/HGPageViewController.h; sourceTree = "<group>"; };
+		95E3CF5DF0C81CDD2C83F2BF0656A4C2 /* HGCenterBaseTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGCenterBaseTableView.h; path = HGPersonalCenterExtend/HGCenterBaseTableView.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0A2C8550D01F07F0C1A0C8EACD22E6E /* GKNavigationBarViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GKNavigationBarViewController-prefix.pch"; sourceTree = "<group>"; };
-		A46218A14FB5D541F375B901ADE88839 /* HGSegmentedPageViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGSegmentedPageViewController.h; path = HGPersonalCenterExtend/HGSegmentedPageViewController.h; sourceTree = "<group>"; };
+		A32B1FE5830F8A8B614388C3D2D63FD2 /* HGPagesViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGPagesViewController.m; path = HGPersonalCenterExtend/HGPagesViewController.m; sourceTree = "<group>"; };
+		A7C8FE0372074D589DA686BEC0C9AE5B /* GKBaseTransitionAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKBaseTransitionAnimation.m; path = GKNavigationBarViewController/TransitionAnimation/GKBaseTransitionAnimation.m; sourceTree = "<group>"; };
 		A7C9DA2E6AB8D35F801B547420FCE6A6 /* Pods-HGPersonalCenter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HGPersonalCenter.debug.xcconfig"; sourceTree = "<group>"; };
-		AAE27C6D76589CD4C4B66C63E3E49C50 /* GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKCategory.h; path = GKNavigationBarViewController/Category/GKCategory.h; sourceTree = "<group>"; };
-		AB1C6FF3084C82B12FA600D7E4A622AE /* GKPushTransitionAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKPushTransitionAnimation.m; path = GKNavigationBarViewController/TransitionAnimation/GKPushTransitionAnimation.m; sourceTree = "<group>"; };
-		AC986D58EC66B726FBCA26B2E95557E0 /* UIViewController+GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+GKCategory.h"; path = "GKNavigationBarViewController/Category/UIViewController+GKCategory.h"; sourceTree = "<group>"; };
-		ADD5EBEE56B1DA2773B4EDC9480E42A8 /* GKDelegateHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKDelegateHandler.h; path = GKNavigationBarViewController/TransitionAnimation/GKDelegateHandler.h; sourceTree = "<group>"; };
-		ADF8493BE394530B395D21C61D10C480 /* GKNavigationBarConfigure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKNavigationBarConfigure.m; path = GKNavigationBarViewController/GKNavigationBarConfigure.m; sourceTree = "<group>"; };
+		B4D128E2A605ABB60081AC4AF3A87B1E /* UIViewController+GKRotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+GKRotation.m"; path = "GKNavigationBarViewController/Category/UIViewController+GKRotation.m"; sourceTree = "<group>"; };
+		B4E3BFC675C7DB439589B53889613A0F /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
+		B4F535D30204080113AFE115F0E3915D /* HGSegmentedPageViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGSegmentedPageViewController.h; path = HGPersonalCenterExtend/HGSegmentedPageViewController.h; sourceTree = "<group>"; };
+		B51FA11591A6B7FE45958517B7759E06 /* HGPersonalCenterExtend.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HGPersonalCenterExtend.xcconfig; sourceTree = "<group>"; };
 		B5966A503DCF21D96973C741F7AD322D /* Pods-HGPersonalCenter-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HGPersonalCenter-acknowledgements.plist"; sourceTree = "<group>"; };
 		B654FAA9517D352CD7A8A5A91419BA9E /* libGKNavigationBarViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGKNavigationBarViewController.a; path = libGKNavigationBarViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8F52ACFBF7D138215F5DD3922314CB5 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
-		BB98E267F98F831DD76A25988F47E2B8 /* GKNavigationBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKNavigationBar.h; path = GKNavigationBarViewController/GKNavigationBar.h; sourceTree = "<group>"; };
-		BE75FD9BE415E9C54AC3CF71F809F15E /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
-		C03998B51A618D5BB5A5B011EC9A2037 /* HGPersonalCenterExtend.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HGPersonalCenterExtend.xcconfig; sourceTree = "<group>"; };
-		C410C08F736306FB0071663BC12335A0 /* GKPopTransitionAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKPopTransitionAnimation.m; path = GKNavigationBarViewController/TransitionAnimation/GKPopTransitionAnimation.m; sourceTree = "<group>"; };
-		C41A31BAE495231238B6FAEDFAB09478 /* UIViewController+GKCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+GKCategory.m"; path = "GKNavigationBarViewController/Category/UIViewController+GKCategory.m"; sourceTree = "<group>"; };
-		C4C21ADE04B05791F44DA62327BF3D94 /* GKDelegateHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKDelegateHandler.m; path = GKNavigationBarViewController/TransitionAnimation/GKDelegateHandler.m; sourceTree = "<group>"; };
-		CB405C8D4A4544A332605147D175AE5D /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
-		CCA862A1FAB73703EEB2EF1AE6519591 /* UIViewController+GKRotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+GKRotation.h"; path = "GKNavigationBarViewController/Category/UIViewController+GKRotation.h"; sourceTree = "<group>"; };
-		CCD2A484AAF0A1DD0FBA5D53AE5C2B20 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
-		CD76EEF07B75FB2CFD665C485538ECBF /* UINavigationController+GKCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+GKCategory.m"; path = "GKNavigationBarViewController/Category/UINavigationController+GKCategory.m"; sourceTree = "<group>"; };
-		CF19978E11353C4FB8FFF4318E460C46 /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
-		DA2D2B763A00ADDFC7B828DABA60270A /* GKNavigationBarViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKNavigationBarViewController.m; path = GKNavigationBarViewController/GKNavigationBarViewController.m; sourceTree = "<group>"; };
-		DADC79932EA9CD43A7991EAFDF9AD105 /* GKPopTransitionAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKPopTransitionAnimation.h; path = GKNavigationBarViewController/TransitionAnimation/GKPopTransitionAnimation.h; sourceTree = "<group>"; };
-		DE645EBE0C6C65A839ACCA339C54D847 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
-		E0C36A5E37C964874DC6782E137466B7 /* UINavigationController+GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+GKCategory.h"; path = "GKNavigationBarViewController/Category/UINavigationController+GKCategory.h"; sourceTree = "<group>"; };
-		E21A591A1DD019391D0ED0C0FC51CAA3 /* UIViewController+GKRotation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+GKRotation.m"; path = "GKNavigationBarViewController/Category/UIViewController+GKRotation.m"; sourceTree = "<group>"; };
+		BBEF9BE143B190480D716FC22FBBDDB1 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
+		C252F543D2DE7F43F5BA48A65FF98D3B /* GKPopTransitionAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKPopTransitionAnimation.m; path = GKNavigationBarViewController/TransitionAnimation/GKPopTransitionAnimation.m; sourceTree = "<group>"; };
+		C3A95F25046BC4FBBC2A4AD83D8AC09E /* UINavigationController+GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+GKCategory.h"; path = "GKNavigationBarViewController/Category/UINavigationController+GKCategory.h"; sourceTree = "<group>"; };
+		C6A915F8D4D4014B80EB424D3FCA9F7D /* GKNavigationBarViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GKNavigationBarViewController-dummy.m"; sourceTree = "<group>"; };
+		C93399CD149FF48C31681BD2990B9A8B /* HGPagesViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGPagesViewController.h; path = HGPersonalCenterExtend/HGPagesViewController.h; sourceTree = "<group>"; };
+		CEEF81F7ADDADE47E7EA34DE9B0FDA6F /* HGPopGestureCompatibleCollectionView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HGPopGestureCompatibleCollectionView.m; path = HGPersonalCenterExtend/HGPopGestureCompatibleCollectionView.m; sourceTree = "<group>"; };
+		CF14458B36C7DD5A1B177FD286B08713 /* View+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASAdditions.h"; path = "Masonry/View+MASAdditions.h"; sourceTree = "<group>"; };
+		D0A280DE0D7C9DA4C2104DA4162D8163 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
+		D4D25B28BA40A095C189FAD7F9CA89C3 /* GKDelegateHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKDelegateHandler.m; path = GKNavigationBarViewController/TransitionAnimation/GKDelegateHandler.m; sourceTree = "<group>"; };
+		D7239181A58A9E66992B805C874376D0 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
+		D96D5BA1B467F1EB024EB5EC6BF89087 /* UIViewController+GKCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+GKCategory.h"; path = "GKNavigationBarViewController/Category/UIViewController+GKCategory.h"; sourceTree = "<group>"; };
+		DC189CE2582C57D11EFDE6470E7494FF /* GKCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GKCommon.h; path = GKNavigationBarViewController/GKCommon.h; sourceTree = "<group>"; };
+		DD448F1B5A8090688664481CAF97EAE1 /* HGCategoryView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HGCategoryView-dummy.m"; sourceTree = "<group>"; };
+		E05EA70FCF1E13D1C496E31A1015DF1D /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		E52333369785719DCB518D594ED89352 /* libHGPersonalCenterExtend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHGPersonalCenterExtend.a; path = libHGPersonalCenterExtend.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7A92E8B503D98BB2D4B635A8D7A777E /* UIScrollView+GKCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+GKCategory.m"; path = "GKNavigationBarViewController/Category/UIScrollView+GKCategory.m"; sourceTree = "<group>"; };
-		EA1F180BED3A6C55E8A25D4EEA14E4F6 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
+		E6E98FD1D6F0C24F21E13B03324C6D09 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
+		E9021B87C73C043D6165A57CDCB2B9BB /* GKNavigationBarViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GKNavigationBarViewController-prefix.pch"; sourceTree = "<group>"; };
+		E90B17EBEE52F5C40197EB5675DA32ED /* HGPopGestureCompatibleCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGPopGestureCompatibleCollectionView.h; path = HGPersonalCenterExtend/HGPopGestureCompatibleCollectionView.h; sourceTree = "<group>"; };
 		EA446B25CBCA771EDC9D65A7080C3D21 /* libHGCategoryView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libHGCategoryView.a; path = libHGCategoryView.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECD1C36A970839DD0F2E88ADFCA40761 /* HGPersonalCenterExtend.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGPersonalCenterExtend.h; path = HGPersonalCenterExtend/HGPersonalCenterExtend.h; sourceTree = "<group>"; };
-		F3EEF7ADCF2C073717F4100D0EC559EA /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
-		F3FE5D15BFAF9720425EDB7103631042 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
-		F42D031896AAA79672795349C308D95F /* HGPopGestureCompatibleScrollView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HGPopGestureCompatibleScrollView.h; path = HGPersonalCenterExtend/HGPopGestureCompatibleScrollView.h; sourceTree = "<group>"; };
-		F50919E55A7B4331A74CFE57F845236A /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
+		F0B718E44408974E929F5F008D23389D /* GKNavigationBarViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKNavigationBarViewController.m; path = GKNavigationBarViewController/GKNavigationBarViewController.m; sourceTree = "<group>"; };
+		F723D36DEBC1210209F8828E717EAF0F /* HGPersonalCenterExtend-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HGPersonalCenterExtend-prefix.pch"; sourceTree = "<group>"; };
+		F805B679741BCF7CC3C27429E2793EBB /* UIScrollView+GKCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+GKCategory.m"; path = "GKNavigationBarViewController/Category/UIScrollView+GKCategory.m"; sourceTree = "<group>"; };
+		F84FE0C5B943F46167870177F6A8A26D /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		F96A95B77B9E3194D3ACDE31D0F0A859 /* GKNavigationBarConfigure.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GKNavigationBarConfigure.m; path = GKNavigationBarViewController/GKNavigationBarConfigure.m; sourceTree = "<group>"; };
+		F9CD7F94507F86A12A71C92B427058CD /* UINavigationController+GKCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+GKCategory.m"; path = "GKNavigationBarViewController/Category/UINavigationController+GKCategory.m"; sourceTree = "<group>"; };
+		FB1D48448EFFF09BC2E8D44019F40960 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		FE548B5A73BBCA9A6F89983F7581E32E /* Pods-HGPersonalCenter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HGPersonalCenter.release.xcconfig"; sourceTree = "<group>"; };
-		FF904C72312DD7F8D9E5B85165AFA39F /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		12071EF6723D5FB08E6EC5FC75E90C5E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4DB14E49B83DB44A99C78DF0A756A772 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -244,14 +245,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6AA7C2F5F9C40C93762D56435DB09B06 /* Frameworks */ = {
+		6F87F947C7724E9F22C4867958780CD9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6F87F947C7724E9F22C4867958780CD9 /* Frameworks */ = {
+		705491F56536AC8CAD8002E9F3ACE653 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC58B849EBFAF04CACF3C346FAAFED44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -261,146 +269,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01ACA061AB5E8CA75502608F129CE3F3 /* GKNavigationBarViewController */ = {
+		268FDC2037F507C65C2DCC0B6E6AF13E /* HGPersonalCenterExtend */ = {
 			isa = PBXGroup;
 			children = (
-				2533F3D413799FCE7EA96FC78EB65E5A /* GKBaseTransitionAnimation.h */,
-				87BD30B8E950852D92C972D8DC644B0E /* GKBaseTransitionAnimation.m */,
-				AAE27C6D76589CD4C4B66C63E3E49C50 /* GKCategory.h */,
-				0370AA0191A5226FFC15654B2F460826 /* GKCommon.h */,
-				ADD5EBEE56B1DA2773B4EDC9480E42A8 /* GKDelegateHandler.h */,
-				C4C21ADE04B05791F44DA62327BF3D94 /* GKDelegateHandler.m */,
-				BB98E267F98F831DD76A25988F47E2B8 /* GKNavigationBar.h */,
-				75251F0329760FD354518879FB6C0FEB /* GKNavigationBar.m */,
-				60830745FC9DC12CB05CB67669003786 /* GKNavigationBarConfigure.h */,
-				ADF8493BE394530B395D21C61D10C480 /* GKNavigationBarConfigure.m */,
-				8823CAAE16A6004E7AD9031C84FAD965 /* GKNavigationBarViewController.h */,
-				DA2D2B763A00ADDFC7B828DABA60270A /* GKNavigationBarViewController.m */,
-				DADC79932EA9CD43A7991EAFDF9AD105 /* GKPopTransitionAnimation.h */,
-				C410C08F736306FB0071663BC12335A0 /* GKPopTransitionAnimation.m */,
-				72D0E090844077D505075EE86E4516AD /* GKPushTransitionAnimation.h */,
-				AB1C6FF3084C82B12FA600D7E4A622AE /* GKPushTransitionAnimation.m */,
-				0540DAF367A39A1AEEB53371E9EFCFBD /* UIBarButtonItem+GKCategory.h */,
-				9D61468E6A1E872B2D0AA17E09E74B8F /* UIBarButtonItem+GKCategory.m */,
-				E0C36A5E37C964874DC6782E137466B7 /* UINavigationController+GKCategory.h */,
-				CD76EEF07B75FB2CFD665C485538ECBF /* UINavigationController+GKCategory.m */,
-				3D3DC16159BECE7DF1B89CF81EA9C2E2 /* UINavigationItem+GKCategory.h */,
-				8C5F6E2A823C15CED7E655D66B7B3A80 /* UINavigationItem+GKCategory.m */,
-				12979835CEFB7428E6EBC5C11C837F33 /* UIScrollView+GKCategory.h */,
-				E7A92E8B503D98BB2D4B635A8D7A777E /* UIScrollView+GKCategory.m */,
-				AC986D58EC66B726FBCA26B2E95557E0 /* UIViewController+GKCategory.h */,
-				C41A31BAE495231238B6FAEDFAB09478 /* UIViewController+GKCategory.m */,
-				CCA862A1FAB73703EEB2EF1AE6519591 /* UIViewController+GKRotation.h */,
-				E21A591A1DD019391D0ED0C0FC51CAA3 /* UIViewController+GKRotation.m */,
-				04E712594CE7A171F8BF107DF65E723F /* Resources */,
-				20FD3D26990254002E3B1B75039E9124 /* Support Files */,
-			);
-			name = GKNavigationBarViewController;
-			path = GKNavigationBarViewController;
-			sourceTree = "<group>";
-		};
-		04E712594CE7A171F8BF107DF65E723F /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6071C1C51F8447452BF9E6008B2D1D2C /* GKNavigationBarViewController.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		20FD3D26990254002E3B1B75039E9124 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				96364BFF8B0402301E2672C90C9F18DB /* GKNavigationBarViewController.xcconfig */,
-				5B32E49B455E0B8D85ECD3C25EB7C6C3 /* GKNavigationBarViewController-dummy.m */,
-				A0A2C8550D01F07F0C1A0C8EACD22E6E /* GKNavigationBarViewController-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GKNavigationBarViewController";
-			sourceTree = "<group>";
-		};
-		218E74F83C3E03F73AA24ECDF6F282BA /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				25D3818CCAD2D222E4EF411BE7786F10 /* HGCategoryView.xcconfig */,
-				6A960C48ACDDDFD9F909B906BF83ABA0 /* HGCategoryView-dummy.m */,
-				7CDBF602B06E0F8BF6C8D5B41D5F1B8F /* HGCategoryView-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/HGCategoryView";
-			sourceTree = "<group>";
-		};
-		5976D313686381BF69918C90E0FB65C2 /* HGPersonalCenterExtend */ = {
-			isa = PBXGroup;
-			children = (
-				21B90FB5F5A35C559ED5F4E4CA27F1CD /* HGCenterBaseTableView.h */,
-				6A1828C50D5CB223AB7C42D43EB556C9 /* HGCenterBaseTableView.m */,
-				2FF01FE22CE83F6DE1DA22100373E6BA /* HGPageViewController.h */,
-				39F0AA671DD2F3896419446B635F8077 /* HGPageViewController.m */,
-				ECD1C36A970839DD0F2E88ADFCA40761 /* HGPersonalCenterExtend.h */,
-				F42D031896AAA79672795349C308D95F /* HGPopGestureCompatibleScrollView.h */,
-				86637216E322F173076A661873A0CF40 /* HGPopGestureCompatibleScrollView.m */,
-				A46218A14FB5D541F375B901ADE88839 /* HGSegmentedPageViewController.h */,
-				7194AC1B12D8C4A283804B8976FDD0F6 /* HGSegmentedPageViewController.m */,
-				C9330244CAEC0480C574E853BCB62DE4 /* Support Files */,
+				95E3CF5DF0C81CDD2C83F2BF0656A4C2 /* HGCenterBaseTableView.h */,
+				02DFFA93B1041BC592B10BB0E01D5E5D /* HGCenterBaseTableView.m */,
+				C93399CD149FF48C31681BD2990B9A8B /* HGPagesViewController.h */,
+				A32B1FE5830F8A8B614388C3D2D63FD2 /* HGPagesViewController.m */,
+				95B39C07E0CC32B9C23BD4E8CB6C7928 /* HGPageViewController.h */,
+				07EA4508B67D415646B890B42B41A37D /* HGPageViewController.m */,
+				0AC1AB110F55937FFCFD84D8CDCB0BA5 /* HGPersonalCenterExtend.h */,
+				E90B17EBEE52F5C40197EB5675DA32ED /* HGPopGestureCompatibleCollectionView.h */,
+				CEEF81F7ADDADE47E7EA34DE9B0FDA6F /* HGPopGestureCompatibleCollectionView.m */,
+				B4F535D30204080113AFE115F0E3915D /* HGSegmentedPageViewController.h */,
+				1CDE3BD198BA7F7593978E7CDBEE1BC8 /* HGSegmentedPageViewController.m */,
+				E8B135869376EBD85FD57527C0C87479 /* Support Files */,
 			);
 			name = HGPersonalCenterExtend;
 			path = HGPersonalCenterExtend;
 			sourceTree = "<group>";
 		};
-		628A4C31F6D3D2522489192430CE7650 /* Support Files */ = {
+		2D4C2ED7FE9AFEC7FF63189A72B7C915 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BE75FD9BE415E9C54AC3CF71F809F15E /* Masonry.xcconfig */,
-				39BF13F8D502A804E9A82064FDB0309C /* Masonry-dummy.m */,
-				48DA174E4D351B91A6894FBC84B00970 /* Masonry-prefix.pch */,
+				0ACA05073BDD868ECA68FAD794E5EE14 /* GKNavigationBarViewController.xcconfig */,
+				C6A915F8D4D4014B80EB424D3FCA9F7D /* GKNavigationBarViewController-dummy.m */,
+				E9021B87C73C043D6165A57CDCB2B9BB /* GKNavigationBarViewController-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Masonry";
+			path = "../Target Support Files/GKNavigationBarViewController";
 			sourceTree = "<group>";
 		};
-		7AF1482A22702E70EEF38B94E5BB1C17 /* Masonry */ = {
+		3C34CA0E6F13FE2D81F40DFA9EFCDE81 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8BE832C3ED405CAE1E18262C431EF41C /* MASCompositeConstraint.h */,
-				171A84D58AA8B55A713F6D507BFB1DD5 /* MASCompositeConstraint.m */,
-				EA1F180BED3A6C55E8A25D4EEA14E4F6 /* MASConstraint.h */,
-				450B9AE50691F63A9EEFEE7E8F811852 /* MASConstraint.m */,
-				900C85A3FFFFBFADCFBCAACDD3ABE1D0 /* MASConstraint+Private.h */,
-				F50919E55A7B4331A74CFE57F845236A /* MASConstraintMaker.h */,
-				619BFD8F798A804E3258E9DA3E18C672 /* MASConstraintMaker.m */,
-				5513AA3E6C6A45F22ABB8F704E430097 /* MASLayoutConstraint.h */,
-				38B142A3704D80C5BA592FB3B34B33C6 /* MASLayoutConstraint.m */,
-				335A4CF6A25951B2E2322229350F8007 /* Masonry.h */,
-				6ECD85F29DC05BF2D2DBE88E78DD218C /* MASUtilities.h */,
-				DE645EBE0C6C65A839ACCA339C54D847 /* MASViewAttribute.h */,
-				CF19978E11353C4FB8FFF4318E460C46 /* MASViewAttribute.m */,
-				6D018036CAC15F31A9C2C16739C1E56F /* MASViewConstraint.h */,
-				FF904C72312DD7F8D9E5B85165AFA39F /* MASViewConstraint.m */,
-				40A9187B1624632AE37F2E995AC84C2A /* NSArray+MASAdditions.h */,
-				B8F52ACFBF7D138215F5DD3922314CB5 /* NSArray+MASAdditions.m */,
-				7D8654CE7FA2FB4BC5F35CFB0D2285BA /* NSArray+MASShorthandAdditions.h */,
-				92474D3D2AD24CF417530E1455B1A9CD /* NSLayoutConstraint+MASDebugAdditions.h */,
-				F3FE5D15BFAF9720425EDB7103631042 /* NSLayoutConstraint+MASDebugAdditions.m */,
-				62EB333D3295AA801100C9EAD83B0103 /* View+MASAdditions.h */,
-				5F4801173E12393DF9EC13557B6DC9AD /* View+MASAdditions.m */,
-				F3EEF7ADCF2C073717F4100D0EC559EA /* View+MASShorthandAdditions.h */,
-				CB405C8D4A4544A332605147D175AE5D /* ViewController+MASAdditions.h */,
-				CCD2A484AAF0A1DD0FBA5D53AE5C2B20 /* ViewController+MASAdditions.m */,
-				628A4C31F6D3D2522489192430CE7650 /* Support Files */,
+				5B88AF1EF150DB0C3371E01A7E47C97D /* GKNavigationBarViewController.bundle */,
 			);
-			name = Masonry;
-			path = Masonry;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		80FFB14D15E82B8FE00B8B6692A20FF0 /* Pods */ = {
+		3D208B29B298214D93D16CEE83AEC4BB /* HGCategoryView */ = {
 			isa = PBXGroup;
 			children = (
-				01ACA061AB5E8CA75502608F129CE3F3 /* GKNavigationBarViewController */,
-				C352DE6962372CD64337117616046DDA /* HGCategoryView */,
-				5976D313686381BF69918C90E0FB65C2 /* HGPersonalCenterExtend */,
-				7AF1482A22702E70EEF38B94E5BB1C17 /* Masonry */,
+				50C93782109A32FBBFBDCA3A5D846339 /* HGCategoryView.h */,
+				480CBE43F600DED1ADCCE81B0C41A5AF /* HGCategoryView.m */,
+				CDCE7025522A9E87D8488A652EAB2BBB /* Support Files */,
+			);
+			name = HGCategoryView;
+			path = HGCategoryView;
+			sourceTree = "<group>";
+		};
+		3E65B763C1B9A5AB0F993A512D30E130 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52B213A1D7A2A0DF2290A4C0E8583A40 /* GKNavigationBarViewController */,
+				3D208B29B298214D93D16CEE83AEC4BB /* HGCategoryView */,
+				268FDC2037F507C65C2DCC0B6E6AF13E /* HGPersonalCenterExtend */,
+				D055692832F0BB8A236B68039CAAADC3 /* Masonry */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		52B213A1D7A2A0DF2290A4C0E8583A40 /* GKNavigationBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				55D0BCA77D4863222EE91D52D005DC64 /* GKBaseTransitionAnimation.h */,
+				A7C8FE0372074D589DA686BEC0C9AE5B /* GKBaseTransitionAnimation.m */,
+				003C2A5E5AE570C647D56F17500246AC /* GKCategory.h */,
+				DC189CE2582C57D11EFDE6470E7494FF /* GKCommon.h */,
+				8FB78F3A7E23F549768CEFDCB7245177 /* GKDelegateHandler.h */,
+				D4D25B28BA40A095C189FAD7F9CA89C3 /* GKDelegateHandler.m */,
+				610FA0CD12016C1CB098B959CAE95985 /* GKNavigationBar.h */,
+				488D5EBA7A423F30C4E9CB99F0F3C211 /* GKNavigationBar.m */,
+				5D02579481D2CDCBE79F4B4078A1D4E5 /* GKNavigationBarConfigure.h */,
+				F96A95B77B9E3194D3ACDE31D0F0A859 /* GKNavigationBarConfigure.m */,
+				37C5C4A2D7A81AB39C12F7A6B55F9147 /* GKNavigationBarViewController.h */,
+				F0B718E44408974E929F5F008D23389D /* GKNavigationBarViewController.m */,
+				0897817D8B3DED62459BB2D51164F990 /* GKPopTransitionAnimation.h */,
+				C252F543D2DE7F43F5BA48A65FF98D3B /* GKPopTransitionAnimation.m */,
+				138D661C793A084E2718787EEC822597 /* GKPushTransitionAnimation.h */,
+				8302508B80664A3DECAF6B04C57C5916 /* GKPushTransitionAnimation.m */,
+				0CD4C92EB6A8ECC45A6AA9EC0413DC60 /* UIBarButtonItem+GKCategory.h */,
+				0E49A1E8B585F64C9F9A8A8F663E36C5 /* UIBarButtonItem+GKCategory.m */,
+				C3A95F25046BC4FBBC2A4AD83D8AC09E /* UINavigationController+GKCategory.h */,
+				F9CD7F94507F86A12A71C92B427058CD /* UINavigationController+GKCategory.m */,
+				71A06FE0B83C900210C8593E94E47F63 /* UINavigationItem+GKCategory.h */,
+				86B1F0C5D344458476D4853A13896810 /* UINavigationItem+GKCategory.m */,
+				20146D85F1D4C80B6C0EAA7D5752D8E3 /* UIScrollView+GKCategory.h */,
+				F805B679741BCF7CC3C27429E2793EBB /* UIScrollView+GKCategory.m */,
+				7A8BFD22E37174702B76FD78EB5DBEE7 /* UIViewController+GKCapture.h */,
+				091D0D791BD8BA8A79E3C93E1063B39E /* UIViewController+GKCapture.m */,
+				D96D5BA1B467F1EB024EB5EC6BF89087 /* UIViewController+GKCategory.h */,
+				0E765C83A43C32B81A81EC48108669C0 /* UIViewController+GKCategory.m */,
+				33B426BEA5A86656503E484F2236FC8B /* UIViewController+GKRotation.h */,
+				B4D128E2A605ABB60081AC4AF3A87B1E /* UIViewController+GKRotation.m */,
+				3C34CA0E6F13FE2D81F40DFA9EFCDE81 /* Resources */,
+				2D4C2ED7FE9AFEC7FF63189A72B7C915 /* Support Files */,
+			);
+			name = GKNavigationBarViewController;
+			path = GKNavigationBarViewController;
 			sourceTree = "<group>";
 		};
 		B9B30B2A1F2D8C12B898F3D9809501EF /* Pods-HGPersonalCenter */ = {
@@ -417,26 +384,15 @@
 			path = "Target Support Files/Pods-HGPersonalCenter";
 			sourceTree = "<group>";
 		};
-		C352DE6962372CD64337117616046DDA /* HGCategoryView */ = {
+		CDCE7025522A9E87D8488A652EAB2BBB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				22348FA613787A447E71EA83EA8D14A5 /* HGCategoryView.h */,
-				14BEAAA125C464E79BD586000510B6E7 /* HGCategoryView.m */,
-				218E74F83C3E03F73AA24ECDF6F282BA /* Support Files */,
-			);
-			name = HGCategoryView;
-			path = HGCategoryView;
-			sourceTree = "<group>";
-		};
-		C9330244CAEC0480C574E853BCB62DE4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C03998B51A618D5BB5A5B011EC9A2037 /* HGPersonalCenterExtend.xcconfig */,
-				568DCFBC267248D7AE388918DB3FF975 /* HGPersonalCenterExtend-dummy.m */,
-				5F0DD3659D47BCFF2184DAE805858E3C /* HGPersonalCenterExtend-prefix.pch */,
+				02C6953613D45A00007FBB5F34F1B680 /* HGCategoryView.xcconfig */,
+				DD448F1B5A8090688664481CAF97EAE1 /* HGCategoryView-dummy.m */,
+				7D2E8ADC06691E22265A3C9EF852A87E /* HGCategoryView-prefix.pch */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/HGPersonalCenterExtend";
+			path = "../Target Support Files/HGCategoryView";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -444,10 +400,44 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				80FFB14D15E82B8FE00B8B6692A20FF0 /* Pods */,
+				3E65B763C1B9A5AB0F993A512D30E130 /* Pods */,
 				E59E2758BDB65E61D4407362DD3EFE25 /* Products */,
 				E71E1603C9CCFA47C9599291E257F34B /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D055692832F0BB8A236B68039CAAADC3 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				3B3D03DB067BF8DC0CB30B87B595E708 /* MASCompositeConstraint.h */,
+				80785A647E4E321ABBCDE04309AC69BB /* MASCompositeConstraint.m */,
+				1693B826F525F8F7BC4316444671201A /* MASConstraint.h */,
+				E6E98FD1D6F0C24F21E13B03324C6D09 /* MASConstraint.m */,
+				63D40AEBE99343E421AA8D167FEBB6EB /* MASConstraint+Private.h */,
+				7136EEF821400AA11BB8C4768241828B /* MASConstraintMaker.h */,
+				10FF081F4205EC42341BF89131FF3CD2 /* MASConstraintMaker.m */,
+				617947338B22EE3E3A42FFC4C5A4E2B8 /* MASLayoutConstraint.h */,
+				D0A280DE0D7C9DA4C2104DA4162D8163 /* MASLayoutConstraint.m */,
+				68461CBBBE7B63F647C319D00D48EB39 /* Masonry.h */,
+				FB1D48448EFFF09BC2E8D44019F40960 /* MASUtilities.h */,
+				B4E3BFC675C7DB439589B53889613A0F /* MASViewAttribute.h */,
+				31B5411BBC5E568D9D2B9777DF9CA866 /* MASViewAttribute.m */,
+				839FEA9830D0C2B429EB8DF676533AB6 /* MASViewConstraint.h */,
+				88DC7F735BA55B5D1AFD1B89D426CFC5 /* MASViewConstraint.m */,
+				20FFA9F4FE709B40FE433F2D0B05D1C2 /* NSArray+MASAdditions.h */,
+				9398008435C9FA8AF65B12DD95095915 /* NSArray+MASAdditions.m */,
+				E05EA70FCF1E13D1C496E31A1015DF1D /* NSArray+MASShorthandAdditions.h */,
+				03436A6278409653E8754EEB690686A8 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				F84FE0C5B943F46167870177F6A8A26D /* NSLayoutConstraint+MASDebugAdditions.m */,
+				CF14458B36C7DD5A1B177FD286B08713 /* View+MASAdditions.h */,
+				D7239181A58A9E66992B805C874376D0 /* View+MASAdditions.m */,
+				45E4B9E546964A114C73A49D7411CD13 /* View+MASShorthandAdditions.h */,
+				86CAD6071266C022C7D5AE9AC0CAF556 /* ViewController+MASAdditions.h */,
+				0B74929C51DA0131685DFA69DB3B91DC /* ViewController+MASAdditions.m */,
+				F5D736D087688996DB99133A719106DE /* Support Files */,
+			);
+			name = Masonry;
+			path = Masonry;
 			sourceTree = "<group>";
 		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
@@ -477,9 +467,54 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		E8B135869376EBD85FD57527C0C87479 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B51FA11591A6B7FE45958517B7759E06 /* HGPersonalCenterExtend.xcconfig */,
+				195AABE5697F131C4749A708E65B5F70 /* HGPersonalCenterExtend-dummy.m */,
+				F723D36DEBC1210209F8828E717EAF0F /* HGPersonalCenterExtend-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/HGPersonalCenterExtend";
+			sourceTree = "<group>";
+		};
+		F5D736D087688996DB99133A719106DE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				2B0CA33AB9F3659A0C50B25551920B27 /* Masonry.xcconfig */,
+				66B1E21619C88B1CF0020DF858626302 /* Masonry-dummy.m */,
+				BBEF9BE143B190480D716FC22FBBDDB1 /* Masonry-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Masonry";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		13D9482CB70C88A7271B77AC7BFA475C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34D915ABCB0772D13F8278E4A4C5CE0C /* GKBaseTransitionAnimation.h in Headers */,
+				9583E644D7E4A3BC58D72F0BA02B0205 /* GKCategory.h in Headers */,
+				7753520E587E5345484A9BFEBC8CCD13 /* GKCommon.h in Headers */,
+				1D5BE1B7BA9BA96826508E105A2FFC17 /* GKDelegateHandler.h in Headers */,
+				28FF5AAFC78ADCA3237E187232BB0364 /* GKNavigationBar.h in Headers */,
+				858C021249F066E8268E39FCE21FB63B /* GKNavigationBarConfigure.h in Headers */,
+				502131E4C639412CE763C55C31C9546D /* GKNavigationBarViewController.h in Headers */,
+				BB03ADD31170B59C6B1FC5EF3BFF7CAD /* GKPopTransitionAnimation.h in Headers */,
+				FED8CE666744FD9CB0D00ED01559AA10 /* GKPushTransitionAnimation.h in Headers */,
+				9DF345B2D17E40880DEEA074D95F1E7F /* UIBarButtonItem+GKCategory.h in Headers */,
+				864F464E36F2B59F37064EFE4FE3E7DB /* UINavigationController+GKCategory.h in Headers */,
+				550A62504EDAF8B5EC4786221662AF62 /* UINavigationItem+GKCategory.h in Headers */,
+				A516F7B307540835FA3F2B656C47C347 /* UIScrollView+GKCategory.h in Headers */,
+				3D5441E4F4504363EFC713DDC0C1C057 /* UIViewController+GKCapture.h in Headers */,
+				DB453BBFE0CF1FB21F01FFB657F80E56 /* UIViewController+GKCategory.h in Headers */,
+				43885216C3AB2AFC5C0D3667C665D9F0 /* UIViewController+GKRotation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		17F874389291ED99359E37682E786F7B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,40 +537,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		953729A3F53AB18373B7653452CE1703 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				62A0DA5EB5F1C399B434F8EFCCF081D8 /* GKBaseTransitionAnimation.h in Headers */,
-				EAEEFFE304667161E95CDF3AE248B467 /* GKCategory.h in Headers */,
-				2BF7C25A5F631A6B09474B9F35569896 /* GKCommon.h in Headers */,
-				EBB783422CA80711A1301EDE0D116860 /* GKDelegateHandler.h in Headers */,
-				1A68565711D25BCB4A8E893EC92825EC /* GKNavigationBar.h in Headers */,
-				C7B165103EAD22B28085105026704C89 /* GKNavigationBarConfigure.h in Headers */,
-				3689E5CE9467D9C08B317A67E5171261 /* GKNavigationBarViewController.h in Headers */,
-				D9F18516E69D353441E8A77ACE2171FA /* GKPopTransitionAnimation.h in Headers */,
-				6EFBBBF1C388495A1616881452114DE0 /* GKPushTransitionAnimation.h in Headers */,
-				F513C46F1F9450D9976E219CA3A7AE46 /* UIBarButtonItem+GKCategory.h in Headers */,
-				4A08FDC9BB66AC8ED85128231FD4037D /* UINavigationController+GKCategory.h in Headers */,
-				B2C4F1E4F06E84BF06DDCD5DA1D159E7 /* UINavigationItem+GKCategory.h in Headers */,
-				9337E7D20CC48FF30D053510EE11717E /* UIScrollView+GKCategory.h in Headers */,
-				C7E9A9AE383F583789E5793D231086FB /* UIViewController+GKCategory.h in Headers */,
-				81AE883A75976207D13572F5E010EC6F /* UIViewController+GKRotation.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A1E0331CE9C8AAB895BEAF5536376CA5 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CC444986D4851CB2D43F3D18F5A317D2 /* HGCenterBaseTableView.h in Headers */,
-				3B5F7B752F0FFDB4A07D92EE3ED39DE9 /* HGPageViewController.h in Headers */,
-				038F5599910941D16A9A2E8653E5A1D0 /* HGPersonalCenterExtend.h in Headers */,
-				F82FC8FCCC21A0ED992E53A494FD1EBB /* HGPopGestureCompatibleScrollView.h in Headers */,
-				5FA5A3E5A557E676EE672DEA1E890D35 /* HGSegmentedPageViewController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B5854535C9F373B481852AEE46ED9DCF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,6 +549,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F0420DB7084E3824C31CE2E1EDFD838 /* HGCategoryView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB0128C1E546EEE715C03A91BC78ED02 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2A67A4FE629F7A2AC3A0FB11D771103 /* HGCenterBaseTableView.h in Headers */,
+				B8E98177AD875435A05B33AEAB049464 /* HGPagesViewController.h in Headers */,
+				6516D9163B7CA258A3075ADBEA7D6212 /* HGPageViewController.h in Headers */,
+				3CA64E58CAB0B514C8D0FB284A52554C /* HGPersonalCenterExtend.h in Headers */,
+				3FA0E4C46071C8973010B36CEBDAE059 /* HGPopGestureCompatibleCollectionView.h in Headers */,
+				BFCDF2F80318A8B3F1090E9F31E48D81 /* HGSegmentedPageViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,17 +608,17 @@
 		};
 		BEA6A7C5A8B97B93098D507B7B04D84A /* HGPersonalCenterExtend */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 17632C6F1229CB22D6902C005EF238BB /* Build configuration list for PBXNativeTarget "HGPersonalCenterExtend" */;
+			buildConfigurationList = B8AA39506DBD53852E881A4E9D358E3D /* Build configuration list for PBXNativeTarget "HGPersonalCenterExtend" */;
 			buildPhases = (
-				A1E0331CE9C8AAB895BEAF5536376CA5 /* Headers */,
-				964EBAEFE4BF527BD066824180EB80CB /* Sources */,
-				12071EF6723D5FB08E6EC5FC75E90C5E /* Frameworks */,
+				EB0128C1E546EEE715C03A91BC78ED02 /* Headers */,
+				1863A43196A6F723C6583A954665BA9B /* Sources */,
+				AC58B849EBFAF04CACF3C346FAAFED44 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				10997F8D84EC24FDCF8BE89FA1EB1022 /* PBXTargetDependency */,
-				90F886865598AFCCCA88336C6D3D8651 /* PBXTargetDependency */,
+				D8DA09A352A02520D00A6753F47BD7E8 /* PBXTargetDependency */,
+				9BFA6EF764FCB09573739277DEBC587C /* PBXTargetDependency */,
 			);
 			name = HGPersonalCenterExtend;
 			productName = HGPersonalCenterExtend;
@@ -613,11 +627,11 @@
 		};
 		C921F96150B62CC49CBC3AC767EB543F /* GKNavigationBarViewController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 418763649F4E67A1A332808F17C6A3E9 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewController" */;
+			buildConfigurationList = EA17B92C0E54BF19247C1D91A26C5F25 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewController" */;
 			buildPhases = (
-				953729A3F53AB18373B7653452CE1703 /* Headers */,
-				87B48E7E186C674B626C0FBB15C35DBA /* Sources */,
-				6AA7C2F5F9C40C93762D56435DB09B06 /* Frameworks */,
+				13D9482CB70C88A7271B77AC7BFA475C /* Headers */,
+				C16B4329B5448E45860ECE48377C03D4 /* Sources */,
+				705491F56536AC8CAD8002E9F3ACE653 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -695,36 +709,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		87B48E7E186C674B626C0FBB15C35DBA /* Sources */ = {
+		1863A43196A6F723C6583A954665BA9B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0DB7EF5C69E4284843593D79245DB2D /* GKBaseTransitionAnimation.m in Sources */,
-				CDEF6170C58082DDCEF0D57489759D82 /* GKDelegateHandler.m in Sources */,
-				CD46404AF3B719F372BE848033A55D6E /* GKNavigationBar.m in Sources */,
-				D6647D9576E4707C35F35398093BFC4D /* GKNavigationBarConfigure.m in Sources */,
-				12FA4F01CEBAE75A100301D05EC49BEC /* GKNavigationBarViewController-dummy.m in Sources */,
-				19E83EC34C6BE761A55F66A98217473A /* GKNavigationBarViewController.m in Sources */,
-				B0A45B69AFDFC68C6DBCD8572D0C6911 /* GKPopTransitionAnimation.m in Sources */,
-				0696D6EC6FB126D42EB1A0430D5D5641 /* GKPushTransitionAnimation.m in Sources */,
-				065DC5B6142CE6AB3C83AF0B847AB84C /* UIBarButtonItem+GKCategory.m in Sources */,
-				DE2A6DE3D06E7BFCBF3D96BD009BFAF2 /* UINavigationController+GKCategory.m in Sources */,
-				52DE1D9A2E1770CFCC442002EBD71483 /* UINavigationItem+GKCategory.m in Sources */,
-				CCEF73EF027E5F517EBF6C076A95B85A /* UIScrollView+GKCategory.m in Sources */,
-				EF4E388BDA896FF3C43FA66FC2D83569 /* UIViewController+GKCategory.m in Sources */,
-				62E810CFA0E2FEBD429222B19783DCE5 /* UIViewController+GKRotation.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		964EBAEFE4BF527BD066824180EB80CB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5B97D7395B6165F5BF7ECF0999903D08 /* HGCenterBaseTableView.m in Sources */,
-				484A78F4ADBDFCFC99638B9EB6B4327B /* HGPageViewController.m in Sources */,
-				1A97CA2B724483537F7BE83240A0862E /* HGPersonalCenterExtend-dummy.m in Sources */,
-				5DCA8826F18D372C8ECF7BBD955A6609 /* HGPopGestureCompatibleScrollView.m in Sources */,
-				96508A800ECF3B3AAFD68A14DE2121A4 /* HGSegmentedPageViewController.m in Sources */,
+				45442CF6A38D6E81A07E4C8ADDD08622 /* HGCenterBaseTableView.m in Sources */,
+				16EC246CA21BC19FD31AC427C2E3DEE5 /* HGPagesViewController.m in Sources */,
+				10C226D92AFA2F0A2CEB1B94A10C3565 /* HGPageViewController.m in Sources */,
+				D142373254DD0CF62616CAF8807A6FCA /* HGPersonalCenterExtend-dummy.m in Sources */,
+				DDF6CDCD5673BCF7EF3BAF065EF85379 /* HGPopGestureCompatibleCollectionView.m in Sources */,
+				61615B1EEDE47C4F84A633344A7324BF /* HGSegmentedPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,15 +739,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C16B4329B5448E45860ECE48377C03D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				442BD22A0B5C8A02E3F424AF5F7E7C78 /* GKBaseTransitionAnimation.m in Sources */,
+				4380C7562AB4672B611BBA0FE1ADE568 /* GKDelegateHandler.m in Sources */,
+				8C419F05AAE106B340BD973C73B5E239 /* GKNavigationBar.m in Sources */,
+				3CF71DCCA5C0C990967C768EDA7D6528 /* GKNavigationBarConfigure.m in Sources */,
+				81457A8FE9AAC0D7B52AE65B2BD0A46C /* GKNavigationBarViewController-dummy.m in Sources */,
+				A12531E4FC62514C2FEDEC0B22D003A3 /* GKNavigationBarViewController.m in Sources */,
+				5876A67FBF97997ECACF8E2CEE6B4D06 /* GKPopTransitionAnimation.m in Sources */,
+				E5DA0769E4954C975795E6826962EAF3 /* GKPushTransitionAnimation.m in Sources */,
+				E7188D0F18E7A02806A39BD6C895F741 /* UIBarButtonItem+GKCategory.m in Sources */,
+				E185D576727F545394208C0E972D9176 /* UINavigationController+GKCategory.m in Sources */,
+				3C9080FF8B308416E072C05236C2401E /* UINavigationItem+GKCategory.m in Sources */,
+				77F4C5DA64A98ED942FF6D3A43431C84 /* UIScrollView+GKCategory.m in Sources */,
+				2249FAD817643F715378AE898313050F /* UIViewController+GKCapture.m in Sources */,
+				350499D7177960139C9F1B27C5A51684 /* UIViewController+GKCategory.m in Sources */,
+				669E0629252591AFDCC0030C3120AD26 /* UIViewController+GKRotation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		10997F8D84EC24FDCF8BE89FA1EB1022 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = HGCategoryView;
-			target = FF2AA169A94910901058A8AADDAF9835 /* HGCategoryView */;
-			targetProxy = D627872903CCD3AD8B29D85A1BA8E93A /* PBXContainerItemProxy */;
-		};
 		360AA590EF3847B51038E5C43D4BB49A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Masonry;
@@ -772,17 +782,23 @@
 			target = C921F96150B62CC49CBC3AC767EB543F /* GKNavigationBarViewController */;
 			targetProxy = BF9D19AC823B9A7A18F682B015C02627 /* PBXContainerItemProxy */;
 		};
-		90F886865598AFCCCA88336C6D3D8651 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Masonry;
-			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
-			targetProxy = 6B9A6A1A643285DC6630E774CBBBDCED /* PBXContainerItemProxy */;
-		};
 		941426E51006BEE9BABC77FB220EF7B8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Masonry;
 			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
 			targetProxy = 394974C416F254CFF4544D4A8049C03E /* PBXContainerItemProxy */;
+		};
+		9BFA6EF764FCB09573739277DEBC587C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Masonry;
+			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
+			targetProxy = D8755099548B2B67B521A3AA064932CE /* PBXContainerItemProxy */;
+		};
+		D8DA09A352A02520D00A6753F47BD7E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = HGCategoryView;
+			target = FF2AA169A94910901058A8AADDAF9835 /* HGCategoryView */;
+			targetProxy = F943FB5CAA4EF0C7FB53564E75EB647F /* PBXContainerItemProxy */;
 		};
 		EB95EC4E42F2559016373180E6ACF4E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -793,53 +809,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		19C7A0B26A89057BC8574DDE4274FC26 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C03998B51A618D5BB5A5B011EC9A2037 /* HGPersonalCenterExtend.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/HGPersonalCenterExtend/HGPersonalCenterExtend-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = HGPersonalCenterExtend;
-				PRODUCT_NAME = HGPersonalCenterExtend;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		24A2FA7ECE595C8530B753E1A263F35D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C03998B51A618D5BB5A5B011EC9A2037 /* HGPersonalCenterExtend.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/HGPersonalCenterExtend/HGPersonalCenterExtend-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = HGPersonalCenterExtend;
-				PRODUCT_NAME = HGPersonalCenterExtend;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		3780863BF0E0462DACF581775860A6F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A7C9DA2E6AB8D35F801B547420FCE6A6 /* Pods-HGPersonalCenter.debug.xcconfig */;
@@ -857,29 +826,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		3C24C019C30A9D16CABF064AA635C088 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96364BFF8B0402301E2672C90C9F18DB /* GKNavigationBarViewController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/GKNavigationBarViewController/GKNavigationBarViewController-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = GKNavigationBarViewController;
-				PRODUCT_NAME = GKNavigationBarViewController;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -944,9 +890,9 @@
 			};
 			name = Release;
 		};
-		52AB6A5496D0223C74764066652B5AA7 /* Release */ = {
+		4EC137A37B747C424861D09AD8E3ABDC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96364BFF8B0402301E2672C90C9F18DB /* GKNavigationBarViewController.xcconfig */;
+			baseConfigurationReference = 0ACA05073BDD868ECA68FAD794E5EE14 /* GKNavigationBarViewController.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -964,13 +910,12 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = Debug;
 		};
 		70A25AB287E8FE2144FE6DD8CE77B6FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE75FD9BE415E9C54AC3CF71F809F15E /* Masonry.xcconfig */;
+			baseConfigurationReference = 2B0CA33AB9F3659A0C50B25551920B27 /* Masonry.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1057,7 +1002,7 @@
 		};
 		8D966B6DFD8755B464F9FE3C9F32B02F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25D3818CCAD2D222E4EF411BE7786F10 /* HGCategoryView.xcconfig */;
+			baseConfigurationReference = 02C6953613D45A00007FBB5F34F1B680 /* HGCategoryView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1080,7 +1025,7 @@
 		};
 		9B225F3604AE30C186845D7B23F1A85A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE75FD9BE415E9C54AC3CF71F809F15E /* Masonry.xcconfig */;
+			baseConfigurationReference = 2B0CA33AB9F3659A0C50B25551920B27 /* Masonry.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1104,7 +1049,7 @@
 		};
 		B3138E9EB32BEA19310AAFC543CBF0A3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25D3818CCAD2D222E4EF411BE7786F10 /* HGCategoryView.xcconfig */;
+			baseConfigurationReference = 02C6953613D45A00007FBB5F34F1B680 /* HGCategoryView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1117,6 +1062,30 @@
 				PRIVATE_HEADERS_FOLDER_PATH = "";
 				PRODUCT_MODULE_NAME = HGCategoryView;
 				PRODUCT_NAME = HGCategoryView;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA8C8F1BAB99DBA4C9CC60D942FBD803 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B51FA11591A6B7FE45958517B7759E06 /* HGPersonalCenterExtend.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/HGPersonalCenterExtend/HGPersonalCenterExtend-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = HGPersonalCenterExtend;
+				PRODUCT_NAME = HGPersonalCenterExtend;
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -1148,27 +1117,56 @@
 			};
 			name = Release;
 		};
+		ED853A467A36EB41006A20D40852935A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ACA05073BDD868ECA68FAD794E5EE14 /* GKNavigationBarViewController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/GKNavigationBarViewController/GKNavigationBarViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = GKNavigationBarViewController;
+				PRODUCT_NAME = GKNavigationBarViewController;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDACF96ED676192BBF79CE61316E3DE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B51FA11591A6B7FE45958517B7759E06 /* HGPersonalCenterExtend.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/HGPersonalCenterExtend/HGPersonalCenterExtend-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = HGPersonalCenterExtend;
+				PRODUCT_NAME = HGPersonalCenterExtend;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		17632C6F1229CB22D6902C005EF238BB /* Build configuration list for PBXNativeTarget "HGPersonalCenterExtend" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				19C7A0B26A89057BC8574DDE4274FC26 /* Debug */,
-				24A2FA7ECE595C8530B753E1A263F35D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		418763649F4E67A1A332808F17C6A3E9 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3C24C019C30A9D16CABF064AA635C088 /* Debug */,
-				52AB6A5496D0223C74764066652B5AA7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1192,6 +1190,24 @@
 			buildConfigurations = (
 				3780863BF0E0462DACF581775860A6F0 /* Debug */,
 				D5E8CB93933AB073F32D4526CDF436C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8AA39506DBD53852E881A4E9D358E3D /* Build configuration list for PBXNativeTarget "HGPersonalCenterExtend" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDACF96ED676192BBF79CE61316E3DE2 /* Debug */,
+				BA8C8F1BAB99DBA4C9CC60D942FBD803 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA17B92C0E54BF19247C1D91A26C5F25 /* Build configuration list for PBXNativeTarget "GKNavigationBarViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EC137A37B747C424861D09AD8E3ABDC /* Debug */,
+				ED853A467A36EB41006A20D40852935A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
