@@ -1,6 +1,7 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GKNavigationBarViewController" "${PODS_ROOT}/Headers/Public/HGCategoryView" "${PODS_ROOT}/Headers/Public/HGPersonalCenterExtend" "${PODS_ROOT}/Headers/Public/Masonry"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GKNavigationBarViewController" "${PODS_CONFIGURATION_BUILD_DIR}/HGCategoryView" "${PODS_CONFIGURATION_BUILD_DIR}/HGPersonalCenterExtend" "${PODS_CONFIGURATION_BUILD_DIR}/Masonry"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/GKNavigationBarViewController" -isystem "${PODS_ROOT}/Headers/Public/HGCategoryView" -isystem "${PODS_ROOT}/Headers/Public/Masonry" -isystem "${PODS_ROOT}/Headers/Public/HGPersonalCenterExtend"
 OTHER_LDFLAGS = $(inherited) -ObjC -l"GKNavigationBarViewController" -l"HGCategoryView" -l"HGPersonalCenterExtend" -l"Masonry" -framework "Foundation" -framework "UIKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

@@ -17,9 +17,10 @@
 		A9F80B8821DF0113000334BE /* HGThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B6E21DF0113000334BE /* HGThirdViewController.m */; };
 		A9F80B8921DF0113000334BE /* HGSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B7021DF0113000334BE /* HGSecondViewController.m */; };
 		A9F80B9121DF0113000334BE /* HGHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F80B8221DF0113000334BE /* HGHomeViewController.m */; };
-		A9FB4F2C228E9B1200525B36 /* HGDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FB4F2A228E9B1200525B36 /* HGDeviceHelper.m */; };
 		A9FB4F3B228EB92500525B36 /* HGMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FB4F3A228EB92500525B36 /* HGMessageViewController.m */; };
 		A9FB4F3F228EBB2800525B36 /* HGHeaderImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FB4F3E228EBB2800525B36 /* HGHeaderImageView.m */; };
+		A9FFE91623EBEB4C0062398C /* HGDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFE91423EBEB4C0062398C /* HGDeviceHelper.m */; };
+		A9FFE91923EC09800062398C /* HGNestedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FFE91723EC097F0062398C /* HGNestedScrollViewController.m */; };
 		D24F5E2D1EF3D9CD0011AB07 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E2C1EF3D9CD0011AB07 /* main.m */; };
 		D24F5E301EF3D9CD0011AB07 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D24F5E2F1EF3D9CD0011AB07 /* AppDelegate.m */; };
 		D24F5E381EF3D9CD0011AB07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D24F5E371EF3D9CD0011AB07 /* Assets.xcassets */; };
@@ -44,13 +45,15 @@
 		A9F80B7221DF0113000334BE /* HGThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGThirdViewController.h; sourceTree = "<group>"; };
 		A9F80B7421DF0113000334BE /* HGPersonalCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGPersonalCenterViewController.h; sourceTree = "<group>"; };
 		A9F80B8221DF0113000334BE /* HGHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGHomeViewController.m; sourceTree = "<group>"; };
-		A9FB4F2A228E9B1200525B36 /* HGDeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGDeviceHelper.m; sourceTree = "<group>"; };
-		A9FB4F2B228E9B1200525B36 /* HGDeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGDeviceHelper.h; sourceTree = "<group>"; };
 		A9FB4F2D228E9BE400525B36 /* HGMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGMacro.h; sourceTree = "<group>"; };
 		A9FB4F39228EB92500525B36 /* HGMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGMessageViewController.h; sourceTree = "<group>"; };
 		A9FB4F3A228EB92500525B36 /* HGMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGMessageViewController.m; sourceTree = "<group>"; };
 		A9FB4F3D228EBB2800525B36 /* HGHeaderImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HGHeaderImageView.h; sourceTree = "<group>"; };
 		A9FB4F3E228EBB2800525B36 /* HGHeaderImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HGHeaderImageView.m; sourceTree = "<group>"; };
+		A9FFE91423EBEB4C0062398C /* HGDeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGDeviceHelper.m; sourceTree = "<group>"; };
+		A9FFE91523EBEB4C0062398C /* HGDeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGDeviceHelper.h; sourceTree = "<group>"; };
+		A9FFE91723EC097F0062398C /* HGNestedScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HGNestedScrollViewController.m; sourceTree = "<group>"; };
+		A9FFE91823EC09800062398C /* HGNestedScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HGNestedScrollViewController.h; sourceTree = "<group>"; };
 		D24F5E281EF3D9CD0011AB07 /* HGPersonalCenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HGPersonalCenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D24F5E2C1EF3D9CD0011AB07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D24F5E2E1EF3D9CD0011AB07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 			children = (
 				A9F80B6321DF0113000334BE /* HGBaseViewController.h */,
 				A9F80B6421DF0113000334BE /* HGBaseViewController.m */,
+				A9FFE91823EC09800062398C /* HGNestedScrollViewController.h */,
+				A9FFE91723EC097F0062398C /* HGNestedScrollViewController.m */,
 			);
 			path = BaseControllers;
 			sourceTree = "<group>";
@@ -135,8 +140,8 @@
 		A9FB4F29228E9B1200525B36 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				A9FB4F2A228E9B1200525B36 /* HGDeviceHelper.m */,
-				A9FB4F2B228E9B1200525B36 /* HGDeviceHelper.h */,
+				A9FFE91523EBEB4C0062398C /* HGDeviceHelper.h */,
+				A9FFE91423EBEB4C0062398C /* HGDeviceHelper.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -308,13 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FFE91623EBEB4C0062398C /* HGDeviceHelper.m in Sources */,
 				A9FB4F3F228EBB2800525B36 /* HGHeaderImageView.m in Sources */,
 				D24F5E301EF3D9CD0011AB07 /* AppDelegate.m in Sources */,
 				A9F80B8321DF0113000334BE /* HGBaseViewController.m in Sources */,
 				A9FB4F3B228EB92500525B36 /* HGMessageViewController.m in Sources */,
+				A9FFE91923EC09800062398C /* HGNestedScrollViewController.m in Sources */,
 				A9F80B8721DF0113000334BE /* HGFirstViewController.m in Sources */,
 				A9F80B8921DF0113000334BE /* HGSecondViewController.m in Sources */,
-				A9FB4F2C228E9B1200525B36 /* HGDeviceHelper.m in Sources */,
 				A9F80B8821DF0113000334BE /* HGThirdViewController.m in Sources */,
 				A9F80B9121DF0113000334BE /* HGHomeViewController.m in Sources */,
 				D24F5E2D1EF3D9CD0011AB07 /* main.m in Sources */,

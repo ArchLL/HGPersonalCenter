@@ -8,11 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-extern CGFloat const HeaderImageViewHeight;
-
 @interface HGHeaderImageView : UIView
-
+@property (nonatomic) CGFloat initialHeight;
 @end
 
-NS_ASSUME_NONNULL_END

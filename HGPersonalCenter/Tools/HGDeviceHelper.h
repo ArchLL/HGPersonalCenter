@@ -8,15 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface HGDeviceHelper : NSObject
-
++ (BOOL)isIpad;
 + (BOOL)isExistFringe;
 + (BOOL)isExistJaw;
 + (CGFloat)safeAreaInsetsTop;
 + (CGFloat)safeAreaInsetsBottom;
++ (CGFloat)navigationBarHeight;
++ (CGFloat)topBarHeight;
 
 @end
-
-NS_ASSUME_NONNULL_END

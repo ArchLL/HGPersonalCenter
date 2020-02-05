@@ -8,8 +8,6 @@
 
 #import "HGHeaderImageView.h"
 
-CGFloat const HeaderImageViewHeight = 240;
-
 @interface HGHeaderImageView ()
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 @property (nonatomic, strong) UIImageView *avatarImageView;
@@ -21,6 +19,7 @@ CGFloat const HeaderImageViewHeight = 240;
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        _initialHeight = frame.size.height;
         [self setupViews];
     }
     return self;
