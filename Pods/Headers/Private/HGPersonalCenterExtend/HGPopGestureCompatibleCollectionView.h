@@ -1,0 +1,1 @@
+../../../HGPersonalCenterExtend/HGPersonalCenterExtend/HGPopGestureCompatibleCollectionView.h
