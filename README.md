@@ -16,7 +16,7 @@ platform :ios, '8.0'
 target 'HGPersonalCenter' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
   # use_frameworks!
-  pod 'HGPersonalCenterExtend', '~> 1.2.5'
+  pod 'HGPersonalCenterExtend', '~> 1.2.6'
 end
 ```
 
