@@ -45,8 +45,8 @@
         _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_backButton setImage:[[UIImage imageNamed:@"back"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
         _backButton.tintColor = [UIColor whiteColor];
+        _backButton.contentEdgeInsets = UIEdgeInsetsMake(0, 12, 0, 12);
         [_backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-        [_backButton sizeToFit];
     }
     return _backButton;
 }

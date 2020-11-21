@@ -1,1 +1,1 @@
-../../../GKNavigationBarViewController/GKNavigationBarViewController/TransitionAnimation/GKPushTransitionAnimation.h
+../../../GKNavigationBarViewController/GKNavigationBarViewController/GKTransition/GKPushTransitionAnimation.h

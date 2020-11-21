@@ -29,7 +29,7 @@ static NSString *const SecondViewControllerTableVIewCellIdentifier = @"SecondVie
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:SecondViewControllerTableVIewCellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SecondViewControllerTableVIewCellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = [NSString stringWithFormat:@"爱晚起，也爱工作到深夜 Row: %ld", indexPath.row];
     cell.imageView.image = [UIImage imageNamed:@"cartoon.jpg"];
     return cell;
@@ -48,6 +48,7 @@ static NSString *const SecondViewControllerTableVIewCellIdentifier = @"SecondVie
         _tableView.dataSource = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _tableView.rowHeight = 50;
+        _tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:SecondViewControllerTableVIewCellIdentifier];
     }
     return _tableView;

@@ -9,8 +9,8 @@
 
 #import <UIKit/UIKit.h>
 #import "GKCategory.h"
-#import "GKNavigationBarConfigure.h"
 #import "GKNavigationBar.h"
+#import "GKNavigationBarConfigure.h"
 
 @interface GKNavigationBarViewController : UIViewController
 
@@ -39,17 +39,11 @@
 @property (nonatomic, strong) UIBarButtonItem               *gk_navRightBarButtonItem;
 @property (nonatomic, strong) NSArray<UIBarButtonItem *>    *gk_navRightBarButtonItems;
 
-/** 导航栏左右按钮距离屏幕边缘的距离，需在设置左右item之前设置此属性 */
-@property (nonatomic, assign) CGFloat                       gk_navItemLeftSpace;
-@property (nonatomic, assign) CGFloat                       gk_navItemRightSpace;
-
 /** 页面标题-快速设置 */
 @property (nonatomic, copy) NSString                        *gk_navTitle;
 
 /// 是否隐藏导航栏分割线，默认为NO
 @property (nonatomic, assign) BOOL                          gk_navLineHidden;
-
-
 
 /// 显示导航栏分割线
 - (void)showNavLine;

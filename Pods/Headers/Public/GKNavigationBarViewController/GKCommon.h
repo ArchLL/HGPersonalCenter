@@ -1,1 +1,1 @@
-../../../GKNavigationBarViewController/GKNavigationBarViewController/GKCommon.h
+../../../GKNavigationBarViewController/GKNavigationBarViewController/GKConfigure/GKCommon.h

@@ -15,6 +15,17 @@ iOS自定义导航栏 - 导航栏联动效果
   [iOS自定义导航栏-导航栏联动（一）](http://www.jianshu.com/p/5662cdf4393e),[GKNavigationController](https://github.com/QuintGao/GKNavigationController)
 
   [iOS自定义导航栏-导航栏联动（二）](http://www.jianshu.com/p/5ba9b12ec933),[GKNavigationBarViewController](https://github.com/QuintGao/GKNavigationBarViewController)
+  
+## 重要
+感谢使用该库，如果在使用过程中遇到问题可查看issue或提交issue，或者进QQ群1047100313
+
+##### 推荐使用
+对于GKNavigationBarViewController有人提出侵入性较高，于是我修改了实现方式，写了[GKNavigationBar](https://github.com/QuintGao/GKNavigationBar)这个库，推荐使用，另外也提供了swift版本[GKNavigationBarSwift](https://github.com/QuintGao/GKNavigationBarSwift)
+
+##### 状态栏问题
+1、有时修改状态栏会闪动（从黑色变成白色等）或状态栏颜色显示异常（左边黑色右边白色等）
+
+    在UIViewController的init方法中修改gk_statusBarStyle即可
 
 ## 说明：
 
@@ -32,18 +43,51 @@ iOS自定义导航栏 - 导航栏联动效果
 
 ## Demo中部分截图如下
 
-![今日头条](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/imgs/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1.gif)
+![今日头条](https://github.com/QuintGao/GKExampleImages/blob/master/GKNavigationBar/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1.gif)
  
-![网易云音乐](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/imgs/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90.gif)
+![网易云音乐](https://github.com/QuintGao/GKExampleImages/blob/master/GKNavigationBar/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90.gif)
 
-![网易新闻](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/imgs/%E7%BD%91%E6%98%93%E6%96%B0%E9%97%BB.gif)
+![网易新闻](https://github.com/QuintGao/GKExampleImages/blob/master/GKNavigationBar/%E7%BD%91%E6%98%93%E6%96%B0%E9%97%BB.gif)
 
-![抖音](https://github.com/QuintGao/GKNavigationBarViewController/blob/master/imgs/douyin.gif)
+![抖音](https://github.com/QuintGao/GKExampleImages/blob/master/GKNavigationBar/douyin.gif)
 
 
 ## 使用说明
+1. 配置默认值
+在AppDelegate的didFinishLaunchingWithOptions方法中配置导航栏的默认属性：
+```
+    [GKConfigure setupCustomConfigure:^(GKNavigationBarConfigure *configure) {
+        // 导航栏背景色
+        configure.backgroundColor = [UIColor whiteColor];
+        // 导航栏标题颜色
+        configure.titleColor = [UIColor blackColor];
+        // 导航栏标题字体
+        configure.titleFont = [UIFont systemFontOfSize:18.0f];
+        // 导航栏返回按钮样式
+        configure.backStyle = GKNavigationBarBackStyleBlack;
+        // 导航栏itme左右间距
+        configure.gk_navItemLeftSpace = 12.0f;
+        configure.gk_navItemRightSpace = 12.0f;
+    }];
+```
+2. 将基类控制器修改为GKNavigationBarViewController
+可在每个控制器的viewDidLoad中单独设置导航栏的样式
+```
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // 设置导航栏样式
+    self.gk_navTitle = @"Demo";
+    self.gk_navTitleColor = [UIColor whiteColor];
+    self.gk_navBackgroundColor = [UIColor redColor];
+    self.gk_navShadowColor = [UIColor blackColor];
+    self.gk_backStyle = GKNavigationBarBackStyleWhite;
+    self.gk_navRightBarButtonItem = self.moreItem;
+}
+```
 
-1. 今日头条的实现
+
+3. 今日头条的实现
 
 UINavigationController作为根控制器，包含一个UITabBarController，UITabBarController中包含以GKNavigationBarViewController为父类的子类
 
@@ -56,11 +100,11 @@ UINavigationController *nav = [UINavigationController rootVC:toutiaoVC translati
 
 ```
 
-2. 网易云音乐的实现
+4. 网易云音乐的实现
 
 UITabBarController作为根控制器，包含带导航栏的以GKNavigationBarViewController为父类的子类
 
-3. 网易新闻的实现
+5. 网易新闻的实现
 
 UITabBarController作为根控制器，包含带导航栏的以GKNavigationBarViewController为父类的子类
 其中导航栏开启左滑push手势，主要代码如下：
@@ -82,7 +126,7 @@ self.gk_pushDelegate = self;
 
 ```
 
-4. 部分属性介绍
+6. 部分属性介绍
 
 UINavigationController
 ```
@@ -146,8 +190,25 @@ pod 'GKNavigationBarViewController'
 ## 缺陷及不足
 * 不能使用系统导航栏的各种属性及方法
 
-
 ## 时间记录(倒序)
+
+* 2020.10.23 -- 2.6.3 iOS14安全区域适配，内部方法修改
+* 2020.10.19 -- 2.6.2 修改对刘海屏的判断，适配iPhone 12系列手机
+* 2020.10.18 -- 2.6.1 增加自定义push或pop转场的代理
+* 2020.08.21 -- 2.5.8 修复导航栏间距调整无法屏蔽的bug
+* 2020.07.28 -- 2.5.7 增加导航栏间距调整对某些控制器的屏蔽
+* 2020.07.27 -- 2.5.6 修复方法交换可能带来的crash问题
+* 2020.07.22 -- 2.5.5 优化手势处理方法，增加属性可屏蔽某些控制器对手势处理的影响
+* 2020.07.16 -- 2.5.4 增加gk_backImage属性，可自定义返回按钮
+* 2020.06.30 -- 2.5.2 bug修复，屏蔽某些没有导航栏的控制器对导航栏间距调整的影响 
+* 2020.06.22 -- 2.5.1 修复导航栏间距属性修改到UIVIewController中
+* 2020.06.16 -- 2.5.0 修复设置导航栏间距失效的bug
+* 2020.04.07 -- 2.4.7 优化代码，修复已知问题
+* 2020.03.34 -- 2.4.5 修改crash
+* 2020.01.14 -- 2.4.4 修复设置某个导航栏间距后其他导航栏间距不准确问题
+* 2019.12.24 -- 2.4.2 修复默认返回按钮不显示问题，项目结构调整
+* 2019.12.22 -- 2.4.1 优化代码，解决改变状态栏颜色无效的bug
+* 2019.11.04 -- 2.4.0 优化部分代码及功能
 * 2019.10.17 -- 2.3.7 优化代码，删除弃用方法，增加对Carthage的支持
 * 2019.10.10 -- 2.3.6 优化带tabbar的控制器的push、pop动画，已知bug修复
 * 2019.8.2     -- 2.3.4 适配iOS13，优化导航栏左右item间距的处理

@@ -110,8 +110,8 @@
         [_messageButton setTitle:@"消息" forState:UIControlStateNormal];
         [_messageButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _messageButton.titleLabel.font = [UIFont systemFontOfSize:17];
+        _messageButton.contentEdgeInsets = UIEdgeInsetsMake(0, 12, 0, 12);
         [_messageButton addTarget:self action:@selector(viewMessage) forControlEvents:UIControlEventTouchUpInside];
-        [_messageButton sizeToFit];
     }
     return _messageButton;
 }

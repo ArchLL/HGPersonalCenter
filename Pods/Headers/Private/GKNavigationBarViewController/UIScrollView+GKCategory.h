@@ -1,1 +1,1 @@
-../../../GKNavigationBarViewController/GKNavigationBarViewController/Category/UIScrollView+GKCategory.h
+../../../GKNavigationBarViewController/GKNavigationBarViewController/GKCategory/UIScrollView+GKCategory.h

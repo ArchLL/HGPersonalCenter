@@ -33,7 +33,7 @@ end
 
 ⚠️ 如果你的`pageViewController`下的`scrollView`是`UICollectionView`类型，需要进行如下设置：
 ```Objc
-//解决categoryView在吸顶状态下，且collectionView的显示内容不满屏时，出现竖直方向滑动失效的问题
+// collectionView的内容不满一屏时，为了避免categoryView在吸顶后页面在竖直方向滑动失效，需要进行如下设置：
 _collectionView.alwaysBounceVertical = YES;
 ```
 
