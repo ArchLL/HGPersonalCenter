@@ -1,18 +1,18 @@
 PODS:
   - GKNavigationBarViewController (2.6.3)
-  - HGCategoryView (1.1.2):
+  - HGCategoryView (1.1.3):
     - Masonry (~> 1.1.0)
-  - HGPersonalCenterExtend (1.2.7):
-    - HGCategoryView (~> 1.1.2)
+  - HGPersonalCenterExtend (1.2.8):
+    - HGCategoryView (~> 1.1.3)
     - Masonry (~> 1.1.0)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
   - GKNavigationBarViewController (~> 2.6.3)
-  - HGPersonalCenterExtend (~> 1.2.7)
+  - HGPersonalCenterExtend (~> 1.2.8)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - GKNavigationBarViewController
     - HGCategoryView
     - HGPersonalCenterExtend
@@ -20,10 +20,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   GKNavigationBarViewController: d682ec891050fccfd3e6695ee0f3ee2f75970535
-  HGCategoryView: 8437194aab246579ba2c29e0fdb7992d54c0ab2d
-  HGPersonalCenterExtend: 2cfe36bbc5d514889dac75cfc0dc239c5089b4bb
+  HGCategoryView: f713093e959fec6a504dbdd8a715833f30489093
+  HGPersonalCenterExtend: 788a5cfb31f27dedbdbb3ab98cf966be6fd43f46
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: e68c3cae6ce9a7ba2a179613c1bc6b10bc238155
+PODFILE CHECKSUM: 04c8c216581923a615d70915562bdc4c3f8ab7d4
 
 COCOAPODS: 1.9.3
