@@ -2,22 +2,16 @@
 
 ## Requirements
 
-- iOS 8.0+ 
+- iOS 9.0+ 
 - Objective-C
-- Xcode 9+
+- Xcode 10+
 
 ## Installation
 我通过自己另一个支持`CocoaPods`的库快速集成 - [HGPersonalCenterExtend](https://github.com/ArchLL/HGPersonalCenterExtend)
 
 
 ```ruby
-platform :ios, '8.0'
-
-target 'HGPersonalCenter' do
-  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-  # use_frameworks!
-  pod 'HGPersonalCenterExtend', '~> 1.2.7'
-end
+pod 'HGPersonalCenterExtend', '~> 1.2.9'
 ```
 
 ## Blog 

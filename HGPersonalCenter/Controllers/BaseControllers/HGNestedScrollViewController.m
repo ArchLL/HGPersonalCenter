@@ -175,6 +175,10 @@
     if (!_segmentedPageViewController) {
         _segmentedPageViewController = [[HGSegmentedPageViewController alloc] init];
         _segmentedPageViewController.delegate = self;
+        _segmentedPageViewController.categoryView.alignment = HGCategoryViewAlignmentLeft;
+        _segmentedPageViewController.categoryView.itemSpacing = 25;
+        _segmentedPageViewController.categoryView.backgroundColor = [UIColor yellowColor];
+        _segmentedPageViewController.categoryView.isEqualParts = YES;
     }
     return _segmentedPageViewController;
 }

@@ -59,12 +59,8 @@
         [controllers addObject:controller];
     }
     self.segmentedPageViewController.pageViewControllers = controllers;
+    self.segmentedPageViewController.selectedPage = self.selectedIndex;
     self.segmentedPageViewController.categoryView.titles = titles;
-    self.segmentedPageViewController.categoryView.alignment = HGCategoryViewAlignmentLeft;
-    self.segmentedPageViewController.categoryView.originalIndex = self.selectedIndex;
-    self.segmentedPageViewController.categoryView.itemSpacing = 25;
-    self.segmentedPageViewController.categoryView.backgroundColor = [UIColor yellowColor];
-    self.segmentedPageViewController.categoryView.isEqualParts = YES;
 }
 
 - (void)viewMessage {
