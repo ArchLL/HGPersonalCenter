@@ -11,7 +11,7 @@
 
 
 ```ruby
-pod 'HGPersonalCenterExtend', '~> 1.2.9'
+pod 'HGPersonalCenterExtend', '~> 1.3.1'
 ```
 
 ## Blog 
@@ -30,6 +30,11 @@ pod 'HGPersonalCenterExtend', '~> 1.2.9'
 // collectionView的内容不满一屏时，为了避免categoryView在吸顶后页面在竖直方向滑动失效，需要进行如下设置：
 _collectionView.alwaysBounceVertical = YES;
 ```
+
+### 温馨提示
+当时为了实验不同导航栏框架的效果，在该项目中引入了`GKNavigationBarViewController`，但是这个第三方库对代码侵入性较高，还有一些bug未解决（比如：在我这个项目的场景下系统左滑操作失效，不得已我接入了`FDFullscreenPopGesture`来解决这个问题；左滑返回时，导航栏会闪屏）.  
+
+所以不建议大家在自己的项目中使用`GKNavigationBarViewController`，推荐使用`RTRootNavigationController`，可以参考[HGPersonalCenterExtend](https://github.com/ArchLL/HGPersonalCenterExtend)中的使用方法
 
 ## Author
 

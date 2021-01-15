@@ -7,7 +7,8 @@ inhibit_all_warnings!
 
 target 'HGPersonalCenter' do
 
-  pod 'HGPersonalCenterExtend', '~> 1.2.9'
-  pod 'GKNavigationBarViewController', '~> 2.6.3'
+  pod 'HGPersonalCenterExtend', '~> 1.3.1'
+  pod 'GKNavigationBarViewController', '~> 2.7.0'
+  pod 'FDFullscreenPopGesture', '~> 1.1'
 
 end

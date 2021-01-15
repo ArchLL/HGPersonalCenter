@@ -10,9 +10,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-- iOS 8.0+ 
+- iOS 9.0+ 
 - Objective-C
-- Xcode 9+
+- Xcode 10+
 
 ## Installation
 
@@ -20,7 +20,7 @@ HGPersonalCenterExtend is available through [CocoaPods](https://cocoapods.org). 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'HGPersonalCenterExtend', '~> 1.2.9'
+pod 'HGPersonalCenterExtend', '~> 1.3.1'
 ```
 
 ## Main 

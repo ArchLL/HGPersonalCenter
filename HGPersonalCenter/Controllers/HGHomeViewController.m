@@ -20,7 +20,7 @@
     self.gk_navTitle = @"主页";
 }
 
-//进入个人中心
+// 进入个人中心
 - (IBAction)enterCenterAction:(UIButton *)sender {
     HGPersonalCenterViewController *vc = [[HGPersonalCenterViewController alloc] init];
     vc.isEnlarge = self.enlargeSwitch.on;
