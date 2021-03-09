@@ -11,7 +11,7 @@
 
 
 ```ruby
-pod 'HGPersonalCenterExtend', '~> 1.3.1'
+pod 'HGPersonalCenterExtend', '~> 1.3.2'
 ```
 
 ## Blog 
